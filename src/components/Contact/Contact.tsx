@@ -1,18 +1,16 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { useState, useCallback } from "react";
 import {
-  Mail,
-  Video,
-  PhoneCall,
-  ClipboardSignature,
-  MapPin,
   Check,
-  X,
+  Mail,
+  MapPin,
+  PhoneCall,
+  X
 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useCallback, useState } from "react";
 
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const STATICFORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_STATICFORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
 
 interface FormData {
   name: string;
@@ -49,13 +47,13 @@ export default function Contact(): React.ReactElement {
       setStatus("sending");
 
       try {
-        const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch("https://api.staticforms.xyz/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            access_key: WEB3FORMS_ACCESS_KEY,
+            accessKey: STATICFORMS_ACCESS_KEY,
             ...formData,
-            from_name: "DentCare Website",
+            subject: "New contact from DentCare Website",
           }),
         });
 

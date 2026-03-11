@@ -21,7 +21,7 @@ export default function HomePage(): React.ReactElement {
         <Contact />
       </main>
       <ScrollToTop />
-      <CookieBanner />
+      {/* <CookieBanner /> */}
     </>
   );
 }

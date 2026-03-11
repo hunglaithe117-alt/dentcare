@@ -17,11 +17,13 @@ export default function CookieBanner(): React.ReactElement | null {
 
   const handleAccept = useCallback((): void => {
     localStorage.setItem("cookie-consent", "accepted");
+    window.dispatchEvent(new Event("cookie-consent-updated"));
     setIsVisible(false);
   }, []);
 
   const handleDecline = useCallback((): void => {
     localStorage.setItem("cookie-consent", "declined");
+    window.dispatchEvent(new Event("cookie-consent-updated"));
     setIsVisible(false);
   }, []);
 
