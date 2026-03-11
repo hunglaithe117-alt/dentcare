@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap');
+      .pill-left { fill: #5D63C4; }
+      .pill-right { fill: #85B2D0; mix-blend-mode: screen; }
+      .text-main { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 26px; fill: #0f172a; letter-spacing: -0.5px; }
+      .text-sub { font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 10.5px; fill: #64748b; letter-spacing: 2.5px; }
+    </style>
+  </defs>
+  <g transform="translate(32, 28) scale(0.48)">
+    <rect x="-30" y="-36" width="36" height="70" rx="18" class="pill-left" transform="rotate(-45)" />
+    <rect x="-6" y="-36" width="36" height="70" rx="18" class="pill-right" opacity="0.95" transform="rotate(45)" />
+  </g>
+  <text x="64" y="32" class="text-main">DentCare</text>
+  <text x="66" y="48" class="text-sub">consultation</text>
+</svg>

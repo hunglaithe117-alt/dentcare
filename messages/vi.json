@@ -1,0 +1,218 @@
+{
+  "header": {
+    "about": "Về Chúng Tôi",
+    "products": "Sản Phẩm",
+    "clinical": "Ca Lâm Sàng",
+    "organization": "Tổ Chức",
+    "contact": "Liên Hệ"
+  },
+  "hero": {
+    "title": "Sự Xuất Sắc Phục Vụ Nụ Cười Của Bạn",
+    "subtitle": "Phòng thí nghiệm chuyên về Thẩm mỹ và Cấy ghép Implant — Hơn 30 năm kinh nghiệm phục vụ các chuyên gia nha khoa",
+    "cta": "Khám Phá Dịch Vụ",
+    "ctaQuote": "Yêu Cầu Báo Giá"
+  },
+  "about": {
+    "sectionTitle": "ADN DentCare",
+    "sectionSubtitle": "Câu chuyện, đam mê và cam kết của chúng tôi",
+    "founderName": "Dr. Casteran Olivier",
+    "founderRole": "Người Sáng Lập — DentCare Consultation",
+    "history": {
+      "title": "Bác sĩ Casteran Olivier",
+      "description": "Hành trình sự nghiệp đã mang đến cho tôi vô vàn kinh nghiệm thực tiễn tại Pháp và quốc tế, cũng như trải nghiệm xây dựng các tổ chức với quy mô từ 15 đến 120 nhân sự.\n\nTôi thấu hiểu trọn vẹn những yêu cầu khắt khe trong lĩnh vực của chúng ta, và sự cần thiết của một mối quan hệ hợp tác khăng khít giữa phòng khám nha khoa và phòng Lab.\n\nTrong suốt 30 năm hành nghề, tôi cống hiến trọn vẹn tâm huyết và gặt hái nhiều thành tựu, kinh nghiệm, chuyên môn và những lựa chọn của bản thân đã thôi thúc tôi thành lập DentCare Consultation vào năm 2017 để giải quyết triệt để các nhu cầu cấp thiết của phòng khám.\n\nĐể hiện thực hóa sứ mệnh đó, tôi xây dựng hai trung tâm sản xuất/điều phối: Hà Nội (Việt Nam), Bordeaux (Pháp).\n\nSẵn sàng đồng hành cùng phòng khám của bạn mỗi ngày trong mọi ca phục hình; sự tận tâm, luôn lắng nghe, giao tiếp minh bạch và khoảng cách gần gũi chính là những thế mạnh cốt lõi của chúng tôi.\n\nChúng tôi làm chủ hoàn toàn quy trình kỹ thuật số, scan trong miệng, in 3D, cắt tiện zirconia, và cấy ghép implant.\n\nChúng tôi sở hữu kiến thức và bí quyết chế tác cho các phục hình toàn hàm, thiết kế nụ cười, mặt dán veneer, onlay, zirconia.\n\nCá nhân tôi cùng đội ngũ hoàn toàn cống hiến và cam kết về chất lượng, tuân thủ nghiêm ngặt các quy trình và giao thức làm việc. Phòng lab tại Hà Nội đạt chứng nhận ISO 13485.\n\nTham vọng của tôi là tạo ra các tác phẩm xuất sắc với mức chi phí hợp lý."
+    },
+    "method": {
+      "title": "Phương Pháp Làm Việc",
+      "description": "Làm chủ hoàn toàn quy trình kỹ thuật số: máy quét trong miệng, in 3D, gia công Zirconia và cấy ghép Implant. Mỗi bước đều được kiểm soát để đảm bảo độ chính xác tuyệt đối và kết quả vượt mong đợi.",
+      "scanner": "Máy Quét Trong Miệng",
+      "printing": "In 3D",
+      "milling": "Gia Công Zirconia",
+      "implant": "Cấy Ghép Implant"
+    },
+    "certification": {
+      "title": "Chứng Nhận Chất Lượng",
+      "description": "Sản xuất được chứng nhận ISO 13485 — đảm bảo chất lượng, truy xuất nguồn gốc và tuân thủ các tiêu chuẩn quốc tế khắt khe nhất.",
+      "badge": "Chứng nhận ISO 13485"
+    }
+  },
+  "products": {
+    "sectionTitle": "Sản Phẩm",
+    "sectionSubtitle": "Giải pháp phục hình chính xác cao",
+    "categories": {
+      "crowns": {
+        "title": "Chụp và Cầu Răng",
+        "items": {
+          "zirconeMonolithic": {
+            "name": "Zirconia Nguyên Khối",
+            "description": "Full Zirconia — độ bền và thẩm mỹ tối ưu"
+          },
+          "zirconeStratified": {
+            "name": "Zirconia Phân Lớp",
+            "description": "Vẻ tự nhiên không gì sánh được nhờ kỹ thuật phân lớp thủ công"
+          },
+          "ccm": {
+            "name": "Sứ Kim Loại (CCM)",
+            "description": "Độ tin cậy đã được chứng minh cho phục hình vùng sau"
+          },
+          "metalCrown": {
+            "name": "Mão Kim Loại",
+            "description": "Độ bền tối đa cho vùng chịu lực cao"
+          },
+          "emax": {
+            "name": "E.max / Onlay / Inlay-Core",
+            "description": "Sứ ép cho thẩm mỹ tự nhiên nhất"
+          }
+        }
+      },
+      "veneers": {
+        "title": "Mặt Dán Sứ (Veneer)",
+        "items": {
+          "emaxVeneer": {
+            "name": "Veneer E.max",
+            "description": "Tinh tế và trong suốt cho nụ cười rạng rỡ"
+          },
+          "stratifiedVeneer": {
+            "name": "Veneer Phân Lớp",
+            "description": "Nghệ thuật phân lớp cho kết quả siêu tự nhiên"
+          },
+          "waxup": {
+            "name": "Wax-up / Mock-up",
+            "description": "Dự án thẩm mỹ — trực quan hóa kết quả trước điều trị"
+          }
+        }
+      },
+      "implants": {
+        "title": "Implant",
+        "items": {
+          "screwRetained": {
+            "name": "Giải Pháp Bắt Vít",
+            "description": "Cố định an toàn bằng vít trực tiếp trên implant"
+          },
+          "cemented": {
+            "name": "Giải Pháp Gắn Xi Măng",
+            "description": "Phục hình cố định bằng gắn xi măng trên trụ implant"
+          },
+          "allOn": {
+            "name": "Cầu All-on Implant",
+            "description": "Phục hồi toàn diện trên implant — giải pháp cố định"
+          },
+          "tiBase": {
+            "name": "Zirconia trên Ti-Base",
+            "description": "Độ chính xác titan, thẩm mỹ zirconia"
+          }
+        }
+      },
+      "removable": {
+        "title": "Phục Hình Tháo Lắp",
+        "items": {
+          "metalFrame": {
+            "name": "Khung Kim Loại",
+            "description": "Hàm tháo lắp bán phần trên khung kim loại nhẹ"
+          },
+          "valplast": {
+            "name": "Nhựa Dẻo Valplast",
+            "description": "Thoải mái và thẩm mỹ không cần móc kim loại"
+          },
+          "complete": {
+            "name": "Hàm Toàn Hàm",
+            "description": "Phục hồi toàn diện — đẳng cấp cao"
+          },
+          "precision": {
+            "name": "Khóa Cài Biosoft",
+            "description": "Khóa cài chính xác cho độ lưu giữ tối ưu"
+          }
+        }
+      }
+    }
+  },
+  "clinical": {
+    "sectionTitle": "Ca Lâm Sàng",
+    "sectionSubtitle": "Bằng chứng qua hình ảnh — khám phá các ca thực tế",
+    "before": "Trước",
+    "after": "Sau",
+    "dragToCompare": "Kéo để so sánh",
+    "macroTitle": "Độ Chính Xác Macro",
+    "macroSubtitle": "Chi tiết, kết cấu và độ trong suốt — dấu ấn DentCare"
+  },
+  "organization": {
+    "sectionTitle": "Tổ Chức",
+    "sectionSubtitle": "Mạng lưới quốc tế phục vụ sự xuất sắc",
+    "digital": {
+      "title": "Quy Trình Kỹ Thuật Số",
+      "description": "Dịch vụ quét tích hợp tại Bordeaux. Số hóa dấu hàm, lập kế hoạch implant và quy trình kỹ thuật số hoàn chỉnh cho độ chính xác tối đa."
+    },
+    "hanoi": {
+      "title": "Sản xuất tại Hà Nội",
+      "subtitle": "Việt Nam — Trung tâm sản xuất",
+      "item1": "Phòng lab rộng 600 m2",
+      "item2": "20 kỹ thuật viên chuyên môn cao",
+      "item3": "Tiện/Cắt, in 3D, Quy trình kỹ thuật số",
+      "item4": "Nguyên vật liệu tiêu chuẩn cao",
+      "item5": "Chứng nhận ISO 13485"
+    },
+    "bordeaux": {
+      "title": "Phòng lab Bordeaux",
+      "subtitle": "Pháp — Trung tâm điều phối",
+      "item1": "3 Kỹ thuật viên",
+      "item2": "Giao tiếp phòng khám, gần gũi",
+      "item3": "Tổ chức kế hoạch",
+      "item4": "Dịch vụ số hóa dấu răng",
+      "item5": "Theo dõi đơn hàng",
+      "item6": "Hỗ trợ implant, Đặt hàng phụ kiện",
+      "item7": "Chỉnh sửa phục hình, Hậu mãi"
+    },
+    "policies": {
+      "title": "Chính Sách & Dịch Vụ",
+      "traceability": "Truy Xuất Nguồn Gốc",
+      "market": "Đưa Ra Thị Trường",
+      "warranty": "Bảo Hành",
+      "terms": "Điều Kiện Bán Hàng"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Liên Hệ",
+    "sectionSubtitle": "Hãy bắt đầu một hợp tác xuất sắc",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "phone": "Số điện thoại",
+      "message": "Lời nhắn của bạn",
+      "submit": "Gửi Tin Nhắn",
+      "sending": "Đang gửi...",
+      "success": "Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất.",
+      "error": "Có lỗi xảy ra khi gửi. Vui lòng thử lại sau."
+    },
+    "address": "29 Rue de Cursol, 33000 Bordeaux, Pháp",
+    "phone": "06 78 09 47 49",
+    "email": "o.dentcare.consult@gmail.com",
+    "cta": {
+      "email": "Trao Đổi Qua Email",
+      "video": "Đặt Lịch Video Call",
+      "callback": "Yêu Cầu Gọi Lại",
+      "quote": "Yêu Cầu Báo Giá"
+    },
+    "info": {
+      "address": "29 Rue de Cursol 33000 Bordeaux",
+      "phone": "06 78 09 47 49",
+      "email": "o.dentcare.consult@gmail.com"
+    }
+  },
+  "footer": {
+    "company": "Dentcare Consultation SASU",
+    "address": "29 Rue de Cursol 33000 Bordeaux",
+    "registration": "832 04 30574 RCS Bordeaux",
+    "vat": "N° TVA : FR52 832043574",
+    "phone": "06 78 09 47 49",
+    "email": "o.dentcare.consult@gmail.com",
+    "rights": "Bản Quyền Đã Được Bảo Lưu",
+    "privacy": "Chính Sách Bảo Mật",
+    "legal": "Thông Tin Pháp Lý",
+    "tagline": "Phòng lab chuyên sâu về Thẩm Mỹ và Implant"
+  },
+  "cookie": {
+    "message": "Trang web này sử dụng cookie để cải thiện trải nghiệm của bạn. Tiếp tục sử dụng đồng nghĩa với việc bạn chấp nhận cookie.",
+    "accept": "Chấp Nhận",
+    "decline": "Từ Chối",
+    "learnMore": "Tìm Hiểu Thêm"
+  }
+}

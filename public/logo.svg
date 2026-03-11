@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="45 55 70 50" width="100%" height="100%">
+  <defs>
+    <style>
+      .pill-left { fill: #5D63C4; }
+      .pill-right { fill: #85B2D0; mix-blend-mode: screen; }
+    </style>
+  </defs>
+
+  <g transform="translate(80, 80)">
+    <rect x="-30" y="-36" width="36" height="70" rx="18" class="pill-left" transform="rotate(-45)" />
+    <rect x="-6" y="-36" width="36" height="70" rx="18" class="pill-right" opacity="0.95" transform="rotate(45)" />
+  </g>
+</svg>

@@ -1,0 +1,215 @@
+{
+  "header": {
+    "about": "À propos",
+    "products": "Produits",
+    "clinical": "Cas Clinique",
+    "organization": "Organisation",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "L'Excellence au Service de Votre Sourire",
+    "subtitle": "Laboratoire spécialisé en Esthétique et Implantologie — Plus de 30 ans d'expertise au service des professionnels dentaires",
+    "cta": "Découvrir Nos Services",
+    "ctaQuote": "Demander un Devis"
+  },
+  "about": {
+    "sectionTitle": "À Propos",
+    "sectionSubtitle": "Le Mot du Fondateur",
+    "founderName": "Dr. Casteran Olivier",
+    "founderRole": "Fondateur — DentCare Consultation",
+    "history": {
+      "title": "Dr. Casteran Olivier",
+      "description": "Mon parcours professionnel m'a conduit à de nombreuses expériences en France et à l'étranger, mais aussi dans la création de structures allant de 15 salariés à 120 salariés\n\nJe connais parfaitement les exigences de nos activités, la nécessaire collaboration étroite entre le cabinet Dentaire et le laboratoire.\n\n30 ans d'exercice professionnel dans lequel je me suis beaucoup investi et accompli, Mon expérience, mon expertise, mes choix m'ont conduit a créer en 2017 DentCare Consultation pour répondre aux besoins du cabinet.\n\nPour cela, je m'appuie sur deux sites productions: Hanoï (Vietnam), Bordeaux (France)\n\nAccompagner votre cabinet au quotidien dans tous les projets prothétiques, notre disponibilité , notre écoute , notre communication et notre proximité sont nos atouts.\n\nNous maîtrisons parfaitement le flux numérique , scanner intra oral, impression 3D, usinage zircone, implantologie.\n\nNous avons la connaissance et le savoir-faire pour les reconstitutions complètes, smile design, facettes, onlays, zircone.\n\nMes équipes et moi-même sommes totalement investies et attachées à la qualité, au respect des procédures et des protocoles de travail,  le laboratoire de Hanoï est certifié ISO 13485\n\nMon ambition est de produire de l'excellent travail pour un coût raisonné ."
+    },
+    "method": {
+      "title": "Maîtrise & Savoir-faire",
+      "description": "Nous maîtrisons parfaitement le flux numérique, scanner intra oral, impression 3D, usinage zircone, implantologie. Nous avons la connaissance et le savoir-faire pour les reconstitutions complètes, smile design, facettes, onlays, zircone.",
+      "scanner": "Scanner Intra-oral",
+      "printing": "Impression 3D",
+      "milling": "Usinage Zircone",
+      "implant": "Implantologie"
+    },
+    "certification": {
+      "title": "Engagement Qualité",
+      "description": "Mes équipes et moi-même sommes totalement investies et attachées à la qualité, au respect des procédures et des protocoles de travail, le laboratoire de Hanoï est certifié ISO 13485. Mon ambition est de produire de l'excellent travail pour un coût raisonné.",
+      "badge": "Certifié ISO 13485"
+    }
+  },
+  "products": {
+    "sectionTitle": "Nos Produits",
+    "sectionSubtitle": "Solutions prothétiques de haute précision",
+    "categories": {
+      "crowns": {
+        "title": "Couronnes et Bridges",
+        "items": {
+          "zirconeMonolithic": {
+            "name": "Zircone Monolithique",
+            "description": "Full Zircone — résistance et esthétique optimale"
+          },
+          "zirconeStratified": {
+            "name": "Zircone Stratifiée",
+            "description": "Naturalité incomparable grâce à la stratification manuelle"
+          },
+          "ccm": {
+            "name": "Céramo-Métallique (CCM)",
+            "description": "Fiabilité éprouvée pour les restaurations postérieures"
+          },
+          "metalCrown": {
+            "name": "Couronne Métal",
+            "description": "Robustesse maximale pour les zones de forte contrainte"
+          },
+          "emax": {
+            "name": "E.max / Onlay / Inlay-Core",
+            "description": "Céramique pressée pour l'esthétique la plus naturelle"
+          }
+        }
+      },
+      "veneers": {
+        "title": "Facettes (Veneers)",
+        "items": {
+          "emaxVeneer": {
+            "name": "Facettes E.max",
+            "description": "Finesse et translucidité pour un sourire éclatant"
+          },
+          "stratifiedVeneer": {
+            "name": "Facettes Stratifiées",
+            "description": "Art de la stratification pour un rendu ultra-naturel"
+          },
+          "waxup": {
+            "name": "Wax-up / Mock-up",
+            "description": "Projet esthétique — visualisez le résultat avant traitement"
+          }
+        }
+      },
+      "implants": {
+        "title": "Implant",
+        "items": {
+          "screwRetained": {
+            "name": "Solutions Transvissées",
+            "description": "Fixation sécurisée par vissage direct sur implant"
+          },
+          "cemented": {
+            "name": "Solutions Scellées",
+            "description": "Prothèse fixée par cimentation sur pilier implantaire"
+          },
+          "allOn": {
+            "name": "Bridge All-on Implant",
+            "description": "Réhabilitation complète sur implants — solution fixe"
+          },
+          "tiBase": {
+            "name": "Zircone sur Ti-Base",
+            "description": "Précision du titane, esthétique de la zircone"
+          }
+        }
+      },
+      "removable": {
+        "title": "Prothèse Amovible",
+        "items": {
+          "metalFrame": {
+            "name": "Châssis Métallique",
+            "description": "Prothèse partielle sur armature métallique légère"
+          },
+          "valplast": {
+            "name": "Résine Flexible Valplast",
+            "description": "Confort et esthétique sans crochets métalliques"
+          },
+          "complete": {
+            "name": "Prothèse Complète",
+            "description": "Réhabilitation totale — haut de gamme"
+          },
+          "precision": {
+            "name": "Attachement Biosoft",
+            "description": "Attachements de précision pour une rétention optimale"
+          }
+        }
+      }
+    }
+  },
+  "clinical": {
+    "sectionTitle": "Cas Cliniques",
+    "sectionSubtitle": "La preuve par l'image — découvrez nos réalisations",
+    "before": "Avant",
+    "after": "Après",
+    "dragToCompare": "Glissez pour comparer",
+    "macroTitle": "Précision Macro",
+    "macroSubtitle": "Détails, texture et translucidité — la signature DentCare"
+  },
+  "organization": {
+    "sectionTitle": "Organisation",
+    "sectionSubtitle": "Un réseau international au service de l'excellence",
+    "digital": {
+      "title": "Flux Numérique",
+      "description": "Service de scannage intégré à Bordeaux. Numérisation des empreintes, planification implantaire et workflow digital complet pour une précision maximale."
+    },
+    "hanoi": {
+      "title": "Production Hanoï",
+      "subtitle": "Vietnam — Centre de Production",
+      "item1": "Laboratoire de 600 m2",
+      "item2": "20 techniciens Qualifiés",
+      "item3": "Usinage, impression 3D, Flux numérique",
+      "item4": "Matière première de référence",
+      "item5": "Certifié ISO 13485"
+    },
+    "bordeaux": {
+      "title": "Laboratoire Bordeaux",
+      "subtitle": "France — Centre de Coordination",
+      "item1": "3 Techniciens",
+      "item2": "Communication cabinet, proximité",
+      "item3": "Organisation des plannings",
+      "item4": "Service de numérisation des empreintes",
+      "item5": "Suivi des commandes",
+      "item6": "Support implantologie, Commandes des accastillages",
+      "item7": "Modification des prothèses, SAV"
+    },
+    "policies": {
+      "title": "Politique & Services",
+      "traceability": "Traçabilité",
+      "market": "Mise sur le Marché",
+      "warranty": "Garantie",
+      "terms": "Conditions Générales de Vente"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contactez-Nous",
+    "sectionSubtitle": "Démarrons une collaboration d'excellence",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "phone": "Téléphone",
+      "message": "Votre message",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "success": "Votre demande a été envoyée avec succès. Nous vous répondrons dans les plus brefs délais.",
+      "error": "Une erreur s'est produite lors de l'envoi de votre demande. Veuillez réessayer."
+    },
+    "cta": {
+      "email": "Échangez par Mail",
+      "video": "Échangez en Visio",
+      "callback": "Demandez à Être Rappelé",
+      "quote": "Demandez un Devis"
+    },
+    "info": {
+      "address": "29 Rue de Cursol 33000 Bordeaux",
+      "phone": "06 78 09 47 49",
+      "email": "o.dentcare.consult@gmail.com"
+    }
+  },
+  "footer": {
+    "company": "Dentcare Consultation SASU",
+    "address": "29 Rue de Cursol 33000 Bordeaux",
+    "registration": "832 04 30574 RCS Bordeaux",
+    "vat": "N° TVA : FR52 832043574",
+    "phone": "06 78 09 47 49",
+    "email": "o.dentcare.consult@gmail.com",
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de Confidentialité",
+    "legal": "Mentions Légales",
+    "tagline": "Laboratoire spécialisé en Esthétique et Implantologie"
+  },
+  "cookie": {
+    "message": "Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learnMore": "En savoir plus"
+  }
+}
