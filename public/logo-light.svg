@@ -9,8 +9,8 @@
     </style>
   </defs>
   <g transform="translate(32, 28) scale(0.48)">
-    <rect x="-30" y="-36" width="36" height="70" rx="18" class="pill-left" transform="rotate(-45)" />
-    <rect x="-6" y="-36" width="36" height="70" rx="18" class="pill-right" opacity="0.95" transform="rotate(45)" />
+    <rect x="-30" y="-36" width="36" height="66" rx="18" class="pill-left" transform="rotate(-45)" />
+    <rect x="-6" y="-36" width="36" height="66" rx="18" class="pill-right" opacity="0.95" transform="rotate(45)" />
   </g>
   <text x="64" y="32" class="text-main">DentCare</text>
   <text x="66" y="48" class="text-sub">consultation</text>
