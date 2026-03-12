@@ -188,10 +188,19 @@
       "callback": "Demandez à Être Rappelé",
       "quote": "Demandez un Devis"
     },
-    "info": {
-      "address": "29 Rue de Cursol 33000 Bordeaux",
-      "phone": "06 78 09 47 49",
-      "email": "o.dentcare.consult@gmail.com"
+    "locations": {
+      "bordeaux": {
+        "title": "Laboratoire Bordeaux",
+        "address": "29 Rue de Cursol 33000 Bordeaux. France",
+        "phone": "+33 6 78 09 47 49",
+        "email": "o.dentcare.consult@gmail.com"
+      },
+      "hanoi": {
+        "title": "Production Hanoï",
+        "address": "25D3AA Khu Biệt Thự Vườn Đào, Tây Hồ, Hà Nội",
+        "phone": "+33 6 78 09 47 49",
+        "email": "o.dentcare.consult@gmail.com"
+      }
     }
   },
   "footer": {

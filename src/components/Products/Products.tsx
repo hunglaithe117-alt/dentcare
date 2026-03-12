@@ -1,9 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState, useCallback } from "react";
 import Image from "next/image";
-import { Box } from "lucide-react";
+import { useCallback, useState } from "react";
 
 const CATEGORY_KEYS = ["crowns", "veneers", "implants", "removable"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
