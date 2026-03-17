@@ -10,7 +10,7 @@
     "title": "L'Excellence au Service de Votre Sourire",
     "subtitle": "Laboratoire spécialisé en Esthétique et Implantologie — Plus de 30 ans d'expertise au service des professionnels dentaires",
     "cta": "Découvrir Nos Services",
-    "ctaQuote": "Demander un Devis"
+    "ctaQuote": "nos réalisations"
   },
   "about": {
     "sectionTitle": "À Propos",
@@ -31,13 +31,18 @@
     },
     "certification": {
       "title": "Engagement Qualité",
-      "description": "Mes équipes et moi-même sommes totalement investies et attachées à la qualité, au respect des procédures et des protocoles de travail, le laboratoire de Hanoï est certifié ISO 13485. Mon ambition est de produire de l'excellent travail pour un coût raisonné.",
+      "description": "Mes équipes et moi-même sommes totalement investies et attachées à la qualité, au respect des procédures et des protocoles de travail, le laboratoire de Hanoï est certifié ISO 13485. ",
       "badge": "Certifié ISO 13485"
     }
   },
   "products": {
     "sectionTitle": "Nos Produits",
     "sectionSubtitle": "Solutions prothétiques de haute précision",
+    "labels": {
+      "materials": "Matière Première",
+      "digitalFlow": "Flux numérique",
+      "toothRangeNote": "Choix des dents en gamme: Vivodent SPE Triumph"
+    },
     "categories": {
       "crowns": {
         "title": "Couronnes et Bridges",
@@ -53,10 +58,6 @@
           "ccm": {
             "name": "Céramo-Métallique (CCM)",
             "description": "Fiabilité éprouvée pour les restaurations postérieures"
-          },
-          "metalCrown": {
-            "name": "Couronne Métal",
-            "description": "Robustesse maximale pour les zones de forte contrainte"
           },
           "emax": {
             "name": "E.max / Onlay / Inlay-Core",
@@ -76,7 +77,7 @@
             "description": "Art de la stratification pour un rendu ultra-naturel"
           },
           "waxup": {
-            "name": "Wax-up / Mock-up",
+            "name": "diagnostic wax-up",
             "description": "Projet esthétique — visualisez le résultat avant traitement"
           }
         }
@@ -93,12 +94,8 @@
             "description": "Prothèse fixée par cimentation sur pilier implantaire"
           },
           "allOn": {
-            "name": "Bridge All-on Implant",
+            "name": "All-on Implant",
             "description": "Réhabilitation complète sur implants — solution fixe"
-          },
-          "tiBase": {
-            "name": "Zircone sur Ti-Base",
-            "description": "Précision du titane, esthétique de la zircone"
           }
         }
       },
@@ -110,11 +107,11 @@
             "description": "Prothèse partielle sur armature métallique légère"
           },
           "valplast": {
-            "name": "Résine Flexible Valplast",
+            "name": "Résine Flexible",
             "description": "Confort et esthétique sans crochets métalliques"
           },
           "complete": {
-            "name": "Prothèse Complète",
+            "name": "Prothèse Résine",
             "description": "Réhabilitation totale — haut de gamme"
           },
           "precision": {
@@ -128,6 +125,8 @@
   "clinical": {
     "sectionTitle": "Cas Cliniques",
     "sectionSubtitle": "La preuve par l'image — découvrez nos réalisations",
+    "description": "Découvrez notre expertise en esthétique dentaire à travers ces cas cliniques. Chaque réalisation reflète notre engagement envers la qualité et la conservation dentaire.",
+    "caseTitle": "Cas Clinique DentCare",
     "before": "Avant",
     "after": "Après",
     "dragToCompare": "Glissez pour comparer",
@@ -136,7 +135,8 @@
   },
   "organization": {
     "sectionTitle": "Organisation",
-    "sectionSubtitle": "Un réseau international au service de l'excellence",
+    "sectionSubtitle": "Une Organisation au service du cabinet",
+    "deliveryNote": "Livraison dans toute la France",
     "digital": {
       "title": "Flux Numérique",
       "description": "Service de scannage intégré à Bordeaux. Numérisation des empreintes, planification implantaire et workflow digital complet pour une précision maximale."

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Check,
   Mail,
@@ -32,7 +33,7 @@ export default function Contact(): React.ReactElement {
     message: "",
   });
   const [status, setStatus] = useState<FormStatus>("idle");
-  const [activeLocation, setActiveLocation] = useState<"bordeaux" | "hanoi">("bordeaux");
+  const [activeLocation, setActiveLocation] = useState<"bordeaux">("bordeaux");
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -71,14 +72,6 @@ export default function Contact(): React.ReactElement {
     },
     [formData],
   );
-
-  const ctaButtons = [
-    {
-      key: "email" as const,
-      icon: <Mail className="w-6 h-6 stroke-[1.5]" />,
-      href: `mailto:${tFooter("email")}`,
-    },
-  ];
 
   return (
     <>
@@ -218,7 +211,7 @@ export default function Contact(): React.ReactElement {
 
               {/* Locations block */}
               <div className="flex flex-col gap-4">
-                {(["bordeaux", "hanoi"] as const).map((loc) => (
+                {(["bordeaux"] as const).map((loc) => (
                   <div
                     key={loc}
                     onClick={() => setActiveLocation(loc)}
@@ -305,22 +298,7 @@ export default function Contact(): React.ReactElement {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Google Maps Location Bordeaux"
-                  className={`absolute inset-0 transition-opacity duration-500 ${activeLocation === "bordeaux" ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                    }`}
-                />
-                <iframe
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                    "Khu Biệt Thự Vườn Đào, Tây Hồ, Hà Nội"
-                  )}&t=&z=15&ie=UTF8&iwloc=B&output=embed`}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Maps Location Hanoi"
-                  className={`absolute inset-0 transition-opacity duration-500 ${activeLocation === "hanoi" ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                    }`}
+                  className="absolute inset-0"
                 />
               </div>
             </div>
@@ -335,7 +313,7 @@ export default function Contact(): React.ReactElement {
             {/* Brand */}
             <div>
               <div className="flex items-center mb-4 mt-2">
-                <img
+                <Image
                   src="/logo-light.svg"
                   alt="DentCare Logo"
                   width={220}

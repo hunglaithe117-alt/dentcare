@@ -10,7 +10,7 @@
     "title": "Sự Xuất Sắc Phục Vụ Nụ Cười Của Bạn",
     "subtitle": "Phòng thí nghiệm chuyên về Thẩm mỹ và Cấy ghép Implant — Hơn 30 năm kinh nghiệm phục vụ các chuyên gia nha khoa",
     "cta": "Khám Phá Dịch Vụ",
-    "ctaQuote": "Yêu Cầu Báo Giá"
+    "ctaQuote": "các ca đã thực hiện"
   },
   "about": {
     "sectionTitle": "ADN DentCare",
@@ -38,6 +38,11 @@
   "products": {
     "sectionTitle": "Sản Phẩm",
     "sectionSubtitle": "Giải pháp phục hình chính xác cao",
+    "labels": {
+      "materials": "Nguyên Liệu Chính",
+      "digitalFlow": "Quy Trình Kỹ Thuật Số",
+      "toothRangeNote": "Lựa chọn dòng răng: Vivodent SPE Triumph"
+    },
     "categories": {
       "crowns": {
         "title": "Chụp và Cầu Răng",
@@ -53,10 +58,6 @@
           "ccm": {
             "name": "Sứ Kim Loại (CCM)",
             "description": "Độ tin cậy đã được chứng minh cho phục hình vùng sau"
-          },
-          "metalCrown": {
-            "name": "Mão Kim Loại",
-            "description": "Độ bền tối đa cho vùng chịu lực cao"
           },
           "emax": {
             "name": "E.max / Onlay / Inlay-Core",
@@ -76,7 +77,7 @@
             "description": "Nghệ thuật phân lớp cho kết quả siêu tự nhiên"
           },
           "waxup": {
-            "name": "Wax-up / Mock-up",
+            "name": "diagnostic wax-up",
             "description": "Dự án thẩm mỹ — trực quan hóa kết quả trước điều trị"
           }
         }
@@ -95,10 +96,6 @@
           "allOn": {
             "name": "Cầu All-on Implant",
             "description": "Phục hồi toàn diện trên implant — giải pháp cố định"
-          },
-          "tiBase": {
-            "name": "Zirconia trên Ti-Base",
-            "description": "Độ chính xác titan, thẩm mỹ zirconia"
           }
         }
       },
@@ -110,11 +107,11 @@
             "description": "Hàm tháo lắp bán phần trên khung kim loại nhẹ"
           },
           "valplast": {
-            "name": "Nhựa Dẻo Valplast",
+            "name": "Nhựa Dẻo",
             "description": "Thoải mái và thẩm mỹ không cần móc kim loại"
           },
           "complete": {
-            "name": "Hàm Toàn Hàm",
+            "name": "Phục Hình Nhựa",
             "description": "Phục hồi toàn diện — đẳng cấp cao"
           },
           "precision": {
@@ -132,11 +129,14 @@
     "after": "Sau",
     "dragToCompare": "Kéo để so sánh",
     "macroTitle": "Độ Chính Xác Macro",
-    "macroSubtitle": "Chi tiết, kết cấu và độ trong suốt — dấu ấn DentCare"
+    "macroSubtitle": "Chi tiết, kết cấu và độ trong suốt — dấu ấn DentCare",
+    "description": "Khám phá chuyên môn của chúng tôi trong thẩm mỹ nha khoa thông qua các ca lâm sàng này. Mỗi công việc phản ánh cam kết của chúng tôi về chất lượng và bảo tồn răng.",
+    "caseTitle": "Ca Lâm Sàng DentCare"
   },
   "organization": {
     "sectionTitle": "Tổ Chức",
-    "sectionSubtitle": "Mạng lưới quốc tế phục vụ sự xuất sắc",
+    "sectionSubtitle": "Một tổ chức phục vụ phòng khám",
+    "deliveryNote": "Giao hàng trên toàn nước Pháp",
     "digital": {
       "title": "Quy Trình Kỹ Thuật Số",
       "description": "Dịch vụ quét tích hợp tại Bordeaux. Số hóa dấu hàm, lập kế hoạch implant và quy trình kỹ thuật số hoàn chỉnh cho độ chính xác tối đa."

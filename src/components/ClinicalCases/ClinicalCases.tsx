@@ -5,8 +5,6 @@ import {
   useState,
   useRef,
   useEffect,
-  MouseEvent,
-  TouchEvent,
   useCallback,
 } from "react";
 import Image from "next/image";
@@ -138,8 +136,24 @@ function BeforeAfterSlider({
 
 export default function ClinicalCases(): React.ReactElement {
   const t = useTranslations("clinical");
+  const [selectedMacroImage, setSelectedMacroImage] = useState<
+    number | null
+  >(null);
 
   const macroImages = Array.from({ length: 6 }, (_, i) => i + 1);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        setSelectedMacroImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
 
   return (
     <section
@@ -156,8 +170,7 @@ export default function ClinicalCases(): React.ReactElement {
             {t("sectionSubtitle")}
           </h2>
           <p className="text-neutral-600 leading-relaxed text-lg">
-            Découvrez notre expertise en esthétique dentaire à travers ces cas
-            cliniques.
+            {t("description")}
           </p>
         </div>
 
@@ -165,20 +178,20 @@ export default function ClinicalCases(): React.ReactElement {
         <div className="grid lg:grid-cols-2 gap-8 mb-20">
           <div>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=1000&auto=format&fit=crop"
-              afterImage="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop"
+              beforeImage="/images/clinical/before-after/avant-apres-1.jpg"
+              afterImage="/images/clinical/before-after/avant-apres-1.jpg"
             />
             <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("dragToCompare")}
+              {t("caseTitle")}
             </p>
           </div>
           <div>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=1000&auto=format&fit=crop"
-              afterImage="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
+              beforeImage="/images/clinical/before-after/avant-apres-2.jpg"
+              afterImage="/images/clinical/before-after/avant-apres-2.jpg"
             />
             <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("dragToCompare")}
+              {t("caseTitle")}
             </p>
           </div>
         </div>
@@ -195,19 +208,10 @@ export default function ClinicalCases(): React.ReactElement {
             <div
               key={num}
               className="group relative aspect-square rounded-xl bg-neutral-100 overflow-hidden cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 shadow-inner"
+              onClick={() => setSelectedMacroImage(num)}
             >
               <Image
-                src={`https://images.unsplash.com/photo-[TEMPLATE]?q=80&w=600&auto=format&fit=crop`.replace(
-                  "[TEMPLATE]",
-                  [
-                    "1598256989467-3c58f96b994d",
-                    "1606811841689-23dfddce3e95",
-                    "1588776814546-1ffcf47267a5",
-                    "1629909613654-28e377c37b09",
-                    "1570534241772-2aa7f4c084ea",
-                    "1522844990619-4951c40f7eda",
-                  ][num - 1],
-                )}
+                src={`/images/clinical/macro/macro-${num}.jpg`}
                 alt={`Dental Macro ${num}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -218,6 +222,40 @@ export default function ClinicalCases(): React.ReactElement {
             </div>
           ))}
         </div>
+
+        {selectedMacroImage !== null && (
+          <div
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm p-4 sm:p-8"
+            onClick={() => setSelectedMacroImage(null)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setSelectedMacroImage(null);
+              }
+            }}
+          >
+            <div className="relative mx-auto h-full w-full max-w-6xl">
+              <Image
+                src={`/images/clinical/macro/macro-${selectedMacroImage}.jpg`}
+                alt={`Dental Macro ${selectedMacroImage}`}
+                fill
+                className="object-contain"
+              />
+            </div>
+            <button
+              type="button"
+              aria-label="Close image preview"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 h-11 w-11 rounded-full bg-white/10 text-white text-2xl leading-none hover:bg-white/20 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedMacroImage(null);
+              }}
+            >
+              ×
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

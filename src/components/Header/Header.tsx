@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
@@ -46,7 +47,7 @@ export default function Header(): React.ReactElement {
             className="flex items-center gap-2 group cursor-pointer"
             onClick={scrollToTop}
           >
-            <img
+            <Image
               src={isScrolled ? "/logo-dark.svg" : "/logo-light.svg"}
               alt="DentCare Logo"
               width={240}
@@ -78,6 +79,17 @@ export default function Header(): React.ReactElement {
 
           {/* Social icons */}
           <div className="hidden md:flex items-center gap-2">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              aria-label="Instagram"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.9 1.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" />
+              </svg>
+            </a>
             <a
               href="https://linkedin.com"
               target="_blank"

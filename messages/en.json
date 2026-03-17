@@ -10,7 +10,7 @@
     "title": "Excellence at the Service of Your Smile",
     "subtitle": "Laboratory Specialized in Aesthetics and Implantology — Over 30 Years of Expertise Serving Dental Professionals",
     "cta": "Discover Our Services",
-    "ctaQuote": "Request a Quote"
+    "ctaQuote": "our achievements"
   },
   "about": {
     "sectionTitle": "DentCare DNA",
@@ -38,6 +38,11 @@
   "products": {
     "sectionTitle": "Our Products",
     "sectionSubtitle": "High-precision prosthetic solutions",
+    "labels": {
+      "materials": "Raw Materials",
+      "digitalFlow": "Digital Workflow",
+      "toothRangeNote": "Tooth range selection: Vivodent SPE Triumph"
+    },
     "categories": {
       "crowns": {
         "title": "Crowns & Bridges",
@@ -53,10 +58,6 @@
           "ccm": {
             "name": "Porcelain-Fused-to-Metal (PFM)",
             "description": "Proven reliability for posterior restorations"
-          },
-          "metalCrown": {
-            "name": "Metal Crown",
-            "description": "Maximum robustness for high-stress areas"
           },
           "emax": {
             "name": "E.max / Onlay / Inlay-Core",
@@ -76,7 +77,7 @@
             "description": "The art of layering for an ultra-natural finish"
           },
           "waxup": {
-            "name": "Wax-up / Mock-up",
+            "name": "diagnostic wax-up",
             "description": "Aesthetic project — visualize the result before treatment"
           }
         }
@@ -95,10 +96,6 @@
           "allOn": {
             "name": "All-on Implant Bridge",
             "description": "Complete rehabilitation on implants — fixed solution"
-          },
-          "tiBase": {
-            "name": "Zirconia on Ti-Base",
-            "description": "Titanium precision, zirconia aesthetics"
           }
         }
       },
@@ -110,11 +107,11 @@
             "description": "Partial prosthesis on lightweight metal frame"
           },
           "valplast": {
-            "name": "Flexible Resin (Valplast)",
+            "name": "Flexible Resin",
             "description": "Comfort and aesthetics without metal clasps"
           },
           "complete": {
-            "name": "Complete Denture",
+            "name": "Resin Denture",
             "description": "Total rehabilitation — premium quality"
           },
           "precision": {
@@ -127,8 +124,8 @@
   },
   "clinical": {
     "sectionTitle": "Clinical Cases",
-    "sectionSubtitle": "Proof through images — discover our achievements",
-    "before": "Before",
+    "sectionSubtitle": "Proof through images — discover our achievements",    "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
+    "caseTitle": "DentCare Clinical Case",    "before": "Before",
     "after": "After",
     "dragToCompare": "Drag to compare",
     "macroTitle": "Macro Precision",
@@ -136,7 +133,8 @@
   },
   "organization": {
     "sectionTitle": "Organization",
-    "sectionSubtitle": "An international network at the service of excellence",
+    "sectionSubtitle": "An Organization serving your practice",
+    "deliveryNote": "Delivery throughout France",
     "digital": {
       "title": "Digital Workflow",
       "description": "Integrated scanning service in Bordeaux. Impression digitization, implant planning, and complete digital workflow for maximum precision."

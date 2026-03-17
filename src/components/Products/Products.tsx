@@ -8,45 +8,49 @@ const CATEGORY_KEYS = ["crowns", "veneers", "implants", "removable"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
-  crowns: [
-    "zirconeMonolithic",
-    "zirconeStratified",
-    "ccm",
-    "metalCrown",
-    "emax",
-  ],
+  crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "emax"],
   veneers: ["emaxVeneer", "stratifiedVeneer", "waxup"],
-  implants: ["screwRetained", "cemented", "allOn", "tiBase"],
+  implants: ["screwRetained", "cemented", "allOn"],
   removable: ["metalFrame", "valplast", "complete", "precision"],
 };
 
-// Stock images for each product line to make the grid look realistic
+// Local DentCare images for each product line
 const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
   crowns: [
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop", // generic dental close up
-    "https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1570534241772-2aa7f4c084ea?q=80&w=800&auto=format&fit=crop",
+    "/images/products/crowns/zircone-monolithic.jpg",
+    "/images/products/crowns/zircone-stratified.jpg",
+    "/images/products/crowns/ccm.jpg",
+    "/images/products/crowns/emax-onlay-inlay-core.png",
   ],
   veneers: [
-    "https://images.unsplash.com/photo-1590664216202-14811a4c867a?q=80&w=800&auto=format&fit=crop", // bright smile
-    "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+    "/images/products/veneers/diagnostic-wax-up.jpg",
+    "/images/products/veneers/facettes-stratifiees.jpg",
+    "/images/products/veneers/facette-emax.jpg",
   ],
   implants: [
-    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop", // clinical / x-ray feeling
-    "https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    "/images/products/implants/solution-transvissee.jpg",
+    "/images/products/implants/solution-scellee.jpg",
+    "/images/products/implants/all-on.jpg",
   ],
   removable: [
-    "https://images.unsplash.com/photo-1570534241772-2aa7f4c084ea?q=80&w=800&auto=format&fit=crop", // dentures / models
-    "https://images.unsplash.com/photo-1590664216202-14811a4c867a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+    "/images/products/removable/chassis-metallique.jpg",
+    "/images/products/removable/biosoft.jpg",
+    "/images/products/removable/chassis.jpg",
+    "/images/products/removable/attachement-precision.jpg",
   ],
 };
+
+const BRAND_LOGOS = {
+  materials: [
+    { name: "dentaurum", src: "/images/brands/dentaurum.svg" },
+    { name: "zircone", src: "/images/brands/zircone.svg" },
+  ],
+  digitalFlow: [
+    { name: "3shape", src: "/images/brands/3shape.svg" },
+    { name: "Medit", src: "/images/brands/medit.svg" },
+    { name: "DScam", src: "/images/brands/dscam.svg" },
+  ],
+} as const;
 
 export default function Products(): React.ReactElement {
   const t = useTranslations("products");
@@ -106,9 +110,7 @@ export default function Products(): React.ReactElement {
               <div className="aspect-[3/2] rounded-xl bg-neutral-100 mb-5 flex items-center justify-center overflow-hidden relative shadow-inner">
                 <Image
                   src={
-                    PRODUCT_IMAGES[activeCategory][
-                      index % PRODUCT_IMAGES[activeCategory].length
-                    ]
+                    PRODUCT_IMAGES[activeCategory][index]
                   }
                   alt={productKey}
                   fill
@@ -126,6 +128,62 @@ export default function Products(): React.ReactElement {
             </div>
           ))}
         </div>
+
+        {activeCategory === "crowns" && (
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <h3 className="font-heading text-xl font-bold text-primary-900 mb-4">
+                {t("labels.materials")}
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {BRAND_LOGOS.materials.map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="h-20 rounded-xl border border-neutral-200 bg-neutral-50 flex items-center justify-center p-3"
+                  >
+                    <Image
+                      src={brand.src}
+                      alt={brand.name}
+                      width={180}
+                      height={60}
+                      className="h-12 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <h3 className="font-heading text-xl font-bold text-primary-900 mb-4">
+                {t("labels.digitalFlow")}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {BRAND_LOGOS.digitalFlow.map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="h-20 rounded-xl border border-neutral-200 bg-neutral-50 flex items-center justify-center p-3"
+                  >
+                    <Image
+                      src={brand.src}
+                      alt={brand.name}
+                      width={180}
+                      height={60}
+                      className="h-12 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === "removable" && (
+          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5">
+            <p className="text-primary-900 font-semibold text-sm tracking-wide">
+              {t("labels.toothRangeNote")}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
