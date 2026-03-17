@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-labelledby="title">
+  <title>dentaurum logo placeholder</title>
+  <rect x="2" y="2" width="356" height="116" rx="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="56" cy="60" r="24" fill="#f59e0b"/>
+  <path d="M44 60h24M56 48v24" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <text x="95" y="56" font-family="Verdana, sans-serif" font-size="22" font-weight="700" fill="#92400e">dentaurum</text>
+  <text x="95" y="82" font-family="Verdana, sans-serif" font-size="12" fill="#b45309" letter-spacing="2">PREMIUM ALLOY</text>
+</svg>

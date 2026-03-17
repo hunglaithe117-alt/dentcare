@@ -45,10 +45,10 @@ export default function Organization(): React.ReactElement {
             <div className="relative flex flex-col lg:flex-row items-center gap-6">
               <div className="shrink-0 w-24 h-24 lg:w-32 lg:h-32 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 relative overflow-hidden shadow-inner">
                 <Image
-                  src="/images/workflow/intraoral-scanner.png"
+                  src="/images/clinical/before-after/avant-apres-1.jpg"
                   alt="Digital Dentistry Workflow"
                   fill
-                  className="object-cover opacity-80 mix-blend-overlay hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
+                  className="object-cover opacity-80 hover:opacity-100 transition-all duration-500"
                 />
                 <Monitor className="w-8 h-8 stroke-[1.5] text-white absolute z-10 drop-shadow-md" />
               </div>
@@ -82,6 +82,14 @@ export default function Organization(): React.ReactElement {
                   {t("hanoi.subtitle")}
                 </p>
               </div>
+            </div>
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-6 border border-neutral-100">
+              <Image
+                src="/images/organization/hanoi-lab.jpg"
+                alt={t("hanoi.title")}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="grid grid-cols-2 gap-4">
               {(["item1", "item2", "item3", "item4", "item5"] as const).map(
@@ -117,6 +125,14 @@ export default function Organization(): React.ReactElement {
                 </p>
               </div>
             </div>
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-6 border border-neutral-100">
+              <Image
+                src="/images/organization/bordeaux-lab.jpg"
+                alt={t("bordeaux.title")}
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="grid grid-cols-2 gap-4">
               {(
                 [
@@ -144,6 +160,12 @@ export default function Organization(): React.ReactElement {
         </div>
 
         {/* Policies */}
+        <div className="mb-8 rounded-2xl border border-accent-200 bg-accent-50 p-5 text-center">
+          <p className="text-primary-900 font-semibold tracking-wide">
+            {t("deliveryNote")}
+          </p>
+        </div>
+
         <div className="bg-white rounded-2xl border border-neutral-100 p-8">
           <h3 className="font-heading text-xl font-bold text-primary-900 mb-6 text-center">
             {t("policies.title")}

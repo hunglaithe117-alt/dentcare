@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Scan, Printer, Settings2, Activity } from "lucide-react";
 
 function useInView(
   threshold = 0.2,
@@ -34,19 +33,19 @@ export default function AboutUs(): React.ReactElement {
   const methods = [
     {
       key: "scanner" as const,
-      icon: <Scan className="w-8 h-8 stroke-[1.5] text-accent-500" />,
+      image: "/images/workflow/intraoral-scanner.png",
     },
     {
       key: "printing" as const,
-      icon: <Printer className="w-8 h-8 stroke-[1.5] text-accent-500" />,
+      image: "/images/workflow/impression-3d.jpg",
     },
     {
       key: "milling" as const,
-      icon: <Settings2 className="w-8 h-8 stroke-[1.5] text-accent-500" />,
+      image: "/images/workflow/usinage-zircone.jpg",
     },
     {
       key: "implant" as const,
-      icon: <Activity className="w-8 h-8 stroke-[1.5] text-accent-500" />,
+      image: "/images/workflow/implantologie.jpg",
     },
   ];
 
@@ -92,6 +91,7 @@ export default function AboutUs(): React.ReactElement {
                 src="/images/about/founder-portrait.jpg"
                 alt={t("founderName")}
                 fill
+                unoptimized
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/20 to-transparent" />
@@ -118,61 +118,25 @@ export default function AboutUs(): React.ReactElement {
             {t("method.description")}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {methods.map(({ key, icon }, index) => (
+            {methods.map(({ key, image }, index) => (
               <div
                 key={key}
                 className="group p-6 bg-neutral-50 rounded-2xl border border-neutral-100 hover:border-accent-200 hover:shadow-lg hover:shadow-accent-100/50 transition-all hover:-translate-y-1"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="mb-6">{icon}</div>
+                <div className="mb-6 aspect-[4/3] w-full rounded-xl overflow-hidden bg-white relative">
+                  <Image
+                    src={image}
+                    alt={t(`method.${key}`)}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <h4 className="font-semibold text-primary-900 group-hover:text-accent-600 transition-colors">
                   {t(`method.${key}`)}
                 </h4>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Certification */}
-        <div
-          className={`transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        >
-          <div className="relative bg-gradient-to-r from-primary-900 to-primary-800 rounded-3xl p-8 lg:p-12 overflow-hidden">
-            <div
-              className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                backgroundSize: "24px 24px",
-              }}
-            />
-            <div className="relative flex flex-col lg:flex-row items-center gap-8 text-center lg:text-left">
-              <div className="shrink-0">
-                <div className="w-28 h-28 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center animate-pulse-gold">
-                  <div className="text-center">
-                    <div className="text-accent-400 font-heading font-bold text-lg">
-                      ISO
-                    </div>
-                    <div className="text-accent-300 font-heading font-bold text-2xl">
-                      13485
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="font-heading text-2xl font-bold text-white mb-3">
-                  {t("certification.title")}
-                </h3>
-                <p className="text-white/70 text-lg leading-relaxed">
-                  {t("certification.description")}
-                </p>
-              </div>
-              <div className="shrink-0">
-                <span className="inline-flex items-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-full">
-                  {t("certification.badge")}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

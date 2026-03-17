@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-labelledby="title">
+  <title>3shape logo placeholder</title>
+  <rect x="2" y="2" width="356" height="116" rx="20" fill="#e0f2fe" stroke="#2563eb" stroke-width="4"/>
+  <path d="M42 38h34v10H54v8h18v10H54v8h22v10H42z" fill="#2563eb"/>
+  <text x="95" y="68" font-family="Arial Black, sans-serif" font-size="34" fill="#1d4ed8">3shape</text>
+</svg>

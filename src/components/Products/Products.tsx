@@ -8,15 +8,9 @@ const CATEGORY_KEYS = ["crowns", "veneers", "implants", "removable"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
-  crowns: [
-    "zirconeMonolithic",
-    "zirconeStratified",
-    "ccm",
-    "metalCrown",
-    "emax",
-  ],
+  crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "emax"],
   veneers: ["emaxVeneer", "stratifiedVeneer", "waxup"],
-  implants: ["screwRetained", "cemented", "allOn", "tiBase"],
+  implants: ["screwRetained", "cemented", "allOn"],
   removable: ["metalFrame", "valplast", "complete", "precision"],
 };
 
@@ -26,27 +20,37 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/crowns/zircone-monolithic.jpg",
     "/images/products/crowns/zircone-stratified.jpg",
     "/images/products/crowns/ccm.jpg",
-    "/images/products/crowns/zircone-monolithic.jpg",
-    "/images/products/crowns/zircone-stratified.jpg",
+    "/images/products/crowns/emax-onlay-inlay-core.png",
   ],
   veneers: [
-    "/images/products/veneers/facette-emax.jpg",
+    "/images/products/veneers/diagnostic-wax-up.jpg",
     "/images/products/veneers/facettes-stratifiees.jpg",
-    "/images/products/veneers/waxup.jpg",
+    "/images/products/veneers/facette-emax.jpg",
   ],
   implants: [
     "/images/products/implants/solution-transvissee.jpg",
     "/images/products/implants/solution-scellee.jpg",
     "/images/products/implants/all-on.jpg",
-    "/images/products/implants/attachement-precision.jpg",
   ],
   removable: [
-    "/images/products/removable/chassis.jpg",
+    "/images/products/removable/chassis-metallique.jpg",
     "/images/products/removable/biosoft.jpg",
     "/images/products/removable/chassis.jpg",
-    "/images/products/removable/biosoft.jpg",
+    "/images/products/removable/attachement-precision.jpg",
   ],
 };
+
+const BRAND_LOGOS = {
+  materials: [
+    { name: "dentaurum", src: "/images/brands/dentaurum.svg" },
+    { name: "zircone", src: "/images/brands/zircone.svg" },
+  ],
+  digitalFlow: [
+    { name: "3shape", src: "/images/brands/3shape.svg" },
+    { name: "Medit", src: "/images/brands/medit.svg" },
+    { name: "DScam", src: "/images/brands/dscam.svg" },
+  ],
+} as const;
 
 export default function Products(): React.ReactElement {
   const t = useTranslations("products");
@@ -106,9 +110,7 @@ export default function Products(): React.ReactElement {
               <div className="aspect-[3/2] rounded-xl bg-neutral-100 mb-5 flex items-center justify-center overflow-hidden relative shadow-inner">
                 <Image
                   src={
-                    PRODUCT_IMAGES[activeCategory][
-                      index % PRODUCT_IMAGES[activeCategory].length
-                    ]
+                    PRODUCT_IMAGES[activeCategory][index]
                   }
                   alt={productKey}
                   fill
@@ -126,6 +128,62 @@ export default function Products(): React.ReactElement {
             </div>
           ))}
         </div>
+
+        {activeCategory === "crowns" && (
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <h3 className="font-heading text-xl font-bold text-primary-900 mb-4">
+                {t("labels.materials")}
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {BRAND_LOGOS.materials.map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="h-20 rounded-xl border border-neutral-200 bg-neutral-50 flex items-center justify-center p-3"
+                  >
+                    <Image
+                      src={brand.src}
+                      alt={brand.name}
+                      width={180}
+                      height={60}
+                      className="h-12 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <h3 className="font-heading text-xl font-bold text-primary-900 mb-4">
+                {t("labels.digitalFlow")}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {BRAND_LOGOS.digitalFlow.map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="h-20 rounded-xl border border-neutral-200 bg-neutral-50 flex items-center justify-center p-3"
+                  >
+                    <Image
+                      src={brand.src}
+                      alt={brand.name}
+                      width={180}
+                      height={60}
+                      className="h-12 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === "removable" && (
+          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5">
+            <p className="text-primary-900 font-semibold text-sm tracking-wide">
+              {t("labels.toothRangeNote")}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
