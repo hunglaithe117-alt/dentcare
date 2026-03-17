@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Analytics from "@/components/Analytics/Analytics";
 import "./globals.css";
 
 interface RootLayoutProps {
@@ -17,7 +16,6 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>): Rea
       <body className="font-body antialiased">
         {children}
       </body>
-      {/* <Analytics /> */}
     </html>
   );
 }

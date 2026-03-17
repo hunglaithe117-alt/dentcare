@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
@@ -46,7 +47,7 @@ export default function Header(): React.ReactElement {
             className="flex items-center gap-2 group cursor-pointer"
             onClick={scrollToTop}
           >
-            <img
+            <Image
               src={isScrolled ? "/logo-dark.svg" : "/logo-light.svg"}
               alt="DentCare Logo"
               width={240}

@@ -127,8 +127,8 @@
   },
   "clinical": {
     "sectionTitle": "Clinical Cases",
-    "sectionSubtitle": "Proof through images — discover our achievements",
-    "before": "Before",
+    "sectionSubtitle": "Proof through images — discover our achievements",    "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
+    "caseTitle": "DentCare Clinical Case",    "before": "Before",
     "after": "After",
     "dragToCompare": "Drag to compare",
     "macroTitle": "Macro Precision",

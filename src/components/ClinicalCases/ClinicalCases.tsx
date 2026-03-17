@@ -5,8 +5,6 @@ import {
   useState,
   useRef,
   useEffect,
-  MouseEvent,
-  TouchEvent,
   useCallback,
 } from "react";
 import Image from "next/image";
@@ -156,8 +154,7 @@ export default function ClinicalCases(): React.ReactElement {
             {t("sectionSubtitle")}
           </h2>
           <p className="text-neutral-600 leading-relaxed text-lg">
-            Découvrez notre expertise en esthétique dentaire à travers ces cas
-            cliniques.
+            {t("description")}
           </p>
         </div>
 
@@ -165,20 +162,20 @@ export default function ClinicalCases(): React.ReactElement {
         <div className="grid lg:grid-cols-2 gap-8 mb-20">
           <div>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=1000&auto=format&fit=crop"
-              afterImage="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop"
+              beforeImage="/images/clinical/before-after/avant-apres-1.jpg"
+              afterImage="/images/clinical/before-after/avant-apres-1.jpg"
             />
             <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("dragToCompare")}
+              {t("caseTitle")}
             </p>
           </div>
           <div>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=1000&auto=format&fit=crop"
-              afterImage="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
+              beforeImage="/images/clinical/before-after/avant-apres-2.jpg"
+              afterImage="/images/clinical/before-after/avant-apres-2.jpg"
             />
             <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("dragToCompare")}
+              {t("caseTitle")}
             </p>
           </div>
         </div>
@@ -197,17 +194,7 @@ export default function ClinicalCases(): React.ReactElement {
               className="group relative aspect-square rounded-xl bg-neutral-100 overflow-hidden cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 shadow-inner"
             >
               <Image
-                src={`https://images.unsplash.com/photo-[TEMPLATE]?q=80&w=600&auto=format&fit=crop`.replace(
-                  "[TEMPLATE]",
-                  [
-                    "1598256989467-3c58f96b994d",
-                    "1606811841689-23dfddce3e95",
-                    "1588776814546-1ffcf47267a5",
-                    "1629909613654-28e377c37b09",
-                    "1570534241772-2aa7f4c084ea",
-                    "1522844990619-4951c40f7eda",
-                  ][num - 1],
-                )}
+                src={`/images/clinical/macro/macro-${num}.jpg`}
                 alt={`Dental Macro ${num}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

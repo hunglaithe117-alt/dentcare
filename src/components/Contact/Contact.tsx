@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Check,
   Mail,
@@ -71,14 +72,6 @@ export default function Contact(): React.ReactElement {
     },
     [formData],
   );
-
-  const ctaButtons = [
-    {
-      key: "email" as const,
-      icon: <Mail className="w-6 h-6 stroke-[1.5]" />,
-      href: `mailto:${tFooter("email")}`,
-    },
-  ];
 
   return (
     <>
@@ -335,7 +328,7 @@ export default function Contact(): React.ReactElement {
             {/* Brand */}
             <div>
               <div className="flex items-center mb-4 mt-2">
-                <img
+                <Image
                   src="/logo-light.svg"
                   alt="DentCare Logo"
                   width={220}

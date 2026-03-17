@@ -20,31 +20,31 @@ const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
   removable: ["metalFrame", "valplast", "complete", "precision"],
 };
 
-// Stock images for each product line to make the grid look realistic
+// Local DentCare images for each product line
 const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
   crowns: [
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop", // generic dental close up
-    "https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1570534241772-2aa7f4c084ea?q=80&w=800&auto=format&fit=crop",
+    "/images/products/crowns/zircone-monolithic.jpg",
+    "/images/products/crowns/zircone-stratified.jpg",
+    "/images/products/crowns/ccm.jpg",
+    "/images/products/crowns/zircone-monolithic.jpg",
+    "/images/products/crowns/zircone-stratified.jpg",
   ],
   veneers: [
-    "https://images.unsplash.com/photo-1590664216202-14811a4c867a?q=80&w=800&auto=format&fit=crop", // bright smile
-    "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+    "/images/products/veneers/facette-emax.jpg",
+    "/images/products/veneers/facettes-stratifiees.jpg",
+    "/images/products/veneers/waxup.jpg",
   ],
   implants: [
-    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop", // clinical / x-ray feeling
-    "https://images.unsplash.com/photo-1598256989467-3c58f96b994d?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    "/images/products/implants/solution-transvissee.jpg",
+    "/images/products/implants/solution-scellee.jpg",
+    "/images/products/implants/all-on.jpg",
+    "/images/products/implants/attachement-precision.jpg",
   ],
   removable: [
-    "https://images.unsplash.com/photo-1570534241772-2aa7f4c084ea?q=80&w=800&auto=format&fit=crop", // dentures / models
-    "https://images.unsplash.com/photo-1590664216202-14811a4c867a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+    "/images/products/removable/chassis.jpg",
+    "/images/products/removable/biosoft.jpg",
+    "/images/products/removable/chassis.jpg",
+    "/images/products/removable/biosoft.jpg",
   ],
 };
 

@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Scan, Printer, Settings2, Activity, HeartPulse } from "lucide-react";
+import { Scan, Printer, Settings2, Activity } from "lucide-react";
 
 function useInView(
   threshold = 0.2,
@@ -89,7 +89,7 @@ export default function AboutUs(): React.ReactElement {
           <div className="lg:col-span-5 relative h-full flex items-center justify-center">
             <div className="w-full aspect-[3/4] max-w-sm mx-auto lg:max-w-none rounded-2xl bg-neutral-100 flex items-center justify-center overflow-hidden relative shadow-lg">
               <Image
-                src="/images/founder.png"
+                src="/images/about/founder-portrait.jpg"
                 alt={t("founderName")}
                 fill
                 className="object-cover"

@@ -45,7 +45,7 @@ export default function Organization(): React.ReactElement {
             <div className="relative flex flex-col lg:flex-row items-center gap-6">
               <div className="shrink-0 w-24 h-24 lg:w-32 lg:h-32 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 relative overflow-hidden shadow-inner">
                 <Image
-                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400&auto=format&fit=crop"
+                  src="/images/workflow/intraoral-scanner.png"
                   alt="Digital Dentistry Workflow"
                   fill
                   className="object-cover opacity-80 mix-blend-overlay hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
