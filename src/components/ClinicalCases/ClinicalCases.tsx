@@ -136,8 +136,24 @@ function BeforeAfterSlider({
 
 export default function ClinicalCases(): React.ReactElement {
   const t = useTranslations("clinical");
+  const [selectedMacroImage, setSelectedMacroImage] = useState<
+    number | null
+  >(null);
 
   const macroImages = Array.from({ length: 6 }, (_, i) => i + 1);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        setSelectedMacroImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
 
   return (
     <section
@@ -192,6 +208,7 @@ export default function ClinicalCases(): React.ReactElement {
             <div
               key={num}
               className="group relative aspect-square rounded-xl bg-neutral-100 overflow-hidden cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 shadow-inner"
+              onClick={() => setSelectedMacroImage(num)}
             >
               <Image
                 src={`/images/clinical/macro/macro-${num}.jpg`}
@@ -205,6 +222,40 @@ export default function ClinicalCases(): React.ReactElement {
             </div>
           ))}
         </div>
+
+        {selectedMacroImage !== null && (
+          <div
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm p-4 sm:p-8"
+            onClick={() => setSelectedMacroImage(null)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setSelectedMacroImage(null);
+              }
+            }}
+          >
+            <div className="relative mx-auto h-full w-full max-w-6xl">
+              <Image
+                src={`/images/clinical/macro/macro-${selectedMacroImage}.jpg`}
+                alt={`Dental Macro ${selectedMacroImage}`}
+                fill
+                className="object-contain"
+              />
+            </div>
+            <button
+              type="button"
+              aria-label="Close image preview"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 h-11 w-11 rounded-full bg-white/10 text-white text-2xl leading-none hover:bg-white/20 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedMacroImage(null);
+              }}
+            >
+              ×
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
