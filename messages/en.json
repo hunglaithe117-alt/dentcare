@@ -19,7 +19,7 @@
     "founderRole": "Founder — DentCare Consultation",
     "history": {
       "title": "Dr. Casteran Olivier",
-      "description": "My professional journey has led me to numerous experiences across France and internationally, as well as the creation of structures ranging from 15 to 120 employees.\n\nI possess an in-depth understanding of the demands of our activities, and the necessary close collaboration between the Dental clinic and the laboratory.\n\nOver my 30 years of professional practice, into which I have invested heavily and achieved much my experience, my expertise, and my choices led me to create DentCare Consultation in 2017 to meet the precise needs of dental practices.\n\nTo achieve this, I rely on two production sites: Hanoi (Vietnam) and Bordeaux (France).\n\nSupporting your clinic daily in all prosthetic projects; our availability, attentiveness, communication, and proximity are our greatest assets.\n\nWe have strictly mastered the digital workflow: intraoral scanning, 3D printing, zirconia milling, and implantology.\n\nWe have the knowledge and expertise for full arch reconstructions, smile design, veneers, onlays, and zirconia.\n\nMy teams and I are fully invested and committed to quality, adhering strictly to working procedures and protocols. The Hanoi laboratory is ISO 13485 certified.\n\nMy ambition is to deliver excellent work at a reasonable cost."
+      "description": "My professional journey has led me to numerous experiences across France and internationally, as well as the creation of structures ranging from 15 to 120 employees.\n\nI possess an in-depth understanding of the demands of our activities, and the necessary close collaboration between the Dental clinic and the laboratory.\n\nOver my 30 years of professional practice, into which I have invested heavily and achieved much my experience, my expertise, and my choices led me to create DentCare Consultation in 2017 to meet the precise needs of dental practices.\n\nTo achieve this, I rely on two production sites: Hanoi (Vietnam) and Bordeaux (France).\n\nSupporting your clinic daily in all prosthetic projects; our availability, attentiveness, communication, and proximity are our greatest assets.\n\nMy teams and I are fully invested and committed to quality, adhering strictly to working procedures and protocols. The Hanoi laboratory is ISO 13485 certified.\n\nMy ambition is to deliver excellent work at a reasonable cost."
     },
     "method": {
       "title": "Working Method",
@@ -124,8 +124,10 @@
   },
   "clinical": {
     "sectionTitle": "Clinical Cases",
-    "sectionSubtitle": "Proof through images — discover our achievements",    "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
-    "caseTitle": "DentCare Clinical Case",    "before": "Before",
+    "sectionSubtitle": "Proof through images — discover our achievements",
+    "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
+    "caseTitle": "DentCare Clinical Case",
+    "before": "Before",
     "after": "After",
     "dragToCompare": "Drag to compare",
     "macroTitle": "Macro Precision",
