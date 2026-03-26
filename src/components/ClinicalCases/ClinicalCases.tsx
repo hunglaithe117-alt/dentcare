@@ -248,7 +248,7 @@ export default function ClinicalCases(): React.ReactElement {
               aria-label="Close image preview"
               className="absolute top-4 right-4 sm:top-6 sm:right-6 h-11 w-11 rounded-full bg-white/10 text-white text-2xl leading-none hover:bg-white/20 transition-colors"
               onClick={(e) => {
-                e.stopPropagation();
+                 e.stopPropagation();
                 setSelectedMacroImage(null);
               }}
             >

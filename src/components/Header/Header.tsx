@@ -67,7 +67,7 @@ export default function Header(): React.ReactElement {
             <button
               key={item}
               onClick={() => handleNavClick(item)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all hover:bg-white/20 ${isScrolled
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-white/10 ${isScrolled
                   ? "text-neutral-700 hover:text-primary-900 hover:bg-primary-50"
                   : "text-white/90 hover:text-white"
                 }`}
@@ -87,7 +87,7 @@ export default function Header(): React.ReactElement {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="Instagram"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export default function Header(): React.ReactElement {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="LinkedIn"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export default function Header(): React.ReactElement {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="Facebook"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ export default function Header(): React.ReactElement {
           {/* Contact CTA */}
           <button
             onClick={() => handleNavClick("contact")}
-            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-accent-500/25"
+            className="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-600/20"
           >
             {t("contact")}
           </button>
@@ -149,14 +149,14 @@ export default function Header(): React.ReactElement {
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-xl font-medium transition-colors"
+                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-lg font-medium transition-colors"
               >
                 {t(item)}
               </button>
             ))}
             <button
               onClick={() => handleNavClick("contact")}
-              className="mt-2 px-4 py-3 bg-accent-500 text-white rounded-xl font-semibold text-center"
+              className="mt-2 px-4 py-3 bg-accent-600 text-white rounded-lg font-semibold text-center hover:bg-accent-700 transition-colors"
             >
               {t("contact")}
             </button>
@@ -168,7 +168,7 @@ export default function Header(): React.ReactElement {
         {PARTNER_LOGOS.map((logo) => (
           <div
             key={logo.alt}
-            className="h-14 w-28 rounded-xl border border-neutral-200 bg-white/90 backdrop-blur p-2 shadow-sm"
+            className="h-14 w-28 rounded-lg border border-neutral-200 bg-white/90 backdrop-blur p-2 shadow-sm"
           >
             <Image
               src={logo.src}
