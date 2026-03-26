@@ -6,6 +6,10 @@ import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
+const PARTNER_LOGOS = [
+  { src: "/images/brands/dentaurum.svg", alt: "Dentaurum" },
+  { src: "/images/brands/zircone.svg", alt: "Zircone" },
+] as const;
 
 export default function Header(): React.ReactElement {
   const t = useTranslations("header");
@@ -159,6 +163,23 @@ export default function Header(): React.ReactElement {
           </div>
         </div>
       )}
+
+      <div className="hidden xl:flex fixed right-4 top-24 z-50 flex-col gap-2">
+        {PARTNER_LOGOS.map((logo) => (
+          <div
+            key={logo.alt}
+            className="h-14 w-28 rounded-xl border border-neutral-200 bg-white/90 backdrop-blur p-2 shadow-sm"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={100}
+              height={40}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
     </header>
   );
 }

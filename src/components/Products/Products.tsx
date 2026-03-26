@@ -23,9 +23,9 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/crowns/emax-onlay-inlay-core.png",
   ],
   veneers: [
-    "/images/products/veneers/diagnostic-wax-up.jpg",
-    "/images/products/veneers/facettes-stratifiees.jpg",
     "/images/products/veneers/facette-emax.jpg",
+    "/images/products/veneers/facettes-stratifiees.jpg",
+    "/images/products/veneers/diagnostic-wax-up.jpg",
   ],
   implants: [
     "/images/products/implants/solution-transvissee.jpg",
@@ -38,6 +38,29 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/removable/chassis.jpg",
     "/images/products/removable/attachement-precision.jpg",
   ],
+};
+
+interface ProductSelection {
+  category: CategoryKey;
+  key: string;
+  index: number;
+}
+
+const TECHNICAL_LINKS: Record<string, string> = {
+  zirconeMonolithic: "/images/products/crowns/zircone-monolithic.jpg",
+  zirconeStratified: "/images/products/crowns/zircone-stratified.jpg",
+  ccm: "/images/products/crowns/ccm.jpg",
+  emax: "/images/products/crowns/emax-onlay-inlay-core.png",
+  emaxVeneer: "/images/products/veneers/facette-emax.jpg",
+  stratifiedVeneer: "/images/products/veneers/facettes-stratifiees.jpg",
+  waxup: "/images/products/veneers/diagnostic-wax-up.jpg",
+  screwRetained: "/images/products/implants/solution-transvissee.jpg",
+  cemented: "/images/products/implants/solution-scellee.jpg",
+  allOn: "/images/products/implants/all-on.jpg",
+  metalFrame: "/images/products/removable/chassis-metallique.jpg",
+  valplast: "/images/products/removable/biosoft.jpg",
+  complete: "/images/products/removable/chassis.jpg",
+  precision: "/images/products/removable/attachement-precision.jpg",
 };
 
 const BRAND_LOGOS = {
@@ -55,10 +78,20 @@ const BRAND_LOGOS = {
 export default function Products(): React.ReactElement {
   const t = useTranslations("products");
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("crowns");
+  const [selectedProduct, setSelectedProduct] = useState<ProductSelection | null>(
+    null,
+  );
 
   const handleCategoryChange = useCallback((key: CategoryKey): void => {
     setActiveCategory(key);
   }, []);
+
+  const openProductDetails = useCallback(
+    (category: CategoryKey, key: string, index: number): void => {
+      setSelectedProduct({ category, key, index });
+    },
+    [],
+  );
 
   return (
     <section
@@ -103,7 +136,16 @@ export default function Products(): React.ReactElement {
           {PRODUCT_KEYS[activeCategory].map((productKey, index) => (
             <div
               key={productKey}
-              className="group bg-white rounded-2xl border border-neutral-100 p-6 hover:border-accent-200 hover:shadow-xl hover:shadow-accent-100/30 transition-all hover:-translate-y-1"
+              role="button"
+              tabIndex={0}
+              onClick={() => openProductDetails(activeCategory, productKey, index)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openProductDetails(activeCategory, productKey, index);
+                }
+              }}
+              className="group cursor-pointer bg-white rounded-2xl border border-neutral-100 p-6 hover:border-accent-200 hover:shadow-xl hover:shadow-accent-100/30 transition-all hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Product image placeholder */}
@@ -124,6 +166,9 @@ export default function Products(): React.ReactElement {
                 {t(
                   `categories.${activeCategory}.items.${productKey}.description`,
                 )}
+              </p>
+              <p className="mt-4 text-sm font-semibold text-accent-700 group-hover:text-accent-800">
+                {t("detail.view")}
               </p>
             </div>
           ))}
@@ -182,6 +227,61 @@ export default function Products(): React.ReactElement {
             <p className="text-primary-900 font-semibold text-sm tracking-wide">
               {t("labels.toothRangeNote")}
             </p>
+          </div>
+        )}
+
+        {selectedProduct && (
+          <div
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm p-4 sm:p-8"
+            onClick={() => setSelectedProduct(null)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setSelectedProduct(null);
+              }
+            }}
+          >
+            <div
+              className="mx-auto max-w-3xl rounded-2xl bg-white p-6 sm:p-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="font-heading text-2xl font-bold text-primary-900 mb-2">
+                {t(
+                  `categories.${selectedProduct.category}.items.${selectedProduct.key}.name`,
+                )}
+              </h3>
+              <p className="text-neutral-600 mb-6">
+                {t(
+                  `categories.${selectedProduct.category}.items.${selectedProduct.key}.description`,
+                )}
+              </p>
+
+              <div className="relative aspect-[16/9] rounded-xl overflow-hidden border border-neutral-200 mb-5">
+                <Image
+                  src={
+                    PRODUCT_IMAGES[selectedProduct.category][selectedProduct.index]
+                  }
+                  alt={t(
+                    `categories.${selectedProduct.category}.items.${selectedProduct.key}.name`,
+                  )}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <p className="text-sm text-neutral-500">{t("detail.note")}</p>
+                <a
+                  href={TECHNICAL_LINKS[selectedProduct.key] ?? "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-primary-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-800 transition-colors"
+                >
+                  {t("detail.open")}
+                </a>
+              </div>
+            </div>
           </div>
         )}
       </div>

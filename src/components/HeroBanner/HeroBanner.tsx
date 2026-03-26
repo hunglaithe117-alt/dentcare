@@ -52,13 +52,13 @@ export default function HeroBanner(): React.ReactElement {
           style={{ animationDelay: "0.4s" }}
         >
           <button
-            onClick={() => handleScroll("about")}
+            onClick={() => handleScroll("products")}
             className="px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-accent-500/30 hover:-translate-y-0.5 text-lg"
           >
             {t("cta")}
           </button>
           <button
-            onClick={() => handleScroll("contact")}
+            onClick={() => handleScroll("macro")}
             className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all hover:-translate-y-0.5 text-lg"
           >
             {t("ctaQuote")}

@@ -197,7 +197,7 @@ export default function ClinicalCases(): React.ReactElement {
         </div>
 
         {/* Macro Photos */}
-        <div className="text-center mb-10">
+        <div id="macro" className="text-center mb-10 scroll-mt-28">
           <h3 className="font-heading text-2xl font-bold text-primary-900">
             {t("macroTitle")}
           </h3>

@@ -7,7 +7,6 @@ import { useState, useCallback, useRef, useEffect } from "react";
 const LOCALES = [
   { code: "fr", label: "FR" },
   { code: "en", label: "EN" },
-  { code: "vi", label: "VI" },
 ] as const;
 
 export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: boolean }): React.ReactElement {

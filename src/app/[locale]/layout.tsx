@@ -23,13 +23,11 @@ export async function generateMetadata({
   const titles: Record<string, string> = {
     fr: "DentCare Consultation — Laboratoire Prothèse Dentaire Bordeaux",
     en: "DentCare Consultation — Dental Prosthetics Laboratory Bordeaux",
-    vi: "DentCare Consultation — Phòng Lab Nha Khoa Bordeaux",
   };
 
   const descriptions: Record<string, string> = {
     fr: "Laboratoire spécialisé en Esthétique et Implantologie. Plus de 30 ans d'expérience. Production certifiée ISO 13485. Bordeaux & Hanoï.",
     en: "Laboratory specialized in Aesthetics and Implantology. Over 30 years of experience. ISO 13485 certified production. Bordeaux & Hanoi.",
-    vi: "Phòng thí nghiệm chuyên về Thẩm mỹ và Cấy ghép Implant. Hơn 30 năm kinh nghiệm. Sản xuất đạt chuẩn ISO 13485. Bordeaux & Hà Nội.",
   };
 
   return {
@@ -39,7 +37,6 @@ export async function generateMetadata({
       languages: {
         fr: "/fr",
         en: "/en",
-        vi: "/vi",
       },
     },
   };
@@ -51,7 +48,7 @@ export default async function LocaleLayout({
 }: Readonly<LocaleLayoutProps>): Promise<React.ReactElement> {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "fr" | "en" | "vi")) {
+  if (!routing.locales.includes(locale as "fr" | "en")) {
     notFound();
   }
 
