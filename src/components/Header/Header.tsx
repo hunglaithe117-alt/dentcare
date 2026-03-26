@@ -5,7 +5,17 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
-const NAV_ITEMS = ["about", "products", "clinical", "organization", "faq"] as const;
+
+const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
+const PARTNER_LOGOS = [
+  { src: "/images/brands/dentaurum-client.jpg", alt: "Dentaurum" },
+  { src: "/images/brands/ivoclar-client.jpg", alt: "Ivoclar" },
+  { src: "/images/brands/gc-client.jpg", alt: "GC" },
+  { src: "/images/brands/upcera-client.jpg", alt: "Upcera" },
+  { src: "/images/brands/emax-client.jpg", alt: "IPS e.max" },
+  { src: "/images/brands/erkodent-client.jpg", alt: "Erkodent" },
+] as const;
+
 
 export default function Header(): React.ReactElement {
   const t = useTranslations("header");
@@ -22,7 +32,8 @@ export default function Header(): React.ReactElement {
 
   const handleNavClick = useCallback((id: string): void => {
     setIsMobileMenuOpen(false);
-    const el = document.getElementById(id);
+    const targetId = id === "clinical" ? "macro" : id;
+    const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -63,7 +74,7 @@ export default function Header(): React.ReactElement {
             <button
               key={item}
               onClick={() => handleNavClick(item)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all hover:bg-white/20 ${isScrolled
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-white/10 ${isScrolled
                   ? "text-neutral-700 hover:text-primary-900 hover:bg-primary-50"
                   : "text-white/90 hover:text-white"
                 }`}
@@ -83,7 +94,7 @@ export default function Header(): React.ReactElement {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="Instagram"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +105,7 @@ export default function Header(): React.ReactElement {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="LinkedIn"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -105,7 +116,7 @@ export default function Header(): React.ReactElement {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
               aria-label="Facebook"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -117,7 +128,7 @@ export default function Header(): React.ReactElement {
           {/* Contact CTA */}
           <button
             onClick={() => handleNavClick("contact")}
-            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-accent-500/25"
+            className="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-600/20"
           >
             {t("contact")}
           </button>
@@ -145,20 +156,37 @@ export default function Header(): React.ReactElement {
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-xl font-medium transition-colors"
+                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-lg font-medium transition-colors"
               >
                 {t(item)}
               </button>
             ))}
             <button
               onClick={() => handleNavClick("contact")}
-              className="mt-2 px-4 py-3 bg-accent-500 text-white rounded-xl font-semibold text-center"
+              className="mt-2 px-4 py-3 bg-accent-600 text-white rounded-lg font-semibold text-center hover:bg-accent-700 transition-colors"
             >
               {t("contact")}
             </button>
           </div>
         </div>
       )}
+
+      <div className="hidden xl:flex fixed right-4 top-24 z-50 flex-col gap-2">
+        {PARTNER_LOGOS.map((logo) => (
+          <div
+            key={logo.alt}
+            className="h-14 w-28 rounded-lg border border-neutral-200 bg-white/90 backdrop-blur p-2 shadow-sm"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={100}
+              height={40}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
     </header>
   );
 }

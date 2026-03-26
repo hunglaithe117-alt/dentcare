@@ -1,7 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Monitor,
   Search,
@@ -9,9 +11,39 @@ import {
   FileText,
   Building2,
 } from "lucide-react";
+import { useState } from "react";
+
+type PolicyKey = "traceability" | "market" | "warranty" | "terms";
 
 export default function Organization(): React.ReactElement {
   const t = useTranslations("organization");
+  const locale = useLocale();
+  const [activePolicy, setActivePolicy] = useState<PolicyKey | null>(null);
+
+  const policyDetails: Record<"fr" | "en", Record<PolicyKey, string>> = {
+    fr: {
+      traceability:
+        "Traçabilité complète des dispositifs et matières premières selon les procédures internes de suivi et d'archivage.",
+      market:
+        "Mise sur le marché conforme au cadre réglementaire applicable, avec contrôle documentaire à chaque étape.",
+      warranty:
+        "Garantie de conformité sur les restaurations livrées selon les protocoles du laboratoire et les indications cliniques.",
+      terms:
+        "Consultez les conditions générales de vente pour le cadre contractuel, les délais, la facturation et le service après-vente.",
+    },
+    en: {
+      traceability:
+        "Full traceability for devices and raw materials through documented production and archiving workflows.",
+      market:
+        "Market release process aligned with applicable regulatory requirements and documentation checks.",
+      warranty:
+        "Conformity warranty for delivered restorations according to laboratory protocols and clinical indications.",
+      terms:
+        "Read the general terms of sale for contractual scope, timelines, billing conditions and after-sales service.",
+    },
+  };
+
+  const currentPolicyLocale = locale === "en" ? "en" : "fr";
 
   return (
     <section
@@ -173,9 +205,15 @@ export default function Organization(): React.ReactElement {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {(["traceability", "market", "warranty", "terms"] as const).map(
               (key) => (
-                <div
+                <button
                   key={key}
-                  className="text-center p-4 bg-neutral-50 rounded-xl hover:bg-accent-50 transition-colors cursor-pointer group"
+                  type="button"
+                  onClick={() => setActivePolicy(key)}
+                  className={`text-center p-4 rounded-xl transition-colors cursor-pointer group border ${
+                    activePolicy === key
+                      ? "bg-accent-50 border-accent-200"
+                      : "bg-neutral-50 border-transparent hover:bg-accent-50"
+                  }`}
                 >
                   <span className="text-neutral-400 group-hover:text-accent-500 transition-colors block mb-3 mx-auto flex justify-center">
                     {key === "traceability" ? (
@@ -191,10 +229,34 @@ export default function Organization(): React.ReactElement {
                   <span className="text-sm font-medium text-neutral-700 group-hover:text-accent-700 transition-colors">
                     {t(`policies.${key}`)}
                   </span>
-                </div>
+                </button>
               ),
             )}
           </div>
+
+          {activePolicy && (
+            <div className="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+              <h4 className="font-semibold text-primary-900 mb-2">
+                {t(`policies.${activePolicy}`)}
+              </h4>
+              <p className="text-sm text-neutral-700 leading-relaxed">
+                {policyDetails[currentPolicyLocale][activePolicy]}
+              </p>
+
+              {activePolicy === "terms" && (
+                <div className="mt-4">
+                  <Link
+                    href={`/${locale}/terms-and-conditions`}
+                    className="inline-flex items-center rounded-full bg-primary-900 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-800 transition-colors"
+                  >
+                    {locale === "en"
+                      ? "Open terms document"
+                      : "Ouvrir le document des conditions"}
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

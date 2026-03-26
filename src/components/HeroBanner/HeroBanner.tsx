@@ -25,18 +25,17 @@ export default function HeroBanner(): React.ReactElement {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-primary-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/70 to-primary-950/75" />
       </div>
 
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-500/3 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-snug mb-8 animate-fade-in-up">
           {t("title")}
         </h1>
 
@@ -52,14 +51,14 @@ export default function HeroBanner(): React.ReactElement {
           style={{ animationDelay: "0.4s" }}
         >
           <button
-            onClick={() => handleScroll("about")}
-            className="px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-accent-500/30 hover:-translate-y-0.5 text-lg"
+            onClick={() => handleScroll("products")}
+            className="px-8 py-3.5 bg-accent-600 hover:bg-accent-700 text-white font-semibold rounded-lg transition-colors text-base shadow-lg shadow-accent-600/30"
           >
             {t("cta")}
           </button>
           <button
-            onClick={() => handleScroll("contact")}
-            className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 transition-all hover:-translate-y-0.5 text-lg"
+            onClick={() => handleScroll("macro")}
+            className="px-8 py-3.5 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 transition-colors text-base"
           >
             {t("ctaQuote")}
           </button>

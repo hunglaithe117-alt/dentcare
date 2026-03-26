@@ -10,16 +10,17 @@
   "hero": {
     "title": "Excellence at the Service of Your Smile",
     "subtitle": "Laboratory Specialized in Aesthetics and Implantology — Over 30 Years of Expertise Serving Dental Professionals",
-    "cta": "Discover Our Services",
+    "cta": "Discover Our Products",
     "ctaQuote": "our achievements"
   },
   "about": {
     "sectionTitle": "DentCare DNA",
     "sectionSubtitle": "Our story, our passion, our commitment",
-    "founderName": "Dr. Casteran Olivier",
+    "founderName": "Mr. Casteran Olivier",
     "founderRole": "Founder — DentCare Consultation",
+    "signatureAlt": "Founder signature",
     "history": {
-      "title": "Dr. Casteran Olivier",
+      "title": "Mr. Casteran Olivier",
       "description": "My professional journey has led me to numerous experiences across France and internationally, as well as the creation of structures ranging from 15 to 120 employees.\n\nI possess an in-depth understanding of the demands of our activities, and the necessary close collaboration between the Dental clinic and the laboratory.\n\nOver my 30 years of professional practice, into which I have invested heavily and achieved much my experience, my expertise, and my choices led me to create DentCare Consultation in 2017 to meet the precise needs of dental practices.\n\nTo achieve this, I rely on two production sites: Hanoi (Vietnam) and Bordeaux (France).\n\nSupporting your clinic daily in all prosthetic projects; our availability, attentiveness, communication, and proximity are our greatest assets.\n\nMy teams and I are fully invested and committed to quality, adhering strictly to working procedures and protocols. The Hanoi laboratory is ISO 13485 certified.\n\nMy ambition is to deliver excellent work at a reasonable cost."
     },
     "method": {
@@ -44,42 +45,54 @@
       "digitalFlow": "Digital Workflow",
       "toothRangeNote": "Tooth range selection: Vivodent SPE Triumph"
     },
+    "detail": {
+      "view": "View technical details",
+      "note": "Technical explanation and illustration are displayed for each selected product.",
+      "close": "Close details"
+    },
     "categories": {
       "crowns": {
         "title": "Crowns & Bridges",
         "items": {
           "zirconeMonolithic": {
             "name": "Monolithic Zirconia",
-            "description": "Full Zirconia — optimal strength and aesthetics"
+            "description": "Metal-free, chip-resistant zirconia restoration.",
+            "technical": "A full-contour zirconia restoration designed for high fracture resistance and long-term stability in posterior and mixed-load zones."
           },
           "zirconeStratified": {
             "name": "Layered Zirconia",
-            "description": "Incomparable naturalness through manual layering"
+            "description": "High esthetics for the anterior region.",
+            "technical": "A zirconia core combined with hand-layered ceramic to reproduce natural translucency, texture and shade gradients for visible teeth."
           },
           "ccm": {
             "name": "Porcelain-Fused-to-Metal (PFM)",
-            "description": "Proven reliability for posterior restorations"
+            "description": "Reliable mechanical strength under high occlusal forces.",
+            "technical": "Metal-ceramic crown/bridge solution offering robust fit, predictable longevity and broad indication coverage for functional restorations."
           },
-          "emax": {
-            "name": "E.max / Onlay / Inlay-Core",
-            "description": "Pressed ceramic for the most natural aesthetics"
+          "inlayCore": {
+            "name": "Inlay-Core",
+            "description": "Core build-up to restore compromised abutments.",
+            "technical": "Indirect post-and-core reconstruction used to rebuild a damaged tooth stump before final crown placement, improving retention and structural support."
           }
         }
       },
       "veneers": {
         "title": "Veneers",
         "items": {
-          "emaxVeneer": {
-            "name": "E.max Veneers",
-            "description": "Finesse and translucency for a radiant smile"
+          "waxup": {
+            "name": "Diagnostic WAX-UP",
+            "description": "3D or manual mock-up to preview treatment.",
+            "technical": "A diagnostic modeling step used to validate occlusion, shape and smile line before preparation, ensuring a predictable esthetic outcome."
           },
           "stratifiedVeneer": {
             "name": "Layered Veneers",
-            "description": "The art of layering for an ultra-natural finish"
+            "description": "Hand-layered Emax ceramic for advanced esthetics.",
+            "technical": "Custom layered veneer technique using Emax ceramic and manual stratification to optimize translucency, depth and individualized morphology."
           },
-          "waxup": {
-            "name": "diagnostic wax-up",
-            "description": "Aesthetic project — visualize the result before treatment"
+          "monolithicVeneer": {
+            "name": "Monolithic Veneers",
+            "description": "High-strength monolithic ceramic veneers.",
+            "technical": "Single-structure ceramic veneers designed for enhanced durability and simplified maintenance while preserving esthetic integration."
           }
         }
       },
@@ -88,15 +101,18 @@
         "items": {
           "screwRetained": {
             "name": "Screw-Retained Solutions",
-            "description": "Secure fixation by direct screwing onto the implant"
+            "description": "Implant restoration fixed by screw retention.",
+            "technical": "Direct screw fixation allows retrievability, easier maintenance and controlled passive fit for single and multi-unit implant prostheses."
           },
           "cemented": {
             "name": "Cemented Solutions",
-            "description": "Prosthesis fixed by cementation on implant abutment"
+            "description": "Implant restoration luted on abutments.",
+            "technical": "Cement-retained prosthetic design selected for esthetic emergence profile and angulation flexibility where screw access is limited."
           },
           "allOn": {
-            "name": "All-on Implant Bridge",
-            "description": "Complete rehabilitation on implants — fixed solution"
+            "name": "All-on Type",
+            "description": "Full-arch fixed implant rehabilitation.",
+            "technical": "Complete arch restoration supported by a reduced number of strategically placed implants to deliver immediate function and stability."
           }
         }
       },
@@ -105,19 +121,18 @@
         "items": {
           "metalFrame": {
             "name": "Metal Framework",
-            "description": "Partial prosthesis on lightweight metal frame"
+            "description": "Laser-printed metal frame removable prosthesis.",
+            "technical": "Digitally designed and laser-manufactured framework ensures precision fit, rigidity and long-term functional performance."
           },
-          "valplast": {
-            "name": "Flexible Resin",
-            "description": "Comfort and aesthetics without metal clasps"
+          "biosoft": {
+            "name": "Biosoft Flexible Resin",
+            "description": "Biocompatible flexible resin with improved comfort.",
+            "technical": "Soft-flex resin concept improves insertion comfort, gum adaptation and esthetic integration while reducing metallic visibility."
           },
-          "complete": {
-            "name": "Resin Denture",
-            "description": "Total rehabilitation — premium quality"
-          },
-          "precision": {
-            "name": "Biosoft Attachment",
-            "description": "Precision attachments for optimal retention"
+          "conventionalResin": {
+            "name": "Conventional Resin Appliance",
+            "description": "Conventional acrylic removable prosthesis.",
+            "technical": "Traditional resin prosthesis solution indicated for partial or complete rehabilitation with validated workflow and controlled cost."
           }
         }
       }
@@ -131,6 +146,7 @@
     "before": "Before",
     "after": "After",
     "dragToCompare": "Drag to compare",
+    "beforeAfterPending": "Before/after patient visuals will be replaced as soon as the client sends the new approved images.",
     "macroTitle": "Macro Precision",
     "macroSubtitle": "Details, texture and translucency — the DentCare signature"
   },
@@ -258,8 +274,8 @@
     "phone": "06 78 09 47 49",
     "email": "o.dentcare.consult@gmail.com",
     "rights": "All rights reserved",
-    "privacy": "Privacy Policy",
-    "legal": "Legal Notice",
+    "privacy": "Legal Information",
+    "legal": "General Terms of Sale",
     "tagline": "Laboratory specialized in Aesthetics and Implantology"
   },
   "cookie": {

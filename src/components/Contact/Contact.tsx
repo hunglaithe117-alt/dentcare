@@ -6,9 +6,12 @@ import {
   Mail,
   MapPin,
   PhoneCall,
+  Truck,
   X
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import Link from "next/link";
 import { useCallback, useState } from "react";
 
 const STATICFORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_STATICFORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
@@ -22,9 +25,16 @@ interface FormData {
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
+const SHIPPING_PARTNERS = [
+  { name: "TNT", logoSrc: "" },
+  { name: "Chronopost", logoSrc: "" },
+  { name: "Colissimo", logoSrc: "" },
+] as const;
+
 export default function Contact(): React.ReactElement {
   const t = useTranslations("contact");
   const tFooter = useTranslations("footer");
+  const locale = useLocale();
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -34,6 +44,14 @@ export default function Contact(): React.ReactElement {
   });
   const [status, setStatus] = useState<FormStatus>("idle");
   const [activeLocation, setActiveLocation] = useState<"bordeaux">("bordeaux");
+  const shippingTitle =
+    locale === "fr"
+      ? "Partenaires de livraison en France"
+      : "Delivery partners in France";
+  const shippingNote =
+    locale === "fr"
+      ? "La carte a ete retiree. Les logos officiels des transporteurs seront affiches des reception des fichiers client."
+      : "The map has been removed. Official carrier logos will be displayed once final files are provided by the client.";
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -345,18 +363,18 @@ export default function Contact(): React.ReactElement {
                 <p>{tFooter("phone")}</p>
                 <p>{tFooter("email")}</p>
                 <div className="flex gap-4 mt-4">
-                  <a
-                    href="#"
+                  <Link
+                    href={`/${locale}/legal-info`}
                     className="text-white/40 hover:text-accent-400 transition-colors text-xs"
                   >
                     {tFooter("privacy")}
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    href={`/${locale}/terms-and-conditions`}
                     className="text-white/40 hover:text-accent-400 transition-colors text-xs"
                   >
                     {tFooter("legal")}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -102,6 +102,14 @@ export default function AboutUs(): React.ReactElement {
                 <p className="text-white/80 text-sm mt-1 drop-shadow-md">
                   {t("founderRole")}
                 </p>
+                <Image
+                  src="/images/about/founder-signature.svg"
+                  alt={t("signatureAlt")}
+                  width={160}
+                  height={36}
+                  unoptimized
+                  className="mx-auto mt-3 h-9 w-auto opacity-90"
+                />
               </div>
             </div>
           </div>

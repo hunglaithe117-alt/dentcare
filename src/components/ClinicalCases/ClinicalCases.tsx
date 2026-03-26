@@ -196,8 +196,14 @@ export default function ClinicalCases(): React.ReactElement {
           </div>
         </div>
 
+        <div className="mb-14 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-center">
+          <p className="text-sm font-medium text-amber-900">
+            {t("beforeAfterPending")}
+          </p>
+        </div>
+
         {/* Macro Photos */}
-        <div className="text-center mb-10">
+        <div id="macro" className="text-center mb-10 scroll-mt-28">
           <h3 className="font-heading text-2xl font-bold text-primary-900">
             {t("macroTitle")}
           </h3>
@@ -248,7 +254,7 @@ export default function ClinicalCases(): React.ReactElement {
               aria-label="Close image preview"
               className="absolute top-4 right-4 sm:top-6 sm:right-6 h-11 w-11 rounded-full bg-white/10 text-white text-2xl leading-none hover:bg-white/20 transition-colors"
               onClick={(e) => {
-                e.stopPropagation();
+                 e.stopPropagation();
                 setSelectedMacroImage(null);
               }}
             >
