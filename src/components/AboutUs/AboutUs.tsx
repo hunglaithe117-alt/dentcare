@@ -91,7 +91,7 @@ export default function AboutUs(): React.ReactElement {
                 src="/images/about/founder-portrait.jpg"
                 alt={t("founderName")}
                 fill
-                unoptimized
+                priority
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/20 to-transparent" />

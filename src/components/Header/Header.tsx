@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
-const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
+const NAV_ITEMS = ["about", "products", "clinical", "organization", "faq"] as const;
 
 export default function Header(): React.ReactElement {
   const t = useTranslations("header");

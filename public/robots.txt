@@ -1,0 +1,26 @@
+# Robots.txt for DentCare Consultation
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+Disallow: *.json$
+
+# Specific directives for AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Specify sitemap location
+Sitemap: https://dentcare-pi.vercel.app/sitemap.xml
+Sitemap: https://dentcare-pi.vercel.app/fr/sitemap.xml
+Sitemap: https://dentcare-pi.vercel.app/vi/sitemap.xml

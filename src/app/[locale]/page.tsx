@@ -4,6 +4,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import Products from "@/components/Products/Products";
 import ClinicalCases from "@/components/ClinicalCases/ClinicalCases";
 import Organization from "@/components/Organization/Organization";
+import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 
@@ -17,6 +18,7 @@ export default function HomePage(): React.ReactElement {
         <Products />
         <ClinicalCases />
         <Organization />
+        <FAQ />
         <Contact />
       </main>
       <ScrollToTop />

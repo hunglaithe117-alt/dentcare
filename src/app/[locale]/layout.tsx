@@ -42,6 +42,21 @@ export async function generateMetadata({
         vi: "/vi",
       },
     },
+    openGraph: {
+      title: titles[locale] ?? titles.fr,
+      description: descriptions[locale] ?? descriptions.fr,
+      url: `https://dentcare-pi.vercel.app/${locale}`,
+      locale: locale === "fr" ? "fr_FR" : locale === "vi" ? "vi_VN" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "https://dentcare-pi.vercel.app/images/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: titles[locale] ?? titles.fr,
+        },
+      ],
+    },
   };
 }
 
