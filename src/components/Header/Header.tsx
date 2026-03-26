@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
+
 const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
 const PARTNER_LOGOS = [
   { src: "/images/brands/dentaurum-client.jpg", alt: "Dentaurum" },
@@ -14,6 +15,7 @@ const PARTNER_LOGOS = [
   { src: "/images/brands/emax-client.jpg", alt: "IPS e.max" },
   { src: "/images/brands/erkodent-client.jpg", alt: "Erkodent" },
 ] as const;
+
 
 export default function Header(): React.ReactElement {
   const t = useTranslations("header");

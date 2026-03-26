@@ -4,6 +4,7 @@
     "products": "Sản Phẩm",
     "clinical": "Ca Lâm Sàng",
     "organization": "Tổ Chức",
+    "faq": "FAQ",
     "contact": "Liên Hệ"
   },
   "hero": {
@@ -23,7 +24,7 @@
     },
     "method": {
       "title": "Phương Pháp Làm Việc",
-      "description": "Làm chủ hoàn toàn quy trình kỹ thuật số: máy quét trong miệng, in 3D, gia công Zirconia và cấy ghép Implant. Mỗi bước đều được kiểm soát để đảm bảo độ chính xác tuyệt đối và kết quả vượt mong đợi.",
+      "description": "Làm chủ hoàn toàn quy trình kỹ thuật số: máy quét trong miệng, in 3D, gia công Zirconia và cấy ghép Implant. Mỗi bước đều được kiểm soát để đảm bảo độ chính xác tuyệt đối và kết quả vượt mong đợi. Đội ngũ của chúng tôi sử dụng phần mềm CAD chuyên biệt trong lĩnh vực nha khoa để thiết kế kỹ thuật số. Chúng tôi kết hợp thủ công truyền thống với công nghệ tiên tiến để cung cấp các phục hình vừa ưu việt về chức năng vừa xuất sắc về thẩm mỹ.",
       "scanner": "Máy Quét Trong Miệng",
       "printing": "In 3D",
       "milling": "Gia Công Zirconia",
@@ -205,6 +206,52 @@
         "email": "o.dentcare.consult@gmail.com"
       }
     }
+  },
+  "faq": {
+    "sectionTitle": "Các Câu Hỏi Thường Gặp",
+    "sectionSubtitle": "Tìm câu trả lời cho các câu hỏi phổ biến",
+    "items": [
+      {
+        "question": "Thời gian sản xuất tiêu chuẩn cho một phục hình là bao lâu?",
+        "answer": "Thời gian tiêu chuẩn của chúng tôi là 5-7 ngày làm việc cho hầu hết các phục hình, tùy thuộc vào độ phức tạp và vật liệu được chọn. Các đơn hàng khẩn cấp với thời gian 2-3 ngày có sẵn. Chúng tôi phối hợp chặt chẽ với phòng khám để đảm bảo lịch sản xuất phù hợp với kế hoạch điều trị bệnh nhân."
+      },
+      {
+        "question": "DentCare sử dụng những vật liệu và thương hiệu nào?",
+        "answer": "Chúng tôi làm việc độc quyền với các vật liệu cấp cao cấp và các thương hiệu được tôn trọng bao gồm bộ dùi Vivodent SPE Triumph, Zirconia cấp cao, sứ lithium-disilicate E.max và các giải pháp implant titanium. Tất cả vật liệu được cấp từ các nhà cung cấp có chứng chỉ và tuân thủ tiêu chuẩn ISO 13485 và FDA."
+      },
+      {
+        "question": "DentCare có cung cấp tích hợp quy trình kỹ thuật số không?",
+        "answer": "Có, chúng tôi cung cấp tích hợp quy trình kỹ thuật số hoàn chỉnh. Phòng lab Bordeaux của chúng tôi có dịch vụ quét tích hợp để số hóa dấu hàm, lập kế hoạch implant và thiết kế kỹ thuật số. Chúng tôi chấp nhận các tệp kỹ thuật số từ các máy quét phổ biến bao gồm TRIOS, iTero, Cerec Omnicam."
+      },
+      {
+        "question": "DentCare có được chứng nhận sản xuất thiết bị y tế không?",
+        "answer": "Có, cơ sở sản xuất Hà Nội của chúng tôi được chứng nhận ISO 13485:2016, đây là tiêu chuẩn hệ thống quản lý chất lượng quốc tế cho thiết bị y tế. Chứng nhận này chứng minh cam kết của chúng tôi đối với chất lượng, truy xuất nguồn gốc và tuân thủ các tiêu chuẩn quốc tế đòi hỏi cao nhất."
+      },
+      {
+        "question": "DentCare có thể xử lý các ca cấy ghép implant phức tạp không?",
+        "answer": "Chắc chắn. Đội ngũ chuyên biệt về implant của chúng tôi có kinh nghiệm rộng với các giải pháp bắt vít, cầu gắn xi măng, phục hồi all-on implant và các ca implant phức tạp. Chúng tôi cung cấp lập kế hoạch implant ảo và có thể tạo các hướng dẫn phẫu thuật tùy chỉnh."
+      },
+      {
+        "question": "DentCare cung cấp bảo hành và hỗ trợ sau bán hàng như thế nào?",
+        "answer": "Chúng tôi cung cấp bảo hành 5 năm chống lại các khiếm khuyết sản xuất. Bảo hành bao gồm lỗi vật liệu và thủ công nhân nhưng không bao gồm thiệt hại từ xử lý hoặc các yếu tố của bệnh nhân. Chúng tôi cung cấp dịch vụ chỉnh sửa, sửa chữa và hậu mãi nhanh chóng."
+      },
+      {
+        "question": "DentCare đảm bảo độ chính xác trong thiết kế kỹ thuật số như thế nào?",
+        "answer": "Quy trình thiết kế kỹ thuật số của chúng tôi sử dụng phần mềm CAO nâng cao với các thư viện chuyên biệt về nha khoa. Mỗi thiết kế được các kỹ thuật viên giàu kinh nghiệm xem xét trước sản xuất. Chúng tôi sử dụng thiết bị sản xuất chính xác và kiểm soát chất lượng nghiêm ngặt."
+      },
+      {
+        "question": "DentCare có giao hàng quốc tế không?",
+        "answer": "Có, chúng tôi giao hàng tại Pháp và quốc tế. Chúng tôi làm việc với các đối tác hậu cần uy tín để đảm bảo giao hàng an toàn và kịp thời. Các đơn hàng quốc tế được xử lý với tài liệu hải quan thích hợp."
+      },
+      {
+        "question": "Sự khác biệt giữa Zirconia nguyên khối và phân lớp là gì?",
+        "answer": "Phục hình Zirconia nguyên khối có vật liệu Zirconia đầy đủ, mang lại sức mạnh và khả năng chống gãy vượt trội — lý tưởng cho các vùng áp lực cao. Zirconia phân lớp kết hợp một lõi Zirconia với sứ phủ bằng tay, cung cấp kết quả thẩm mỹ xuất sắc."
+      },
+      {
+        "question": "DentCare có thể phục vụ các thông số kỹ thuật tùy chỉnh cho các ca phức tạp không?",
+        "answer": "Có, chúng tôi chuyên xử lý các ca phức tạp và tùy chỉnh. Đội ngũ giàu kinh nghiệm của chúng tôi có thể làm việc với các thông số kỹ thuật giải phẫu tùy chỉnh và các thiết kế chuyên biệt. Chúng tôi khuyến khích liên lạc trực tiếp với phòng khám trong giai đoạn thiết kế để đảm bảo sự phù hợp hoàn hảo."
+      }
+    ]
   },
   "footer": {
     "company": "Dentcare Consultation SASU",

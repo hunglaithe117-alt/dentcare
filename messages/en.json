@@ -4,6 +4,7 @@
     "products": "Products",
     "clinical": "Clinical Cases",
     "organization": "Organization",
+    "faq": "FAQ",
     "contact": "Contact"
   },
   "hero": {
@@ -24,7 +25,7 @@
     },
     "method": {
       "title": "Working Method",
-      "description": "Complete mastery of the digital workflow: intraoral scanner, 3D printing, Zirconia milling, and implantology. Every step is controlled to guarantee absolute precision and results that exceed your expectations.",
+      "description": "Complete mastery of the digital workflow: intraoral scanner, 3D printing, Zirconia milling, and implantology. Every step is controlled to guarantee absolute precision and results that exceed your expectations. Our team utilizes state-of-the-art CAD software for digital design, high-precision manufacturing equipment, and rigorous quality control protocols at every stage of production. We combine traditional craftsmanship with cutting-edge technology to deliver prosthetics that are both functionally superior and esthetically superior. Each prosthesis undergoes multiple quality checks before delivery to ensure it meets the highest international standards. Our commitment to excellence means your patients receive restorations that restore not just function, but also natural appearance and long-term durability.",
       "scanner": "Intraoral Scanner",
       "printing": "3D Printing",
       "milling": "Zirconia Milling",
@@ -218,6 +219,52 @@
         "email": "o.dentcare.consult@gmail.com"
       }
     }
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "sectionSubtitle": "Get answers to common questions about our services",
+    "items": [
+      {
+        "question": "What is the typical turnaround time for prosthesis fabrication?",
+        "answer": "Our standard turnaround time is 5-7 business days for most prostheses, depending on complexity and materials selected. Expedited orders with 2-3 day turnaround are available for urgent cases. We coordinate closely with your clinic to ensure production schedules meet your patient treatment plans."
+      },
+      {
+        "question": "Which materials and brands does DentCare use for manufacturing?",
+        "answer": "We work exclusively with premium-grade materials and respected brands including Vivodent SPE Triumph tooth sets, high-grade zirconia, E.max lithium disilicate ceramic, and titanium implant solutions. All materials are sourced from certified suppliers and comply with ISO 13485 and FDA standards. We can accommodate specific material preferences from our clients."
+      },
+      {
+        "question": "Do you offer digital workflow integration with intraoral scanners?",
+        "answer": "Yes, we offer complete digital workflow integration. Our Bordeaux laboratory has integrated scanning services for impression digitization, implant planning, and digital design. We accept digital files from popular scanners including TRIOS, iTero, Cerec Omnicam, and Standard formats (STL, OBJ). This ensures maximum precision and speeds up the design process."
+      },
+      {
+        "question": "Is DentCare certified for medical device manufacturing?",
+        "answer": "Yes, our Hanoi production facility is ISO 13485:2016 certified, which is the international quality management system standard for medical devices. This certification demonstrates our commitment to quality, traceability, and compliance with the most demanding international standards. All prostheses meet European CE Medical Device requirements."
+      },
+      {
+        "question": "Can DentCare handle complex implant cases?",
+        "answer": "Absolutely. Our specialized implant team has extensive experience with screw-retained solutions, cement-retained bridges, all-on implant rehabilitations, and complex multi-implant cases. We provide virtual implant planning using advanced CAD software and can create surgical guides and custom abutments as needed."
+      },
+      {
+        "question": "What warranty and after-sales support does DentCare provide?",
+        "answer": "We provide a 5-year warranty against manufacturing defects on all prostheses. Our warranty covers material defects and craftsmanship but excludes damage from handling or patient factors. We offer prompt modifications, repairs, and after-sales service through our Bordeaux coordination center to ensure your patients have ongoing support."
+      },
+      {
+        "question": "How does DentCare ensure precision in digital design?",
+        "answer": "Our digital design process uses advanced CAD software with specialized dental libraries. Each design is reviewed by experienced technicians before production. We use precision manufacturing equipment including 5-axis milling machines and high-resolution 3D printers. Every prosthesis undergoes detailed visual inspection and fit verification before shipment."
+      },
+      {
+        "question": "Does DentCare ship internationally?",
+        "answer": "Yes, we ship throughout France and internationally. We work with reputable logistics partners to ensure secure, timely delivery. International orders are handled with proper customs documentation and packaging. We can accommodate urgent international shipments when required. Contact our team for specific international quotes."
+      },
+      {
+        "question": "What is the difference between monolithic and layered zirconia?",
+        "answer": "Monolithic zirconia restorations feature full-thickness zirconia material, offering superior strength and fracture resistance—ideal for high-stress posterior areas. Layered zirconia combines a zirconia core with hand-applied ceramic veneering, providing exceptional esthetic results with natural translucency and shade variation—perfect for visible anterior regions."
+      },
+      {
+        "question": "Can DentCare accommodate custom specifications for complex cases?",
+        "answer": "Yes, we specialize in handling complex and customized cases. Our experienced team can work with custom anatomical specifications, unique color requirements, and specialized designs. We encourage direct communication with your clinic during the design phase to ensure the final prosthesis perfectly matches your clinical requirements."
+      }
+    ]
   },
   "footer": {
     "company": "Dentcare Consultation SASU",

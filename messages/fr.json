@@ -4,6 +4,7 @@
     "products": "Produits",
     "clinical": "Cas Clinique",
     "organization": "Organisation",
+    "faq": "FAQ",
     "contact": "Contact"
   },
   "hero": {
@@ -24,7 +25,7 @@
     },
     "method": {
       "title": "Maîtrise & Savoir-faire",
-      "description": "Nous maîtrisons parfaitement le flux numérique, scanner intra oral, impression 3D, usinage zircone, implantologie. Nous avons la connaissance et le savoir-faire pour les reconstitutions complètes, smile design, facettes, onlays, zircone.",
+      "description": "Nous maîtrisons parfaitement le flux numérique : scanner intra-oral, impression 3D, usinage zircone et implantologie. Nous possédons le savoir-faire nécessaire pour les reconstitutions complètes, smile design, facettes et restaurations zircone. Notre équipe utilise des logiciels CAO spécialisés en dentisterie pour la conception numérique précise. Chaque étape du processus de fabrication est contrôlée pour garantir une précision absolue et des résultats qui dépassent les attentes. Nous combinons l'artisanat traditionnel avec la technologie de pointe pour livrer des prothèses à la fois supérieures sur le plan fonctionnel et esthétique.",
       "scanner": "Scanner Intra-oral",
       "printing": "Impression 3D",
       "milling": "Usinage Zircone",
@@ -218,6 +219,52 @@
         "email": "o.dentcare.consult@gmail.com"
       }
     }
+  },
+  "faq": {
+    "sectionTitle": "Questions Fréquentes",
+    "sectionSubtitle": "Trouvez les réponses à vos questions",
+    "items": [
+      {
+        "question": "Quel est le délai de fabrication standard pour une prothèse?",
+        "answer": "Notre délai standard est de 5 à 7 jours ouvrables pour la plupart des prothèses, selon la complexité et les matériaux choisis. Des commandes urgentes avec délai de 2-3 jours sont disponibles. Nous coordonnamos étroitement avec votre cabinet pour que les délais de production correspondent à vos plans de traitement."
+      },
+      {
+        "question": "Quels matériaux et marques DentCare utilise-t-il?",
+        "answer": "Nous travaillons exclusivement avec des matériaux de qualité premium et des marques reconnues : gammes de dents Vivodent SPE Triumph, zircone haute performance, céramique lithium-disilicate E.max et solutions implantaires en titane. Tous les matériaux proviennent de fournisseurs certifiés et respectent les normes ISO 13485 et FDA."
+      },
+      {
+        "question": "Proposez-vous l'intégration du flux numérique avec scanners intra-oraux?",
+        "answer": "Oui, nous offrons une intégration complète du workflow numérique. Notre laboratoire de Bordeaux dispose de services de scannage intégré pour la numérisation des empreintes, la planification implantaire et la conception numérique. Nous acceptons les fichiers numériques des principaux scanners : TRIOS, iTero, Cerec Omnicam, et formats standards STL/OBJ."
+      },
+      {
+        "question": "DentCare est-il certifié pour la fabrication de dispositifs médicaux?",
+        "answer": "Oui, notre site de production à Hanoï est certifié ISO 13485:2016, la norme internationale de système de management qualité pour dispositifs médicaux. Cette certification démontre notre engagement envers la qualité, la traçabilité et la conformité aux normes internationales les plus exigeantes. Toutes les prothèses respectent les exigences CE des dispositifs médicaux."
+      },
+      {
+        "question": "DentCare peut-il gérer les cas implantaires complexes?",
+        "answer": "Absolument. Notre équipe spécialisée en implantologie possède une vaste expérience des solutions transvissées, des bridges scellés, des réhabilitatons all-on implants et des cas multi-implants complexes. Nous fournissons une planification virtuelle précise et pouvons créer des guides chirurgicaux et des piliers customisés."
+      },
+      {
+        "question": "Quelle garantie et support après-vente propose DentCare?",
+        "answer": "Nous offrons une garantie de 5 ans contre les défauts de fabrication. La garantie couvre les défauts de matière et de workmanship, mais exclut les dommages liés à la manipulation ou au patient. Nous proposons modifications rapides, réparations et service après-vente via notre centre de coordination à Bordeaux."
+      },
+      {
+        "question": "Comment DentCare assure-t-il la précision en conception numérique?",
+        "answer": "Notre processus de conception numérique utilise des logiciels CAO avancés avec des bibliothèques spécialisées dentaires. Chaque conception est examinée par des techniciens expérimentés avant la production. Nous utilisons des équipements de fabrication précis et des contrôles qualité rigoureux. Chaque prothèse est inspectée avant expédition."
+      },
+      {
+        "question": "DentCare livre-t-il à l'international?",
+        "answer": "Oui, nous livrons en France et à l'international. Nous travaillons avec des partenaires logistiques réputés pour assurer une livraison sécurisée et rapide. Les commandes internationales sont traitées avec la documentation douanière appropriée. Nous pouvons accommoder les expéditions internationales urgentes si nécessaire."
+      },
+      {
+        "question": "Quelle est la différence entre zircone monolithique et stratifiée?",
+        "answer": "La zircone monolithique offre une résistance supérieure et une résistance à la fracture — idéale pour les zones postérieures. La zircone stratifiée combine un noyau zircone avec une céramique appliquée manuellement, offrant des résultats esthétiques exceptionnels avec translucidité et variation de teinte naturelle — parfaite pour les zones antérieures."
+      },
+      {
+        "question": "DentCare peut-il accommoder des spécifications customisées pour les cas complexes?",
+        "answer": "Oui, nous excellons dans le traitement des cas complexes et customisés. Notre équipe expérimentée peut travailler avec des spécifications anatomiques customisées et des designs spécialisés. Nous encourageons la communication directe pendant la phase de conception pour garantir une correspondance parfaite avec vos exigences cliniques."
+      }
+    ]
   },
   "footer": {
     "company": "Dentcare Consultation SASU",
