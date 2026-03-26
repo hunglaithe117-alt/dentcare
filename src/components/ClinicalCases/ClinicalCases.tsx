@@ -196,6 +196,12 @@ export default function ClinicalCases(): React.ReactElement {
           </div>
         </div>
 
+        <div className="mb-14 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-center">
+          <p className="text-sm font-medium text-amber-900">
+            {t("beforeAfterPending")}
+          </p>
+        </div>
+
         {/* Macro Photos */}
         <div id="macro" className="text-center mb-10 scroll-mt-28">
           <h3 className="font-heading text-2xl font-bold text-primary-900">

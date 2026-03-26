@@ -6,6 +6,7 @@ import {
   Mail,
   MapPin,
   PhoneCall,
+  Truck,
   X
 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -24,6 +25,12 @@ interface FormData {
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
+const SHIPPING_PARTNERS = [
+  { name: "TNT", logoSrc: "" },
+  { name: "Chronopost", logoSrc: "" },
+  { name: "Colissimo", logoSrc: "" },
+] as const;
+
 export default function Contact(): React.ReactElement {
   const t = useTranslations("contact");
   const tFooter = useTranslations("footer");
@@ -37,6 +44,14 @@ export default function Contact(): React.ReactElement {
   });
   const [status, setStatus] = useState<FormStatus>("idle");
   const [activeLocation, setActiveLocation] = useState<"bordeaux">("bordeaux");
+  const shippingTitle =
+    locale === "fr"
+      ? "Partenaires de livraison en France"
+      : "Delivery partners in France";
+  const shippingNote =
+    locale === "fr"
+      ? "La carte a ete retiree. Les logos officiels des transporteurs seront affiches des reception des fichiers client."
+      : "The map has been removed. Official carrier logos will be displayed once final files are provided by the client.";
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {

@@ -8,10 +8,10 @@ const CATEGORY_KEYS = ["crowns", "veneers", "implants", "removable"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
-  crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "emax"],
-  veneers: ["emaxVeneer", "stratifiedVeneer", "waxup"],
+  crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "inlayCore"],
+  veneers: ["waxup", "stratifiedVeneer", "monolithicVeneer"],
   implants: ["screwRetained", "cemented", "allOn"],
-  removable: ["metalFrame", "valplast", "complete", "precision"],
+  removable: ["metalFrame", "biosoft", "conventionalResin"],
 };
 
 // Local DentCare images for each product line
@@ -23,9 +23,9 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/crowns/emax-onlay-inlay-core.png",
   ],
   veneers: [
-    "/images/products/veneers/facette-emax.jpg",
-    "/images/products/veneers/facettes-stratifiees.jpg",
     "/images/products/veneers/diagnostic-wax-up.jpg",
+    "/images/products/veneers/facettes-stratifiees.jpg",
+    "/images/products/veneers/facette-emax.jpg",
   ],
   implants: [
     "/images/products/implants/solution-transvissee.jpg",
@@ -36,7 +36,6 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/removable/chassis-metallique.jpg",
     "/images/products/removable/biosoft.jpg",
     "/images/products/removable/chassis.jpg",
-    "/images/products/removable/attachement-precision.jpg",
   ],
 };
 
@@ -46,32 +45,23 @@ interface ProductSelection {
   index: number;
 }
 
-const TECHNICAL_LINKS: Record<string, string> = {
-  zirconeMonolithic: "/images/products/crowns/zircone-monolithic.jpg",
-  zirconeStratified: "/images/products/crowns/zircone-stratified.jpg",
-  ccm: "/images/products/crowns/ccm.jpg",
-  emax: "/images/products/crowns/emax-onlay-inlay-core.png",
-  emaxVeneer: "/images/products/veneers/facette-emax.jpg",
-  stratifiedVeneer: "/images/products/veneers/facettes-stratifiees.jpg",
-  waxup: "/images/products/veneers/diagnostic-wax-up.jpg",
-  screwRetained: "/images/products/implants/solution-transvissee.jpg",
-  cemented: "/images/products/implants/solution-scellee.jpg",
-  allOn: "/images/products/implants/all-on.jpg",
-  metalFrame: "/images/products/removable/chassis-metallique.jpg",
-  valplast: "/images/products/removable/biosoft.jpg",
-  complete: "/images/products/removable/chassis.jpg",
-  precision: "/images/products/removable/attachement-precision.jpg",
-};
-
 const BRAND_LOGOS = {
   materials: [
-    { name: "dentaurum", src: "/images/brands/dentaurum.svg" },
-    { name: "zircone", src: "/images/brands/zircone.svg" },
+    { name: "Dentaurum", src: "/images/brands/dentaurum-client.jpg" },
+    { name: "Ivoclar", src: "/images/brands/ivoclar-client.jpg" },
+    { name: "GC", src: "/images/brands/gc-client.jpg" },
+    { name: "Triumph", src: "/images/brands/triumph-client.jpg" },
+    { name: "Erkodent", src: "/images/brands/erkodent-client.jpg" },
+    { name: "Lava", src: "/images/brands/lava-client.jpg" },
+    { name: "UPCERA", src: "/images/brands/upcera-client.jpg" },
+    { name: "Ceramotion", src: "/images/brands/ceramotion-client.jpg" },
+    { name: "IPS e.max", src: "/images/brands/emax-client.jpg" },
   ],
   digitalFlow: [
-    { name: "3shape", src: "/images/brands/3shape.svg" },
-    { name: "Medit", src: "/images/brands/medit.svg" },
-    { name: "DScam", src: "/images/brands/dscam.svg" },
+    { name: "3shape", src: "/images/brands/3shape-client.jpg" },
+    { name: "Medit", src: "/images/brands/medit-client.jpg" },
+    { name: "DS Core", src: "/images/brands/ds-core-client.jpg" },
+    { name: "Shining 3D", src: "/images/brands/shining3d-client.jpg" },
   ],
 } as const;
 
@@ -251,9 +241,15 @@ export default function Products(): React.ReactElement {
                   `categories.${selectedProduct.category}.items.${selectedProduct.key}.name`,
                 )}
               </h3>
-              <p className="text-neutral-600 mb-6">
+              <p className="text-neutral-600 mb-4">
                 {t(
                   `categories.${selectedProduct.category}.items.${selectedProduct.key}.description`,
+                )}
+              </p>
+
+              <p className="text-sm text-neutral-700 leading-relaxed mb-6 rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                {t(
+                  `categories.${selectedProduct.category}.items.${selectedProduct.key}.technical`,
                 )}
               </p>
 
@@ -272,14 +268,13 @@ export default function Products(): React.ReactElement {
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <p className="text-sm text-neutral-500">{t("detail.note")}</p>
-                <a
-                  href={TECHNICAL_LINKS[selectedProduct.key] ?? "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(null)}
                   className="inline-flex items-center justify-center rounded-full bg-primary-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-800 transition-colors"
                 >
-                  {t("detail.open")}
-                </a>
+                  {t("detail.close")}
+                </button>
               </div>
             </div>
           </div>

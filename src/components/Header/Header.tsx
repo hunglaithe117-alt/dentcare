@@ -7,8 +7,12 @@ import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
 const PARTNER_LOGOS = [
-  { src: "/images/brands/dentaurum.svg", alt: "Dentaurum" },
-  { src: "/images/brands/zircone.svg", alt: "Zircone" },
+  { src: "/images/brands/dentaurum-client.jpg", alt: "Dentaurum" },
+  { src: "/images/brands/ivoclar-client.jpg", alt: "Ivoclar" },
+  { src: "/images/brands/gc-client.jpg", alt: "GC" },
+  { src: "/images/brands/upcera-client.jpg", alt: "Upcera" },
+  { src: "/images/brands/emax-client.jpg", alt: "IPS e.max" },
+  { src: "/images/brands/erkodent-client.jpg", alt: "Erkodent" },
 ] as const;
 
 export default function Header(): React.ReactElement {
@@ -26,7 +30,8 @@ export default function Header(): React.ReactElement {
 
   const handleNavClick = useCallback((id: string): void => {
     setIsMobileMenuOpen(false);
-    const el = document.getElementById(id);
+    const targetId = id === "clinical" ? "macro" : id;
+    const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
