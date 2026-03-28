@@ -91,7 +91,7 @@ export default function Header(): React.ReactElement {
           {/* Social icons */}
           <div className="hidden md:flex items-center gap-2">
             <a
-              href="#"
+              href="https://instagram.com/dentcarelabo"
               target="_blank"
               rel="noopener noreferrer"
               className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
