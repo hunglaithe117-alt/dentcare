@@ -133,6 +133,16 @@
             "name": "Appareil Résine Conventionnelle",
             "description": "Prothèse amovible en résine traditionnelle.",
             "technical": "Solution classique en résine acrylique pour réhabilitation partielle ou totale, avec protocole éprouvé et entretien simple."
+          },
+          "flexibleResin": {
+            "name": "Résine Flexible",
+            "description": "Prothèse en résine flexible thermoplastique.",
+            "technical": "Résine flexible offrant confort supérieur, insertion facilitée et esthétique naturelle pour appareils partiels bimaxillaires."
+          },
+          "attachementPrecision": {
+            "name": "Attachement de Précision",
+            "description": "Système d'attachement mécanique multicomposant.",
+            "technical": "Attaches de précision permettant liaison mécanique stable sur implants, assurant rétention fiable et maintenance simplifiée."
           }
         }
       }
