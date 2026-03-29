@@ -26,10 +26,10 @@ interface FormData {
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 const SHIPPING_PARTNERS = [
-  { name: "DHL", logoSrc: "/images/shipping/dhl.jpg" },
-  { name: "Chronopost", logoSrc: "/images/shipping/chronopost.jpg" },
-  { name: "TNT / FedEx", logoSrc: "/images/shipping/tnt-fedex.jpg" },
-  { name: "Deliverbag", logoSrc: "/images/shipping/deliverbag.jpg" },
+  { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
+  { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
+  { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
+  { name: "Deliverbag", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg" },
 ] as const;
 
 export default function Contact(): React.ReactElement {
@@ -331,7 +331,7 @@ export default function Contact(): React.ReactElement {
                     <p className="text-sm text-neutral-600 mt-1">{shippingNote}</p>
                   </div>
                   <Image
-                    src="/images/shipping/france-outline.jpg"
+                    src="/images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg"
                     alt="France"
                     width={64}
                     height={64}

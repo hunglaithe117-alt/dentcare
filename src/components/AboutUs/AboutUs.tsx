@@ -41,7 +41,7 @@ export default function AboutUs(): React.ReactElement {
   const methods = [
     {
       key: "scanner" as const,
-      image: "/images/workflow/intraoral-scanner.png",
+      image: "/images/wetransfer/Pict 3 scanner intra oral/Capture d’écran 2026-03-15 à 09.10.39.png",
     },
     {
       key: "printing" as const,
