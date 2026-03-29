@@ -56,23 +56,23 @@
         "items": {
           "zirconeMonolithic": {
             "name": "Zircone Monolithique",
-            "description": "Sans métal, résistante et anti-écaillage.",
-            "technical": "Couronne monobloc en zircone conçue pour supporter de fortes contraintes occlusales, avec une stabilité mécanique élevée et une très bonne longévité clinique."
+            "description": "Usinage numérique haute précision, biocompatibilité optimale et finition soignée, avec ou sans maquillage selon l'indication.",
+            "technical": "La zircone monolithique offre une alternative sans métal, résistante et esthétique, tout en limitant les risques de chipping liés à la céramique stratifiée."
           },
           "zirconeStratified": {
             "name": "Zircone Stratifiée",
-            "description": "Haute esthétique pour les zones antérieures.",
-            "technical": "Infrastructure zircone recouverte d'une céramique stratifiée manuellement pour restituer translucidité, texture et dégradés naturels en secteur visible."
+            "description": "Restauration céramo-céramique alliant résistance mécanique et rendu esthétique avancé.",
+            "technical": "Elle associe une armature en zircone usinée par CFAO à une stratification céramique cosmétique appliquée manuellement. Cette conception dissocie fonctions mécaniques et esthétiques, et constitue une solution de référence pour les secteurs visibles et les cas esthétiques complexes."
           },
           "ccm": {
             "name": "Céramo-Métallique (CCM)",
-            "description": "Très bonne tenue mécanique sous contraintes.",
-            "technical": "Solution céramo-métallique fiable pour couronnes et bridges, particulièrement adaptée aux zones postérieures nécessitant robustesse et précision d'ajustage."
+            "description": "Association d'une armature métallique résistante et d'une stratification céramique esthétique.",
+            "technical": "Les couronnes céramo-métalliques (CCM) combinent une base en chrome-cobalt ou titane avec une céramique cosmétique. Elles sont particulièrement indiquées pour les zones peu visibles, les fortes contraintes occlusales et les reconstitutions volumiques importantes, avec une excellente tenue mécanique dans le temps."
           },
           "inlayCore": {
             "name": "Inlay-Core",
-            "description": "Reconstitution du moignon pour dents délabrées.",
-            "technical": "Pièce de reconstitution indirecte permettant de restaurer un pilier dentaire affaibli avant pose prothétique, avec meilleure rétention et stabilité."
+            "description": "Reconstitution coronaire en Co-Cr, anatomique ou à l'aide de tenons normalisés.",
+            "technical": "Solution à adaptation précise, opacifiable pour les cas esthétiques, réalisable en flux numérique ou traditionnel pour une gestion clinique en un temps opératoire."
           }
         }
       },
@@ -81,18 +81,18 @@
         "items": {
           "waxup": {
             "name": "Diagnostic WAX-UP",
-            "description": "Maquette 3D ou manuelle avant traitement.",
-            "technical": "Étape de simulation esthétique et fonctionnelle pour valider forme, volume et occlusion avant la préparation définitive."
+            "description": "Le Diagnostic Wax-up est bien plus qu'une simple maquette dentaire. C'est le projet esthétique pour votre patient.",
+            "technical": "C'est un outil de communication clinique et esthétique permettant au praticien, au patient et au laboratoire d'anticiper précisément le rendu final du traitement avant toute intervention irréversible. Qu'il soit en 3D ou réalisé manuellement, il permet de simuler la forme finale des dents, de valider les objectifs fonctionnels et esthétiques, et de sécuriser la préparation grâce à une clé de transfert. But également fonctionnel lors de reconstitution globale, permet de valider l'ensemble des paramètres fonctionnels. C'est une étape fondamentale du plan de traitement."
           },
           "stratifiedVeneer": {
             "name": "Facettes Stratifiées",
-            "description": "Facettes Emax stratifiées à la main.",
-            "technical": "Technique de stratification céramique manuelle sur base Emax offrant un rendu naturel avancé, adapté aux cas esthétiques exigeants."
+            "description": "Les facettes stratifiées en céramique Emax offrent une solution esthétique haut de gamme pour sublimer le sourire.",
+            "technical": "Réalisées en céramique pressée au lithium disilicate, elles se distinguent par leur translucidité naturelle, leur grande résistance et leur durabilité dans le temps. Chaque facette est stratifiée à la main par le prothésiste, permettant de reproduire parfaitement la texture, la luminosité et les nuances d'une dent naturelle. Le résultat est un sourire harmonieux, discret et parfaitement intégré."
           },
           "monolithicVeneer": {
             "name": "Facettes Monolithiques",
-            "description": "Céramique monobloc à haute résistance.",
-            "technical": "Facettes monolithiques usinées pour combiner finesse, résistance mécanique et protocole de maintenance simplifié."
+            "description": "Solution esthétique et durable pour sublimer le sourire tout en conservant un maximum de structure dentaire naturelle.",
+            "technical": "Réalisées en céramique pressée sans stratification, elles offrent une excellente résistance ainsi qu'une translucidité proche de celle de l'émail naturel. Grâce à leur conception monolithique, ces facettes présentent une grande fiabilité mécanique et un risque réduit d'écaillage. Elles permettent de corriger efficacement la forme, la couleur ou de légères malpositions dentaires, tout en garantissant un résultat naturel et harmonieux. Les facettes e.max monolithiques constituent ainsi une option moderne, précise et pérenne pour les restaurations esthétiques du sourire."
           }
         }
       },
@@ -101,18 +101,18 @@
         "items": {
           "screwRetained": {
             "name": "Solutions Transvissées",
-            "description": "Prothèse implantaire fixée par vissage.",
-            "technical": "Conception transvissée permettant démontabilité, maintenance facilitée et contrôle précis de l'adaptation passive sur implants."
+            "description": "Restaurations esthétiques, fonctionnelles et durables avec suivi clinique optimal.",
+            "technical": "Aucune rétention de ciment à la pose, maintenance facilitée, gestion des angulations jusqu'à 25° avec Ti Base spécifique, restauration unitaire ou plurale, disponible en zircone et en métal-céramique."
           },
           "cemented": {
             "name": "Solutions Scellées",
-            "description": "Prothèse implantaire collée sur pilier.",
-            "technical": "Solution scellée privilégiée dans certains axes esthétiques, avec gestion de l'émergence et protocole de cimentation contrôlé."
+            "description": "Technique offrant une grande liberté pour l'esthétique, l'alignement et la morphologie coronaire.",
+            "technical": "Particulièrement indiquée lorsque l'axe implantaire ne permet pas une solution transvissée idéale. Les restaurations scellées permettent d'obtenir des résultats esthétiques, fonctionnels et durables, en restauration unitaire ou plurale, disponibles en zircone et en métal-céramique."
           },
           "allOn": {
             "name": "Type All-on",
-            "description": "Réhabilitation fixe de l'arcade complète.",
-            "technical": "Réhabilitation implantaire complète sur un nombre optimisé d'implants pour restaurer fonction, stabilité et confort du patient."
+            "description": "Réhabilitation complète d'une arcade grâce à des implants stratégiquement positionnés.",
+            "technical": "Cette technique fournit une base solide pour une prothèse fixe complète, redonnant fonction et esthétique. Réalisée en flux numérique et en technologie de frittage laser, elle permet un contrôle de passivité, une stabilité prothétique à long terme et une intégration esthétique optimale."
           }
         }
       },
@@ -121,18 +121,18 @@
         "items": {
           "metalFrame": {
             "name": "Châssis Métallique",
-            "description": "Armature métallique imprimée laser.",
-            "technical": "Châssis conçu numériquement et fabriqué avec précision pour assurer rigidité, adaptation muqueuse et durabilité de la prothèse partielle."
+            "description": "Stellites réalisés en fusion laser pour une adaptation précise et une finition de haute qualité.",
+            "technical": "La fabrication additive permet d'obtenir des structures métalliques homogènes, résistantes et légères, avec une excellente reproductibilité. Les stellites en fusion laser Co-Cr constituent une solution fiable, précise et durable pour les prothèses partielles amovibles."
           },
           "biosoft": {
             "name": "Résine Flexible Biosoft",
-            "description": "Résine souple biocompatible et confortable.",
-            "technical": "Prothèse en résine flexible offrant insertion facilitée, meilleure tolérance tissulaire et discrétion esthétique au quotidien."
+            "description": "Solution confortable et esthétique pour les prothèses dentaires amovibles.",
+            "technical": "Grâce à leur flexibilité, les résines BioSoft s'adaptent à la morphologie buccale et apportent un excellent confort quotidien. Elles permettent des prothèses légères, résistantes et discrètes, avec des crochets souvent moins visibles que sur les solutions traditionnelles."
           },
           "conventionalResin": {
             "name": "Appareil Résine Conventionnelle",
-            "description": "Prothèse amovible en résine traditionnelle.",
-            "technical": "Solution classique en résine acrylique pour réhabilitation partielle ou totale, avec protocole éprouvé et entretien simple."
+            "description": "Solution classique et éprouvée en résine acrylique pour les prothèses amovibles.",
+            "technical": "Ces appareils permettent de remplacer plusieurs dents en rétablissant la fonction masticatoire et l'esthétique du sourire. Ils offrent une fabrication fiable et adaptable, avec des ajustements facilités selon l'évolution buccale, et sont souvent utilisés en provisoire ou dans des indications spécifiques."
           },
           "flexibleResin": {
             "name": "Résine Flexible",

@@ -82,7 +82,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>): Rea
 
   return (
     <html suppressHydrationWarning>
-      <head>
+      <head suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
