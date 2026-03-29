@@ -97,7 +97,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body suppressHydrationWarning className="font-body antialiased">
         {children}
         <Analytics />
         <SpeedInsights />

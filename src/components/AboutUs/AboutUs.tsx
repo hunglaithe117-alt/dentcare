@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
@@ -28,12 +29,19 @@ function useInView(
 
 export default function AboutUs(): React.ReactElement {
   const t = useTranslations("about");
+  const locale = useLocale();
   const [sectionRef, isVisible] = useInView(0.15);
+  const videoTitle =
+    locale === "fr" ? "Video de presentation" : "Introduction Video";
+  const videoDescription =
+    locale === "fr"
+      ? "Decouvrez DentCare Consultation en video."
+      : "Discover DentCare Consultation in video.";
 
   const methods = [
     {
       key: "scanner" as const,
-      image: "/images/workflow/intraoral-scanner.png",
+      image: "/images/wetransfer/Pict 3 scanner intra oral/Capture d’écran 2026-03-15 à 09.10.39.png",
     },
     {
       key: "printing" as const,
@@ -119,6 +127,31 @@ export default function AboutUs(): React.ReactElement {
         <div
           className={`mb-24 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
+          <div className="mb-16">
+            <div className="max-w-5xl mx-auto">
+              <h3 className="font-heading text-2xl lg:text-3xl font-bold text-primary-900 mb-2 text-center">
+                {videoTitle}
+              </h3>
+              <p className="text-neutral-600 leading-relaxed text-base sm:text-lg mb-6 text-center">
+                {videoDescription}
+              </p>
+              <div className="h-px w-full bg-neutral-200 mb-6" />
+              <div className="border border-neutral-300 bg-black shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
+                <div className="relative w-full aspect-video overflow-hidden bg-black">
+                  <iframe
+                    className="absolute -inset-[1px] h-[calc(100%+2px)] w-[calc(100%+2px)] rounded-none"
+                    src="https://www.youtube.com/embed/Gp1mmmbTzJk?autoplay=1&mute=1&playsinline=1&loop=1&playlist=Gp1mmmbTzJk&rel=0"
+                    title="DentCare Consultation Introduction"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <h3 className="font-heading text-2xl lg:text-3xl font-bold text-primary-900 mb-4 text-center">
             {t("method.title")}
           </h3>

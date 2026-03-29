@@ -26,9 +26,10 @@ interface FormData {
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 const SHIPPING_PARTNERS = [
-  { name: "TNT", logoSrc: "" },
-  { name: "Chronopost", logoSrc: "" },
-  { name: "Colissimo", logoSrc: "" },
+  { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
+  { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
+  { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
+  { name: "Deliverbag", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg" },
 ] as const;
 
 export default function Contact(): React.ReactElement {
@@ -50,8 +51,8 @@ export default function Contact(): React.ReactElement {
       : "Delivery partners in France";
   const shippingNote =
     locale === "fr"
-      ? "La carte a ete retiree. Les logos officiels des transporteurs seront affiches des reception des fichiers client."
-      : "The map has been removed. Official carrier logos will be displayed once final files are provided by the client.";
+      ? "Expedition securisee sur toute la France avec nos transporteurs partenaires."
+      : "Secure shipping across France with our trusted carrier partners.";
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -95,7 +96,7 @@ export default function Contact(): React.ReactElement {
     <>
       <section
         id="contact"
-        className="py-24 lg:py-32 bg-white relative overflow-hidden"
+        className="py-24 lg:py-32 pb-32 lg:pb-40 bg-white relative overflow-visible"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
 
@@ -110,7 +111,7 @@ export default function Contact(): React.ReactElement {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-stretch">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
             {/* Contact Form */}
             <div className="lg:col-span-2 flex flex-col justify-between gap-12">
               <div className="w-full">
@@ -303,10 +304,10 @@ export default function Contact(): React.ReactElement {
               </div>
             </div>
 
-            {/* Right Column: Google Maps & Info */}
-            <div className="lg:col-span-3 pb-2">
+            {/* Right Column: Google Maps & Shipping */}
+            <div className="lg:col-span-3 pb-2 space-y-6">
               {/* Map Iframe */}
-              <div className="w-full h-[450px] lg:h-full min-h-[450px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 relative shadow-inner">
+              <div className="w-full h-[450px] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 relative shadow-inner">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.4975549072976!2d-0.5786729235882069!3d44.83177897107062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527ca3df11d8d%3A0x6bba355b9e7dfc92!2s29%20Rue%20de%20Cursol%2C%2033000%20Bordeaux%2C%20France!5e0!3m2!1sen!2svn!4v1741682855217!5m2!1sen!2svn"
                   width="100%"
@@ -318,6 +319,43 @@ export default function Contact(): React.ReactElement {
                   title="Google Maps Location Bordeaux"
                   className="absolute inset-0"
                 />
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-5 md:p-6 shadow-sm">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-primary-900 flex items-center gap-2">
+                      <Truck className="w-5 h-5 text-accent-600" />
+                      {shippingTitle}
+                    </h3>
+                    <p className="text-sm text-neutral-600 mt-1">{shippingNote}</p>
+                  </div>
+                  <Image
+                    src="/images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg"
+                    alt="France"
+                    width={64}
+                    height={64}
+                    className="hidden sm:block h-16 w-16 object-contain opacity-70"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {SHIPPING_PARTNERS.map((partner) => (
+                    <div
+                      key={partner.name}
+                      className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20"
+                      title={partner.name}
+                    >
+                      <Image
+                        src={partner.logoSrc}
+                        alt={partner.name}
+                        width={180}
+                        height={80}
+                        className="max-h-14 w-auto object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
