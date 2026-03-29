@@ -51,9 +51,9 @@ export default function Header(): React.ReactElement {
           : "bg-transparent py-5"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <div 
             className="flex items-center gap-2 group cursor-pointer"
             onClick={scrollToTop}
@@ -63,7 +63,7 @@ export default function Header(): React.ReactElement {
               alt="DentCare Logo"
               width={240}
               height={60}
-              className="drop-shadow-sm transition-transform group-hover:scale-105 object-contain"
+              className="h-auto w-36 sm:w-44 md:w-52 lg:w-60 drop-shadow-sm transition-transform group-hover:scale-105 object-contain"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Header(): React.ReactElement {
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <LanguageSwitcher isScrolled={isScrolled} />
 
           {/* Social icons */}

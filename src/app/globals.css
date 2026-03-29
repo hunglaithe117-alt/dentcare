@@ -53,13 +53,14 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-neutral-800);
   background-color: #ffffff;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Section scroll offset for sticky header */
