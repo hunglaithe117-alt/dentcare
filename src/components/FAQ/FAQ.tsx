@@ -85,13 +85,13 @@ export default function FAQ(): React.ReactElement {
         {/* Additional info */}
         <div className="mt-16 pt-12 border-t border-neutral-100 text-center">
           <p className="text-neutral-600 mb-6">
-            Didn't find your answer? We're here to help!
+            {t("additionalInfo")}
           </p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-semibold transition-all hover:shadow-lg hover:shadow-accent-500/30"
           >
-            Contact Us
+            {t("contactUs")}
             <span>→</span>
           </a>
         </div>
