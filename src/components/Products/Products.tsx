@@ -269,7 +269,6 @@ export default function Products(): React.ReactElement {
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <p className="text-sm text-neutral-500">{t("detail.note")}</p>
                 <button
                   type="button"
                   onClick={() => setSelectedProduct(null)}
