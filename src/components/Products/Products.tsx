@@ -11,7 +11,7 @@ const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
   crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "inlayCore"],
   veneers: ["waxup", "stratifiedVeneer", "monolithicVeneer"],
   implants: ["screwRetained", "cemented", "allOn"],
-  removable: ["metalFrame", "biosoft", "conventionalResin"],
+  removable: ["metalFrame", "biosoft", "flexibleResin", "conventionalResin", "attachementPrecision"],
 };
 
 // Local DentCare images for each product line
@@ -23,9 +23,9 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
     "/images/products/crowns/emax-onlay-inlay-core.png",
   ],
   veneers: [
-    "/images/products/veneers/diagnostic-wax-up.jpg",
-    "/images/products/veneers/facettes-stratifiees.jpg",
     "/images/products/veneers/facette-emax.jpg",
+    "/images/products/veneers/facettes-stratifiees.jpg",
+    "/images/products/veneers/diagnostic-wax-up.jpg",
   ],
   implants: [
     "/images/products/implants/solution-transvissee.jpg",
@@ -35,7 +35,9 @@ const PRODUCT_IMAGES: Record<CategoryKey, string[]> = {
   removable: [
     "/images/products/removable/chassis-metallique.jpg",
     "/images/products/removable/biosoft.jpg",
-    "/images/products/removable/chassis.jpg",
+    "/images/products/removable/resine-flexible-placeholder.jpg",
+    "/images/products/removable/prothese-resine-placeholder.jpg",
+    "/images/products/removable/attachement-precision.jpg",
   ],
 };
 

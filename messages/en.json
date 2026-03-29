@@ -11,7 +11,7 @@
     "title": "Excellence at the Service of Your Smile",
     "subtitle": "Laboratory Specialized in Aesthetics and Implantology — Over 30 Years of Expertise Serving Dental Professionals",
     "cta": "Discover Our Products",
-    "ctaQuote": "our achievements"
+    "ctaQuote": "Our Achievements"
   },
   "about": {
     "sectionTitle": "DentCare DNA",
@@ -133,6 +133,16 @@
             "name": "Conventional Resin Appliance",
             "description": "Conventional acrylic removable prosthesis.",
             "technical": "Traditional resin prosthesis solution indicated for partial or complete rehabilitation with validated workflow and controlled cost."
+          },
+          "flexibleResin": {
+            "name": "Flexible Resin",
+            "description": "Thermoplastic flexible resin prosthesis.",
+            "technical": "Advanced flexible resin offering superior comfort, easier insertion and natural esthetics for bilateral partial removable dentures."
+          },
+          "attachementPrecision": {
+            "name": "Precision Attachment",
+            "description": "Multi-component mechanical attachment system.",
+            "technical": "Precise mechanical attachments providing stable retention on implants with reliable support and simplified maintenance protocol."
           }
         }
       }
