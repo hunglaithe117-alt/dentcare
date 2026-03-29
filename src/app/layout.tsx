@@ -88,7 +88,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>): Rea
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body suppressHydrationWarning className="font-body antialiased">
         {children}
       </body>
     </html>
