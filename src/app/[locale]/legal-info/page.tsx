@@ -12,7 +12,7 @@ const CONTENT = {
       "Adresse: 29 Rue de Cursol 33000 Bordeaux",
       "RCS Bordeaux: 832 04 30574",
       "TVA: FR52 832043574",
-      "Contact: o.dentcare.consult@gmail.com",
+      "Contact: olivier@dentcare-consultation.com",
     ],
   },
   en: {
@@ -24,7 +24,7 @@ const CONTENT = {
       "Address: 29 Rue de Cursol 33000 Bordeaux",
       "RCS Bordeaux: 832 04 30574",
       "VAT: FR52 832043574",
-      "Contact: o.dentcare.consult@gmail.com",
+      "Contact: olivier@dentcare-consultation.com",
     ],
   },
 } as const;
