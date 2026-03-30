@@ -11,7 +11,7 @@ const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
   crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "inlayCore"],
   veneers: ["waxup", "stratifiedVeneer", "monolithicVeneer"],
   implants: ["screwRetained", "cemented", "allOn"],
-  removable: ["metalFrame", "biosoft", "flexibleResin", "conventionalResin", "attachementPrecision"],
+  removable: ["metalFrame", "biosoft", "conventionalResin", "attachementPrecision"],
 };
 
 const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
@@ -75,7 +75,8 @@ const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
       "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-47.jpg",
     ],
     biosoft: [
-      "/images/wetransfer/Pict 31/IMG_8285.jpg",
+      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
+      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-39.jpg",
     ],
     flexibleResin: [
       "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
