@@ -11,7 +11,7 @@ const PRODUCT_KEYS: Record<CategoryKey, string[]> = {
   crowns: ["zirconeMonolithic", "zirconeStratified", "ccm", "inlayCore"],
   veneers: ["waxup", "stratifiedVeneer", "monolithicVeneer"],
   implants: ["screwRetained", "cemented", "allOn"],
-  removable: ["metalFrame", "biosoft", "flexibleResin", "conventionalResin", "attachementPrecision"],
+  removable: ["metalFrame", "biosoft", "conventionalResin", "attachementPrecision"],
 };
 
 const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
@@ -71,18 +71,14 @@ const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
   },
   removable: {
     metalFrame: [
-      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-37.jpg",
-      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-47.jpg",
+      "/images/products/removable/pict-1662.jpg",
     ],
     biosoft: [
-      "/images/wetransfer/Pict 31/IMG_8285.jpg",
-    ],
-    flexibleResin: [
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-39.jpg",
+      "/images/products/removable/pict-1512.jpg",
     ],
     conventionalResin: [
       "/images/wetransfer/Pict 19 Resine/Capture d’écran 2026-03-21 à 11.55.13.png",
+      "/images/products/removable/pict-1670.jpg",
     ],
     attachementPrecision: [
       "/images/wetransfer/pict 20 Attachement de precision/PHOTO-2026-03-15-07-57-21.jpg",
@@ -113,6 +109,10 @@ const BRAND_LOGOS = {
     { name: "Camera 2", src: "/images/wetransfer/Logo camera 3D/IMG_1586.jpg" },
     { name: "Camera 3", src: "/images/wetransfer/Logo camera 3D/IMG_1587.jpg" },
     { name: "Camera 4", src: "/images/wetransfer/Logo camera 3D/IMG_1588.jpg" },
+  ],
+  toothChoices: [
+    { name: "Ivoclar Vivadent", src: "/images/brands/tooth-choice/ivoclar-vivadent.jpg" },
+    { name: "Triumph Dental", src: "/images/brands/tooth-choice/triumph-dental.jpg" },
   ],
 } as const;
 
@@ -203,7 +203,7 @@ export default function Products(): React.ReactElement {
                   src={PRODUCT_IMAGES[activeCategory][productKey]?.[0] ?? "/images/hero/hero-dental-closeup.jpg"}
                   alt={productKey}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain p-2 transition-opacity duration-300 group-hover:opacity-95"
                 />
                 {(PRODUCT_IMAGES[activeCategory][productKey]?.length ?? 0) > 1 && (
                   <span className="absolute top-2 right-2 rounded-full bg-black/65 px-2 py-1 text-[11px] font-semibold text-white">
@@ -275,10 +275,26 @@ export default function Products(): React.ReactElement {
         )}
 
         {activeCategory === "removable" && (
-          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5">
-            <p className="text-primary-900 font-semibold text-sm tracking-wide">
+          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5 sm:p-6 space-y-4">
+            <p className="text-primary-900 font-semibold text-sm tracking-wide text-center sm:text-left">
               {t("labels.toothRangeNote")}
             </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {BRAND_LOGOS.toothChoices.map((brand) => (
+                <div
+                  key={brand.name}
+                  className="h-20 rounded-xl border border-primary-200 bg-white flex items-center justify-center p-3"
+                >
+                  <Image
+                    src={brand.src}
+                    alt={brand.name}
+                    width={180}
+                    height={60}
+                    className="max-h-12 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
@@ -326,7 +342,7 @@ export default function Products(): React.ReactElement {
                 )}
               </p>
 
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden border border-neutral-200 mb-4">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100 mb-4">
                 <Image
                   src={
                     PRODUCT_IMAGES[selectedProduct.category][selectedProduct.key]?.[
@@ -339,7 +355,7 @@ export default function Products(): React.ReactElement {
                     `categories.${selectedProduct.category}.items.${selectedProduct.key}.name`,
                   )}
                   fill
-                  className="object-cover"
+                  className="object-contain p-2"
                 />
               </div>
 
@@ -350,7 +366,7 @@ export default function Products(): React.ReactElement {
                       key={`${src}-${imageIndex}`}
                       type="button"
                       onClick={() => setSelectedImageIndex(imageIndex)}
-                      className={`relative h-24 w-32 sm:h-28 sm:w-40 shrink-0 overflow-hidden rounded-lg border transition-colors ${
+                      className={`relative h-24 w-32 sm:h-28 sm:w-40 shrink-0 overflow-hidden rounded-lg border bg-neutral-100 transition-colors ${
                         imageIndex === selectedImageIndex
                           ? "border-primary-700 ring-2 ring-primary-200"
                           : "border-neutral-200"
@@ -360,7 +376,7 @@ export default function Products(): React.ReactElement {
                         src={src}
                         alt={`${t(`categories.${selectedProduct.category}.items.${selectedProduct.key}.name`)} ${imageIndex + 1}`}
                         fill
-                        className="object-cover"
+                        className="object-contain p-1"
                       />
                     </button>
                   ))}

@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Monitor,
   Search,
   ShieldCheck,
   FileText,
@@ -14,6 +13,13 @@ import {
 import { useState } from "react";
 
 type PolicyKey = "traceability" | "market" | "warranty" | "terms";
+
+const SHIPPING_PARTNERS = [
+  { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
+  { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
+  { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
+  { name: "Deliverbag", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg" },
+] as const;
 
 export default function Organization(): React.ReactElement {
   const t = useTranslations("organization");
@@ -75,14 +81,13 @@ export default function Organization(): React.ReactElement {
               }}
             />
             <div className="relative flex flex-col lg:flex-row items-center gap-6">
-              <div className="shrink-0 w-24 h-24 lg:w-32 lg:h-32 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 relative overflow-hidden shadow-inner">
+              <div className="shrink-0 w-full max-w-xs rounded-2xl bg-white/10 border border-white/20 relative overflow-hidden shadow-inner aspect-[16/9]">
                 <Image
-                  src="/images/workflow/intraoral-scanner.png"
+                  src="/images/organization/pict-31.jpg"
                   alt="Digital Dentistry Workflow"
                   fill
-                  className="object-cover opacity-80 hover:opacity-100 transition-all duration-500"
+                  className="object-contain bg-neutral-100 p-2"
                 />
-                <Monitor className="w-8 h-8 stroke-[1.5] text-white absolute z-10 drop-shadow-md" />
               </div>
               <div className="text-center lg:text-left">
                 <h3 className="font-heading text-2xl font-bold text-white mb-2">
@@ -117,10 +122,10 @@ export default function Organization(): React.ReactElement {
             </div>
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-6 border border-neutral-100">
               <Image
-                src="/images/organization/hanoi-lab.jpg"
+                src="/images/organization/pict-8319.jpg"
                 alt={t("hanoi.title")}
                 fill
-                className="object-cover"
+                className="object-contain bg-neutral-100 p-2"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -137,6 +142,15 @@ export default function Organization(): React.ReactElement {
                   </div>
                 ),
               )}
+              <div className="rounded-xl border border-neutral-100 bg-neutral-50 p-4 flex items-center justify-center">
+                <Image
+                  src="/images/brands/certifications/pict-5456.png"
+                  alt="ISO 13485"
+                  width={240}
+                  height={90}
+                  className="max-h-16 w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
 
@@ -162,7 +176,7 @@ export default function Organization(): React.ReactElement {
                 src="/images/organization/bordeaux-lab.jpg"
                 alt={t("bordeaux.title")}
                 fill
-                className="object-cover"
+                className="object-contain bg-neutral-100 p-2"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -191,11 +205,24 @@ export default function Organization(): React.ReactElement {
           </div>
         </div>
 
-        {/* Policies */}
-        <div className="mb-8 rounded-2xl border border-accent-200 bg-accent-50 p-5 text-center">
-          <p className="text-primary-900 font-semibold tracking-wide">
-            {t("deliveryNote")}
-          </p>
+        <div className="mb-4 rounded-2xl border border-accent-200 bg-white p-5 sm:p-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {SHIPPING_PARTNERS.map((partner) => (
+              <div
+                key={partner.name}
+                className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20"
+                title={partner.name}
+              >
+                <Image
+                  src={partner.logoSrc}
+                  alt={partner.name}
+                  width={180}
+                  height={80}
+                  className="max-h-14 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="bg-white rounded-2xl border border-neutral-100 p-8">
