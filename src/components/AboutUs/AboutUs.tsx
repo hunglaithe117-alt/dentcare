@@ -81,7 +81,7 @@ export default function AboutUs(): React.ReactElement {
 
         {/* History */}
         <div
-          className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <div className="lg:col-span-7 pr-0 lg:pr-8">
             <h3 className="font-heading text-2xl font-bold text-primary-900 mb-6 italic">
@@ -110,16 +110,21 @@ export default function AboutUs(): React.ReactElement {
                 <p className="text-white/80 text-sm mt-1 drop-shadow-md">
                   {t("founderRole")}
                 </p>
-                <Image
-                  src="/images/about/founder-signature.svg"
-                  alt={t("signatureAlt")}
-                  width={300}
-                  height={68}
-                  unoptimized
-                  className="mx-auto mt-3 h-14 sm:h-16 w-auto opacity-95"
-                />
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto w-full py-12">
+          <div className="flex justify-center">
+            <Image
+              src="/images/about/founder-signature.svg"
+              alt={t("signatureAlt")}
+              width={300}
+              height={68}
+              unoptimized
+              className="h-28 sm:h-32 w-auto opacity-90"
+            />
           </div>
         </div>
 
