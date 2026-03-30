@@ -80,7 +80,7 @@ export default function Organization(): React.ReactElement {
                   src="/images/workflow/intraoral-scanner.png"
                   alt="Digital Dentistry Workflow"
                   fill
-                  className="object-cover opacity-80 hover:opacity-100 transition-all duration-500"
+                  className="object-contain p-2 opacity-80 hover:opacity-100 transition-all duration-500"
                 />
                 <Monitor className="w-8 h-8 stroke-[1.5] text-white absolute z-10 drop-shadow-md" />
               </div>
@@ -120,7 +120,7 @@ export default function Organization(): React.ReactElement {
                 src="/images/organization/hanoi-lab.jpg"
                 alt={t("hanoi.title")}
                 fill
-                className="object-cover"
+                className="object-contain bg-neutral-100 p-2"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -162,7 +162,7 @@ export default function Organization(): React.ReactElement {
                 src="/images/organization/bordeaux-lab.jpg"
                 alt={t("bordeaux.title")}
                 fill
-                className="object-cover"
+                className="object-contain bg-neutral-100 p-2"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">

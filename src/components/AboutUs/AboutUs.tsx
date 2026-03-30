@@ -100,7 +100,7 @@ export default function AboutUs(): React.ReactElement {
                 alt={t("founderName")}
                 fill
                 priority
-                className="object-cover"
+                className="object-contain p-2"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 text-center p-8">
@@ -170,7 +170,7 @@ export default function AboutUs(): React.ReactElement {
                     src={image}
                     alt={t(`method.${key}`)}
                     fill
-                    className="object-cover"
+                    className="object-contain p-2"
                   />
                 </div>
                 <h4 className="font-semibold text-primary-900 group-hover:text-accent-600 transition-colors">

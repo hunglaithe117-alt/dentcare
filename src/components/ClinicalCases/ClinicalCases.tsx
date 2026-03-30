@@ -76,7 +76,7 @@ function BeforeAfterSlider({
           src={afterImage}
           alt="After treatment"
           fill
-          className="object-cover"
+          className="object-contain p-2"
         />
         {/* Fallback text if image fails/loads */}
         {/* <div className="text-center relative z-10">
@@ -93,7 +93,7 @@ function BeforeAfterSlider({
           src={beforeImage}
           alt="Before treatment"
           fill
-          className="object-cover"
+          className="object-contain p-2"
         />
         {/* <div className="text-center relative z-10">
           <span className="text-white font-semibold text-sm drop-shadow-md">{t("before")}</span>
@@ -220,7 +220,7 @@ export default function ClinicalCases(): React.ReactElement {
                 src={`/images/clinical/macro/macro-${num}.jpg`}
                 alt={`Dental Macro ${num}`}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-contain p-2"
               />
               <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/20 transition-colors flex items-center justify-center">
                 <Search className="w-8 h-8 stroke-[1.5] text-white opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100 drop-shadow-md" />
