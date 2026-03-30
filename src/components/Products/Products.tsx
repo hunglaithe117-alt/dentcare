@@ -71,19 +71,14 @@ const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
   },
   removable: {
     metalFrame: [
-      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-37.jpg",
-      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-47.jpg",
+      "/images/products/removable/pict-1662.jpg",
     ],
     biosoft: [
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-39.jpg",
-    ],
-    flexibleResin: [
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
-      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-39.jpg",
+      "/images/products/removable/pict-1512.jpg",
     ],
     conventionalResin: [
       "/images/wetransfer/Pict 19 Resine/Capture d’écran 2026-03-21 à 11.55.13.png",
+      "/images/products/removable/pict-1670.jpg",
     ],
     attachementPrecision: [
       "/images/wetransfer/pict 20 Attachement de precision/PHOTO-2026-03-15-07-57-21.jpg",

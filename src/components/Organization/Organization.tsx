@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Monitor,
   Search,
   ShieldCheck,
   FileText,
@@ -82,14 +81,13 @@ export default function Organization(): React.ReactElement {
               }}
             />
             <div className="relative flex flex-col lg:flex-row items-center gap-6">
-              <div className="shrink-0 w-24 h-24 lg:w-32 lg:h-32 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 relative overflow-hidden shadow-inner">
+              <div className="shrink-0 w-full max-w-xs rounded-2xl bg-white/10 border border-white/20 relative overflow-hidden shadow-inner aspect-[16/9]">
                 <Image
-                  src="/images/workflow/intraoral-scanner.png"
+                  src="/images/organization/pict-31.jpg"
                   alt="Digital Dentistry Workflow"
                   fill
-                  className="object-contain p-2 opacity-80 hover:opacity-100 transition-all duration-500"
+                  className="object-contain bg-neutral-100 p-2"
                 />
-                <Monitor className="w-8 h-8 stroke-[1.5] text-white absolute z-10 drop-shadow-md" />
               </div>
               <div className="text-center lg:text-left">
                 <h3 className="font-heading text-2xl font-bold text-white mb-2">
@@ -124,14 +122,14 @@ export default function Organization(): React.ReactElement {
             </div>
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-6 border border-neutral-100">
               <Image
-                src="/images/organization/hanoi-lab.jpg"
+                src="/images/organization/pict-8319.jpg"
                 alt={t("hanoi.title")}
                 fill
                 className="object-contain bg-neutral-100 p-2"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {(["item1", "item2", "item3", "item4"] as const).map(
+              {(["item1", "item2", "item3", "item4", "item5"] as const).map(
                 (key) => (
                   <div
                     key={key}
@@ -144,19 +142,14 @@ export default function Organization(): React.ReactElement {
                   </div>
                 ),
               )}
-              <div className="col-span-2 rounded-xl border border-neutral-100 bg-neutral-50 p-4">
-                <div className="h-16 w-full flex items-center justify-center rounded-lg bg-white border border-neutral-200">
-                  <Image
-                    src="/images/brands/certifications/iso-13485.png"
-                    alt="ISO 13485"
-                    width={220}
-                    height={60}
-                    className="max-h-12 w-auto object-contain"
-                  />
-                </div>
-                <p className="mt-3 text-center text-sm text-neutral-700 font-medium">
-                  {t("hanoi.item5")}
-                </p>
+              <div className="rounded-xl border border-neutral-100 bg-neutral-50 p-4 flex items-center justify-center">
+                <Image
+                  src="/images/brands/certifications/pict-5456.png"
+                  alt="ISO 13485"
+                  width={240}
+                  height={90}
+                  className="max-h-16 w-auto object-contain"
+                />
               </div>
             </div>
           </div>
