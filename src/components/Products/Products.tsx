@@ -115,6 +115,10 @@ const BRAND_LOGOS = {
     { name: "Camera 3", src: "/images/wetransfer/Logo camera 3D/IMG_1587.jpg" },
     { name: "Camera 4", src: "/images/wetransfer/Logo camera 3D/IMG_1588.jpg" },
   ],
+  toothChoices: [
+    { name: "Ivoclar Vivadent", src: "/images/brands/tooth-choice/ivoclar-vivadent.jpg" },
+    { name: "Triumph Dental", src: "/images/brands/tooth-choice/triumph-dental.jpg" },
+  ],
 } as const;
 
 export default function Products(): React.ReactElement {
@@ -276,10 +280,26 @@ export default function Products(): React.ReactElement {
         )}
 
         {activeCategory === "removable" && (
-          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5">
-            <p className="text-primary-900 font-semibold text-sm tracking-wide">
+          <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5 sm:p-6 space-y-4">
+            <p className="text-primary-900 font-semibold text-sm tracking-wide text-center sm:text-left">
               {t("labels.toothRangeNote")}
             </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {BRAND_LOGOS.toothChoices.map((brand) => (
+                <div
+                  key={brand.name}
+                  className="h-20 rounded-xl border border-primary-200 bg-white flex items-center justify-center p-3"
+                >
+                  <Image
+                    src={brand.src}
+                    alt={brand.name}
+                    width={180}
+                    height={60}
+                    className="max-h-12 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

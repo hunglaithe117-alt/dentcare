@@ -15,6 +15,13 @@ import { useState } from "react";
 
 type PolicyKey = "traceability" | "market" | "warranty" | "terms";
 
+const SHIPPING_PARTNERS = [
+  { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
+  { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
+  { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
+  { name: "Deliverbag", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg" },
+] as const;
+
 export default function Organization(): React.ReactElement {
   const t = useTranslations("organization");
   const locale = useLocale();
@@ -124,7 +131,7 @@ export default function Organization(): React.ReactElement {
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {(["item1", "item2", "item3", "item4", "item5"] as const).map(
+              {(["item1", "item2", "item3", "item4"] as const).map(
                 (key) => (
                   <div
                     key={key}
@@ -137,6 +144,20 @@ export default function Organization(): React.ReactElement {
                   </div>
                 ),
               )}
+              <div className="col-span-2 rounded-xl border border-neutral-100 bg-neutral-50 p-4">
+                <div className="h-16 w-full flex items-center justify-center rounded-lg bg-white border border-neutral-200">
+                  <Image
+                    src="/images/brands/certifications/iso-13485.png"
+                    alt="ISO 13485"
+                    width={220}
+                    height={60}
+                    className="max-h-12 w-auto object-contain"
+                  />
+                </div>
+                <p className="mt-3 text-center text-sm text-neutral-700 font-medium">
+                  {t("hanoi.item5")}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -191,11 +212,24 @@ export default function Organization(): React.ReactElement {
           </div>
         </div>
 
-        {/* Policies */}
-        <div className="mb-8 rounded-2xl border border-accent-200 bg-accent-50 p-5 text-center">
-          <p className="text-primary-900 font-semibold tracking-wide">
-            {t("deliveryNote")}
-          </p>
+        <div className="mb-4 rounded-2xl border border-accent-200 bg-white p-5 sm:p-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {SHIPPING_PARTNERS.map((partner) => (
+              <div
+                key={partner.name}
+                className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20"
+                title={partner.name}
+              >
+                <Image
+                  src={partner.logoSrc}
+                  alt={partner.name}
+                  width={180}
+                  height={80}
+                  className="max-h-14 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="bg-white rounded-2xl border border-neutral-100 p-8">

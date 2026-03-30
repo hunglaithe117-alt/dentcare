@@ -4,102 +4,110 @@ interface TermsPageProps {
 
 const CONTENT = {
   fr: {
-    title: "Conditions générales de vente",
+    title: "CONDITIONS GENERALES DE VENTE",
     intro: "DentCare Consultation",
     sections: [
       {
-        title: "1. Applicabilité des conditions générales",
-        body: "Les présentes conditions générales régissent l'ensemble des relations commerciales entre le client et DentCare Consultation. En cas de commande et de livraison, le client reconnaît avoir préalablement pris connaissance des Conditions Générales de ventes et en accepte tous les termes sans réserve. Aucune condition contraire ne peut être appliquée sauf accord écrit préalable de DentCare.",
+        title: "1. Opposabilités des conditions générales",
+        body: "En passant commande auprès de DentCare Consultation, notamment par l'envoi d'empreinte dentaire accompagne d'un bon de commande ou d'une prescription, le client reconnaît avoir préalablement pris connaissance des Conditions Générales de ventes et les avoir acceptées sans restriction.",
       },
       {
-        title: "2. Devis et commandes",
-        body: "Pour délais Dispositif Médical ou Mesure (DDMM) à établir, un bon de commande dûment rempli doit être adressé en laboratoire avec l'intégralité des informations techniques nécessaires. Pour chaque Dispositif Médical, le bon présente le numéro DDMM ainsi que l'ensemble des caractéristiques. Le client ne peut procéder à aucune modification de son bon de commande une fois celui-ci accepté sans accord écrit préalable de DentCare.",
+        title: "2. COMMANDES DU PRATICIEN",
+        body: "Pour chaque Dispositif Médical Sur Mesure (DMSM) à réaliser, un bon de commande dûment rempli devra être remis au laboratoire avec les empreintes. Il précisera obligatoirement la nature du DMSM à réaliser, les références du patient, la nature des matériaux à utiliser, la teinte, le type morphologique du patient, l'âge, le sexe et la date de livraison souhaitée. Le praticien garantit l'hygiène et l'asepsie des empreintes et travaux délivrés. Il s'engage à accepter les essayages que nous serons amenés à lui demander. Le laboratoire est libéré de son obligation d'exécuter les commandes lors de la survenance d'évènements de force majeure rendant impossible toute livraison. Constituent, notamment, des cas de force majeure : grèves, incendies, accidents, incidents techniques, intempéries ou tout autre fait similaire.",
       },
       {
         title: "3. Prix",
-        body: "Les prix contractuels à la base du devis ou à la base de données au jour de la livraison ou à la base de la commande accepté sont à titre de travail. Pour chaque Dispositif Médical ou Mesure (DDMM) à réaliser, un bon de commande dûment rempli doit être fourni au prix convenu. Tout devis révoqué ou expiré dans les délais conviendront à titre informatif et commande n'en assure pas reproduction.",
+        body: "Nos prix sont facturés sur la base des tarifs en vigueur au jour de la livraison ou sur la base du devis accepté lorsqu'il s'agit de travaux complexes. Les tarifs sont révisables au 1er janvier de chaque année ou suivant les conditions économiques. Nos prix sont exonérés de TVA (CGI art.261, 4-1°).",
       },
       {
-        title: "4. Conditions de paiement",
-        body: "Conformément à l'article L.441 du code de commerce, tout retard dans les paiements entraîne une indemnité de percent à titre de dommages et intérêts. Le client sera tenu de rembourser les frais réels de recouvrement engagés par Dentcare, notamment en cas de contentieux ou de procédure d'encaissement. La responsabilité est proportionnelle au montant non réglé conformément à la jurisprudence applicable.",
+        title: "4. CONDITIONS DE PAIEMENT",
+        body: "Sauf stipulation contraire, nos factures sont payables au comptant sans escompte. Il pourra être exigé le versement d'une provision. Conformément à l'article L 441-6 du code de commerce, tout retard dans les paiements entraîne de plein droit, et sans mise en demeure préalable, le paiement d'intérêts de retard fixés à une fois et demie le taux légal applicable. En cas de retard de paiement, nous nous préservons la faculté de suspendre ou d'annuler les ordres en cours sans préjudice de tous autres recours.",
       },
       {
-        title: "5. Clause de réserve de propriété",
-        body: "Jusqu'au paiement intégral du prix, les biens demeurent la propriété exclusive de Dentcare. Nous nous réservons le droit d'utiliser les photos des cas traités à titre pédagogique ou de présentation lors de formations, publications ou sur le site internet du laboratoire, sauf désaccord écrit du client. L'emballage et l'expédition s'effectuent selon les exigences de sécurité conformément à la logistique du laboratoire.",
+        title: "5. CLAUSE DE RESERVE DE PROPRIETE",
+        body: "La vente n'est parfaite qu'après complet paiement du prix. Nous nous réservons le droit d'exiger la restitution des éléments prothétiques livrés tant qu'ils ne sont pas posés définitivement en bouche. En cas de désaccord, seule l'ordonnance de référé rendue par M. le Président du Tribunal de Grande Instance sera prise en considération.",
       },
       {
-        title: "6. Garantie légale",
-        body: "Conformément à la loi, les produits fournis par DentCare Consultation bénéficient d'une garantie légale. Celle-ci couvre les défauts d'exécution du travail ou les vices cachés relatifs aux articles 1641 et 1648 du code civil. Cette garantie ne s'applique pas à la marchandise livrée au client issues d'une utilisation différente de celle prévue ou en cas de défaut d'entretien.",
+        title: "6. GARANTIE LEGALE",
+        body: "Nous sommes tenus de la garantie des défauts non apparents de la chose vendue, dans les conditions des articles 1641 et suivants du Code Civil étant rappelé qu'entre professionnels appartenant à des spécialités complémentaires, le vendeur n'est pas tenu à garantie lorsque l'acheteur a eu connaissance au moment de la vente, du vice dont la chose était affectée. Il est formellement convenu en outre, que nous serons exonérés de toute garantie à raison des vices non apparents de la chose vendue, ayant leur origine dans un défaut d'objectivité de l'empreinte, une erreur de diagnostic, d'essayage ou de pose, ou dans une modification de la chose intervenue après son achèvement et sa livraison définitive, par notre laboratoire.",
       },
       {
-        title: "7. Responsabilité et modification des conditions",
-        body: "Dentcare se réserve le droit de modifier unilatéralement les conditions tarifaires ou de prise en charge de ses services. Aucune modification de la clause contractuelle intervenue après son acceptation initiale par le client ne peut être effectuée sans accord écrit préalable. La responsabilité civile professionnelle du laboratoire est couverte par une assurance adaptée aux prescriptions légales.",
+        title: "7. GARANTIE CONVENTIONNELLE",
+        body: "Le travail devra être considéré comme achevé, dès lors que le praticien, après tous les essayages, a demandé au prothésiste dentaire de le terminer. Après réception du travail terminé, nous garantissons les vices non apparents de la chose vendue pendant trois années à compter de son achèvement, excepté les provisoires pour lesquels la garantie est de six mois. Aucune garantie n'est due lorsque le vice est dû à une imprudence de l'utilisateur, à une cause étrangère ou à une évolution morphologique ou physiologique.",
       },
       {
-        title: "8. Clauses particulières et litiges contractuels",
-        body: "Toute clause contractuelle complémentaire relative aux conditions spéciales doit faire l'objet d'un accord express et écrit entre les parties. Le client qui refuserait une clause particulière doit formuler ses réserves par écrit. En cas de non-accord, le laboratoire se réserve le droit de refuser la commande ou de proposer une alternative conforme à ses standards de qualité.",
+        title: "8. CLAUSES PARTICULIERES",
+        body: "Les travaux exécutés sur implants et ceux pour lesquels un avis contraire aura été émis par le laboratoire de prothèse dentaire au cours de la fabrication ne sauraient engager la responsabilité du dit laboratoire.",
       },
       {
-        title: "9. Engagements de qualité et conformité réglementaire",
-        body: "Dentcare s'engage à mettre en œuvre des compétences professionnelles et des protocoles de qualité conformément à la Directive 93/42 CEE sur les dispositifs médicaux modifiée et les réglementations nationales applicables. Tous les travaux sont réalisés selon les normes du secteur dentaire en laboratoire interne situé à Hanoï au Vietnam, avec certifications ISO 13485:2016. Le contrôle qualité est effectué selon les procédés validés internes du laboratoire.",
+        title: "9. ENGAGEMENTS DE QUALITE",
+        body: "Nous nous engageons à n'employer que des matières premières et fournitures de qualité, en conformité avec la Directive 93/42 en l'absence de spécification. Nous garantissons l'hygiène du DMSM délivré, mais celui-ci reste un DMSM non stérile.",
       },
       {
-        title: "10. Sous-traitance et responsabilité",
-        body: "Dentcare se réserve le droit de confier la réalisation tout ou en partie de ses prestations à un tiers partenaire agréé. Cette sous-traitance ne dégage aucunement Dentcare de ses responsabilités envers le praticien prescripteur ou le patient final. Le laboratoire reste responsable de la qualité et de la conformité globales de la prestation, indépendamment du recours à des prestataires externes.",
+        title: "10. SOUS-TRAITANCE",
+        body: "Tout ou partie de la réalisation des processus de fabrication sont réalisés à l'étranger au Vietnam.",
       },
       {
-        title: "11. Litiges, réclamations et responsabilités",
-        body: "En cas de non-exécution ou d'exécution défectueuse de la commande, le client doit notifier du litige à Dentcare par écrit dans un délai de 15 jours à compter de la réception de la marchandise. En cas de commande urgente, le laboratoire doit envoyer une notification de mise en urgence pour permettre au client un examen préalable de la marchandise. En cas de litige majeur, le laboratoire est exempté de responsabilité s'il peut démontrer que l'erreur provient de la prescription défaillante du praticien (impression imprécise, mauvaise prise de dimension, données incomplètes, erreur de diagnostic, etc.). La responsabilité est limitée au prix de la prestation en question exclusive de toute indemnité complémentaire.",
+        title: "11. GAMMES",
+        body: "Serenity + cette gamme comprend :\nSélection rigoureuse des Matières Premières ( Ivoclar, Dentaurum, Dental Direkt).\nRespect des processus et des protocoles de fabrication.\nTraçabilité complète de chaque prothèse.\nResponsabilité et declaration de mise sur le marché assuré par DentCare Consultation.\nStructure/ Armature/ brut d'usinage, brut de pressée réalisé en sous-traitance au Vietnam.\nDernière ouvraison substantielle réalisée en France.\nContrôle Qualité réalisé en France.\n\nSerenity cette gamme comprend :\nSélection rigoureuse des Matières Premières ( Ivoclar, Dentaurum, Dental Direkt).\nRespect des processus et des protocoles de fabrication.\nTraçabilité complète de chaque prothèse.\nResponsabilité et declaration de mise sur le marché assuré par DentCare Consultation.\nProcessus de fabrication réalisé au Vietnam.\nContrôle Qualité réalisé au Vietnam.",
+      },
+      {
+        title: "12. LIVRAISONS",
+        body: "Les livraisons sont effectuées par remise directe des produits au client, en colis clos par le laboratoire, par un expéditeur ou un transporteur au cabinet du client. Frais de participation de 15 euros, franco de port à partir de 240 euros de commandes. Les délais de fabrication et de livraison sont de 14 jours à partir de la date de prise de l'empreinte. Toutefois en cas de commande particulière, un délai supplémentaire peut être demandé au client. En cas de commande urgente, le laboratoire peut envisager une livraison plus rapide avec une majoration tarifaire. Les livraisons sont effectuées dans les locaux du client qui s'oblige à les réceptionner. Dans le cas où le client exigerait le dépôt du ou des colis autre que dans ses locaux, sans réception de sa part, sera, dans tous les cas (fait dommageable quelconque, incident ou accident de toute nature) et de convention expresse, inopposable au laboratoire, qui se dégage de toute responsabilité. Les délais de fabrication et de livraison sont donnés à titre purement indicatif et n'engage en aucun cas le laboratoire.",
       },
     ],
   },
   en: {
-    title: "General Terms and Conditions of Sale",
+    title: "GENERAL TERMS AND CONDITIONS OF SALE",
     intro: "DentCare Consultation",
     sections: [
       {
-        title: "1. Applicability of General Conditions",
-        body: "These General Terms and Conditions govern all commercial relations between the client and DentCare Consultation. By placing an order and upon delivery, the client acknowledges having reviewed the General Terms and Conditions of Sale and accepts all terms without reservation. No contrary conditions can be applied except by prior written agreement with DentCare.",
+        title: "1. Enforceability of the General Terms",
+        body: "By placing an order with DentCare Consultation, notably by sending a dental impression accompanied by an order form or prescription, the client acknowledges having read the General Terms and Conditions of Sale in advance and accepts them without restriction.",
       },
       {
-        title: "2. Quotations and Orders",
-        body: "To obtain a Medical Device Quotation or Measurement (DDMM), a properly completed purchase order must be sent to the laboratory with all necessary technical information. For each Medical Device or Measurement, the order form must include the DDMM number and all specifications. The client cannot make any modification to their purchase order once accepted without prior written consent from DentCare.",
+        title: "2. PRACTITIONER ORDERS",
+        body: "For each custom-made medical device (DMSM) to be produced, a duly completed order form must be submitted to the laboratory together with the impressions. It must specify the type of DMSM to be produced, patient references, materials to be used, shade, the patient's morphological type, age, sex, and requested delivery date. The practitioner guarantees hygiene and aseptic handling of submitted impressions and delivered work. The practitioner agrees to accept any try-ins that we may request. The laboratory is released from its obligation to fulfill orders in the event of force majeure making delivery impossible. Force majeure includes, in particular: strikes, fires, accidents, technical incidents, severe weather, or any similar event.",
       },
       {
-        title: "3. Pricing",
-        body: "Contractual prices based on the accepted quotation or as per pricing on the date of delivery apply to the work. For each Medical Device or Measurement (DDMM) to be produced, a properly completed purchase order must be provided at the agreed price. Any revoked or expired quotations are provided for informational purposes only and do not guarantee reproduction or commitment.",
+        title: "3. Prix",
+        body: "Our prices are billed based on the rates in effect on the day of delivery or on the accepted quotation in the case of complex work. Rates are subject to revision on January 1 of each year or according to economic conditions. Our prices are VAT-exempt (French Tax Code, CGI art.261, 4-1 deg).",
       },
       {
-        title: "4. Payment Terms",
-        body: "In accordance with Article L.441 of the Commercial Code, any payment delay incurs penalty interest as damages. The client is responsible for reimbursing all actual collection costs incurred by DentCare, including litigation and collection proceedings. Liability is proportional to the outstanding amount in accordance with applicable case law.",
+        title: "4. PAYMENT TERMS",
+        body: "Unless otherwise stipulated, our invoices are payable in full and without discount. A deposit may be required. In accordance with Article L 441-6 of the French Commercial Code, any late payment automatically gives rise, without prior formal notice, to late-payment interest set at one and a half times the applicable legal rate. In the event of late payment, we reserve the right to suspend or cancel ongoing orders, without prejudice to any other remedies.",
       },
       {
-        title: "5. Retention of Title and Intellectual Property",
-        body: "Until full payment is received, goods remain the exclusive property of DentCare. We reserve the right to use photographs of treated cases for educational purposes, presentations, training sessions, publications, or on the laboratory's website, unless the client objects in writing. Packaging and shipping are carried out according to safety requirements and laboratory logistics standards.",
+        title: "5. RETENTION OF TITLE CLAUSE",
+        body: "The sale is final only after full payment of the price. We reserve the right to require the return of delivered prosthetic elements as long as they have not been permanently placed in the mouth. In the event of disagreement, only an interim order issued by the President of the Tribunal de Grande Instance shall be considered.",
       },
       {
-        title: "6. Legal Warranty and Product Liability",
-        body: "In accordance with law, products supplied by DentCare Consultation come with legal warranty covering defects in workmanship or latent defects related to Articles 1641 and 1648 of the Civil Code. This warranty does not apply to delivered goods resulting from use other than intended or due to lack of maintenance or improper handling.",
+        title: "6. LEGAL WARRANTY",
+        body: "We are bound by warranty for non-apparent defects of the sold item, under the conditions of Articles 1641 and following of the French Civil Code. It is recalled that between professionals in complementary specialties, the seller is not bound by warranty when the buyer was aware at the time of sale of the defect affecting the item. It is also expressly agreed that we are exempt from any warranty for hidden defects originating from lack of objectivity in the impression, diagnostic error, try-in or fitting error, or modification of the item after completion and final delivery by our laboratory.",
       },
       {
-        title: "7. Responsibility and Modification of Terms",
-        body: "DentCare reserves the right to unilaterally modify tariff conditions or service coverage. No modification to contractual terms made after initial client acceptance can be made without prior written agreement. The laboratory's professional liability is covered by appropriate insurance compliant with legal requirements.",
+        title: "7. CONTRACTUAL WARRANTY",
+        body: "Work shall be considered completed when the practitioner, after all try-ins, has asked the dental technician to finalize it. After receipt of the completed work, we warrant non-apparent defects of the sold item for three years from completion, except for temporary prostheses, for which the warranty period is six months. No warranty is due when the defect results from user negligence, an external cause, or morphological or physiological evolution.",
       },
       {
-        title: "8. Special Clauses and Contractual Disputes",
-        body: "Any additional contractual clause relating to special conditions must be expressly agreed upon in writing by both parties. Any client objecting to a particular clause must submit their reservations in writing. In case of disagreement, the laboratory reserves the right to refuse the order or propose an alternative that meets its quality standards.",
+        title: "8. SPECIAL CLAUSES",
+        body: "Work performed on implants, and work for which a contrary opinion was issued by the dental prosthetics laboratory during manufacturing, shall not engage the liability of said laboratory.",
       },
       {
-        title: "9. Quality Commitments and Regulatory Compliance",
-        body: "DentCare commits to implementing professional expertise and quality protocols in accordance with Directive 93/42 EEC on medical devices as amended and applicable national regulations. All work is performed according to dental industry standards in the laboratory located in Hanoi, Vietnam, with ISO 13485:2016 certification. Quality control is performed according to the laboratory's validated internal procedures.",
+        title: "9. QUALITY COMMITMENTS",
+        body: "We undertake to use only quality raw materials and supplies, in compliance with Directive 93/42 in the absence of specific instructions. We guarantee the hygiene of the delivered DMSM; however, it remains a non-sterile DMSM.",
       },
       {
-        title: "10. Subcontracting and Responsibility",
-        body: "DentCare reserves the right to have all or part of its services performed by approved third-party partners. This subcontracting in no way relieves DentCare of its responsibilities to the prescribing practitioner or end patient. The laboratory remains responsible for the overall quality and compliance of the service, regardless of third-party involvement.",
+        title: "10. SUBCONTRACTING",
+        body: "All or part of the manufacturing process is carried out abroad in Vietnam.",
       },
       {
-        title: "11. Disputes, Claims, and Liabilities",
-        body: "In case of non-execution or defective execution of an order, the client must notify DentCare of the dispute in writing within 15 days of receiving the goods. For urgent orders, the laboratory must send an urgent notification to allow the client preliminary inspection. In case of major dispute, the laboratory is exempt from liability if it can demonstrate that the error results from the practitioner's prescription failure (imprecise impression, incorrect measurements, incomplete data, diagnostic error, etc.). Liability is limited to the price of the service in question, excluding any additional compensation.",
+        title: "11. PRODUCT RANGES",
+        body: "Serenity + this range includes:\nRigorous selection of raw materials (Ivoclar, Dentaurum, Dental Direkt).\nCompliance with manufacturing processes and protocols.\nFull traceability of each prosthesis.\nResponsibility and declaration of market release ensured by DentCare Consultation.\nStructure/framework/milling blank/pressed blank produced through subcontracting in Vietnam.\nFinal substantial finishing performed in France.\nQuality control performed in France.\n\nSerenity this range includes:\nRigorous selection of raw materials (Ivoclar, Dentaurum, Dental Direkt).\nCompliance with manufacturing processes and protocols.\nFull traceability of each prosthesis.\nResponsibility and declaration of market release ensured by DentCare Consultation.\nManufacturing process carried out in Vietnam.\nQuality control carried out in Vietnam.",
+      },
+      {
+        title: "12. DELIVERIES",
+        body: "Deliveries are made by direct handover of products to the client, in sealed packages by the laboratory, by a sender or carrier to the client's practice. Participation fee: 15 euros; free shipping from 240 euros of orders. Manufacturing and delivery lead times are 14 days from the date the impression is taken. However, for special orders, an additional delay may be requested from the client. For urgent orders, the laboratory may consider faster delivery with a price surcharge. Deliveries are made to the client's premises, and the client undertakes to receive them. If the client requires that package(s) be left somewhere other than their premises, without reception on their part, then in all cases (any damaging event, incident, or accident of any kind) this shall, by express agreement, be unenforceable against the laboratory, which declines all liability. Manufacturing and delivery times are given for guidance only and in no way bind the laboratory.",
       },
     ],
   },
@@ -126,7 +134,7 @@ export default async function TermsAndConditionsPage({
               className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6"
             >
               <h2 className="font-semibold text-primary-900 mb-2">{section.title}</h2>
-              <p className="text-neutral-700">{section.body}</p>
+              <p className="text-neutral-700 whitespace-pre-line">{section.body}</p>
             </section>
           ))}
         </div>
