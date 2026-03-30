@@ -140,6 +140,8 @@ export default function ClinicalCases(): React.ReactElement {
     number | null
   >(null);
 
+  const doctorName = "Dr. Blavignac";
+
   const macroImages = Array.from({ length: 6 }, (_, i) => i + 1);
 
   useEffect(() => {
@@ -181,8 +183,10 @@ export default function ClinicalCases(): React.ReactElement {
               beforeImage="/images/clinical/before-after/avant-apres-1.jpg"
               afterImage="/images/clinical/before-after/avant-apres-1.jpg"
             />
-            <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("caseTitle")}
+            <p className="mt-4 text-center text-sm font-medium text-neutral-500">
+              <span className="text-neutral-400">{t("caseTitle")}</span>
+              <span className="mx-2 text-neutral-300">/</span>
+              <span className="text-primary-900">{doctorName}</span>
             </p>
           </div>
           <div>
@@ -190,8 +194,10 @@ export default function ClinicalCases(): React.ReactElement {
               beforeImage="/images/clinical/before-after/avant-apres-2.jpg"
               afterImage="/images/clinical/before-after/avant-apres-2.jpg"
             />
-            <p className="text-center text-sm text-neutral-400 mt-3">
-              {t("caseTitle")}
+            <p className="mt-4 text-center text-sm font-medium text-neutral-500">
+              <span className="text-neutral-400">{t("caseTitle")}</span>
+              <span className="mx-2 text-neutral-300">/</span>
+              <span className="text-primary-900">{doctorName}</span>
             </p>
           </div>
         </div>
