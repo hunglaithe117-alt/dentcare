@@ -40,6 +40,7 @@ const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
       "/images/wetransfer/Pict 13  Diagnostic wax  up/fbd6874d-c143-459e-a27a-48f8cf54758d.jpg",
     ],
     stratifiedVeneer: [
+      "/images/wetransfer/pict 12 Facettes stratifiees/IMG_5508.jpg",
       "/images/wetransfer/pict 12 Facettes stratifiees/IMG_5512 2.jpg",
       "/images/wetransfer/pict 12 Facettes stratifiees/PHOTO-2026-03-15-08-41-17.jpg",
     ],
@@ -72,9 +73,13 @@ const PRODUCT_IMAGES: Record<CategoryKey, Record<string, string[]>> = {
   removable: {
     metalFrame: [
       "/images/products/removable/pict-1662.jpg",
+      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-37.jpg",
+      "/images/wetransfer/Pict 17 Chassis/PHOTO-2026-03-15-07-56-47.jpg",
     ],
     biosoft: [
       "/images/products/removable/pict-1512.jpg",
+      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-39.jpg",
+      "/images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg",
     ],
     conventionalResin: [
       "/images/wetransfer/Pict 19 Resine/Capture d’écran 2026-03-21 à 11.55.13.png",
