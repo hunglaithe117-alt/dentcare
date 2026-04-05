@@ -142,7 +142,9 @@ export default function ClinicalCases(): React.ReactElement {
 
   const doctorName = "Dr. Blavignac";
 
-  const macroImages = Array.from({ length: 6 }, (_, i) => i + 1);
+  const macroImages = Array.from({ length: 6 }, (_, i) => i + 1).filter(
+    (num) => num !== 5,
+  );
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent): void => {
