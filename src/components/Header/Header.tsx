@@ -5,8 +5,13 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
-
 const NAV_ITEMS = ["about", "products", "clinical", "organization"] as const;
+const NAV_HASH: Record<(typeof NAV_ITEMS)[number], string> = {
+  about: "about",
+  products: "products",
+  clinical: "macro",
+  organization: "organization",
+};
 const PARTNER_LOGOS = [
   { src: "/images/brands/dentaurum-client.jpg", alt: "Dentaurum" },
   { src: "/images/brands/ivoclar-client.jpg", alt: "Ivoclar" },
@@ -15,7 +20,6 @@ const PARTNER_LOGOS = [
   { src: "/images/brands/emax-client.jpg", alt: "IPS e.max" },
   { src: "/images/brands/erkodent-client.jpg", alt: "Erkodent" },
 ] as const;
-
 
 export default function Header(): React.ReactElement {
   const t = useTranslations("header");
@@ -30,15 +34,6 @@ export default function Header(): React.ReactElement {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = useCallback((id: string): void => {
-    setIsMobileMenuOpen(false);
-    const targetId = id === "clinical" ? "macro" : id;
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
-
   const scrollToTop = useCallback((): void => {
     setIsMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -46,58 +41,65 @@ export default function Header(): React.ReactElement {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${isScrolled
-          ? "glass shadow-lg py-3"
-          : "bg-transparent py-5"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-[background,box-shadow,padding] duration-500 ${
+        isScrolled ? "glass shadow-lg py-3" : "bg-transparent py-5"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
-        {/* Logo */}
         <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <div 
-            className="flex items-center gap-2 group cursor-pointer"
+          <button
+            type="button"
             onClick={scrollToTop}
+            aria-label={t("logoHome")}
+            className="flex items-center gap-2 group cursor-pointer rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-500"
           >
             <Image
               src={isScrolled ? "/logo-dark.svg" : "/logo-light.svg"}
-              alt="DentCare Logo"
+              alt=""
               width={240}
               height={60}
-              className="h-auto w-36 sm:w-44 md:w-52 lg:w-60 drop-shadow-sm transition-transform group-hover:scale-105 object-contain"
+              className="h-auto w-36 sm:w-44 md:w-52 lg:w-60 drop-shadow-sm transition-[transform] duration-300 group-hover:scale-105 object-contain"
             />
-          </div>
+          </button>
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label={t("mainNav")}>
           {NAV_ITEMS.map((item) => (
-            <button
+            <a
               key={item}
-              onClick={() => handleNavClick(item)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-white/10 ${isScrolled
+              href={`#${NAV_HASH[item]}`}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-white/10 ${
+                isScrolled
                   ? "text-neutral-700 hover:text-primary-900 hover:bg-primary-50"
                   : "text-white/90 hover:text-white"
-                }`}
+              }`}
             >
               {t(item)}
-            </button>
+            </a>
           ))}
         </nav>
 
-        {/* Right side */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <LanguageSwitcher isScrolled={isScrolled} />
 
-          {/* Social icons */}
           <div className="hidden md:flex items-center gap-2">
             <a
               href="https://www.instagram.com/dentcare.consultation?IGsh=dnRid2s3b3plc2l2&utm_sour"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-500 ${
+                isScrolled
+                  ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50"
+                  : "text-white/70 hover:text-white hover:bg-white/10"
+              }`}
               aria-label="Instagram"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden
+              >
                 <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.9 1.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" />
               </svg>
             </a>
@@ -105,60 +107,87 @@ export default function Header(): React.ReactElement {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-500 ${
+                isScrolled
+                  ? "text-neutral-500 hover:text-primary-900 hover:bg-primary-50"
+                  : "text-white/70 hover:text-white hover:bg-white/10"
+              }`}
               aria-label="Facebook"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden
+              >
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
           </div>
 
-          {/* Contact CTA */}
-          <button
-            onClick={() => handleNavClick("contact")}
-            className="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-600/20"
+          <a
+            href="#contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-500"
           >
             {t("contact")}
-          </button>
+          </a>
 
-          {/* Mobile hamburger */}
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="lg:hidden p-2 rounded-lg"
-            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-label={t("toggleMenu")}
+            className={`lg:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+              isScrolled
+                ? "focus-visible:ring-primary-600 focus-visible:ring-offset-white"
+                : "focus-visible:ring-white focus-visible:ring-offset-primary-900/40"
+            }`}
           >
-            <div className="space-y-1.5">
-              <span className={`block w-5 h-0.5 transition-all ${isScrolled ? "bg-neutral-800" : "bg-white"} ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-5 h-0.5 transition-all ${isScrolled ? "bg-neutral-800" : "bg-white"} ${isMobileMenuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-5 h-0.5 transition-all ${isScrolled ? "bg-neutral-800" : "bg-white"} ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <div className="space-y-1.5" aria-hidden>
+              <span
+                className={`block w-5 h-0.5 transition-[transform,opacity] duration-200 ${
+                  isScrolled ? "bg-neutral-800" : "bg-white"
+                } ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+              />
+              <span
+                className={`block w-5 h-0.5 transition-opacity duration-200 ${
+                  isScrolled ? "bg-neutral-800" : "bg-white"
+                } ${isMobileMenuOpen ? "opacity-0" : ""}`}
+              />
+              <span
+                className={`block w-5 h-0.5 transition-[transform] duration-200 ${
+                  isScrolled ? "bg-neutral-800" : "bg-white"
+                } ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+              />
             </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
+      {isMobileMenuOpen ? (
         <div className="lg:hidden glass border-t border-neutral-100 animate-fade-in">
           <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
             {NAV_ITEMS.map((item) => (
-              <button
+              <a
                 key={item}
-                onClick={() => handleNavClick(item)}
-                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-lg font-medium transition-colors"
+                href={`#${NAV_HASH[item]}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-left text-neutral-700 hover:text-primary-900 hover:bg-primary-50 rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-500"
               >
                 {t(item)}
-              </button>
+              </a>
             ))}
-            <button
-              onClick={() => handleNavClick("contact")}
-              className="mt-2 px-4 py-3 bg-accent-600 text-white rounded-lg font-semibold text-center hover:bg-accent-700 transition-colors"
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 px-4 py-3 bg-accent-600 text-white rounded-lg font-semibold text-center hover:bg-accent-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-500"
             >
               {t("contact")}
-            </button>
+            </a>
           </div>
         </div>
-      )}
+      ) : null}
 
       <div className="hidden xl:flex fixed right-4 top-24 z-50 flex-col gap-2">
         {PARTNER_LOGOS.map((logo) => (

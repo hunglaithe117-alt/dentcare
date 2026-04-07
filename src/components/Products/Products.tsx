@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 const CATEGORY_KEYS = ["crowns", "veneers", "implants", "removable"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
@@ -141,11 +141,10 @@ export default function Products(): React.ReactElement {
     [],
   );
 
-  useEffect(() => {
-    if (!selectedProduct) {
-      setSelectedImageIndex(0);
-    }
-  }, [selectedProduct]);
+  const closeProductDetails = useCallback((): void => {
+    setSelectedProduct(null);
+    setSelectedImageIndex(0);
+  }, []);
 
   return (
     <section
@@ -171,7 +170,7 @@ export default function Products(): React.ReactElement {
             <button
               key={key}
               onClick={() => handleCategoryChange(key)}
-              className={`px-6 py-3 rounded-full font-medium text-sm transition-all tracking-wide ${
+              className={`px-6 py-3 rounded-full font-medium text-sm transition-[background-color,color,box-shadow,border-color] tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-900 ${
                 activeCategory === key
                   ? "bg-primary-900 text-white shadow-lg shadow-primary-900/25"
                   : "bg-white text-neutral-600 hover:bg-primary-50 hover:text-primary-900 border border-neutral-200"
@@ -199,7 +198,7 @@ export default function Products(): React.ReactElement {
                   openProductDetails(activeCategory, productKey);
                 }
               }}
-              className="group cursor-pointer bg-white rounded-2xl border border-neutral-100 p-6 hover:border-accent-200 hover:shadow-xl hover:shadow-accent-100/30 transition-all hover:-translate-y-1"
+              className="group cursor-pointer bg-white rounded-2xl border border-neutral-100 p-6 hover:border-accent-200 hover:shadow-xl hover:shadow-accent-100/30 transition-[transform,box-shadow,border-color] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Product image placeholder */}
@@ -306,12 +305,12 @@ export default function Products(): React.ReactElement {
         {selectedProduct && (
           <div
             className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm p-4 sm:p-8 overflow-y-auto"
-            onClick={() => setSelectedProduct(null)}
+            onClick={closeProductDetails}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                setSelectedProduct(null);
+                closeProductDetails();
               }
             }}
           >
@@ -334,7 +333,7 @@ export default function Products(): React.ReactElement {
                 </div>
                 <button
                   type="button"
-                  onClick={() => setSelectedProduct(null)}
+                  onClick={closeProductDetails}
                   className="inline-flex items-center justify-center rounded-full bg-primary-900 px-4 py-2 text-xs font-semibold text-white hover:bg-primary-800 transition-colors"
                 >
                   {t("detail.close")}

@@ -18,6 +18,8 @@ export default function HeroBanner(): React.ReactElement {
 
   useEffect(() => {
     if (HERO_IMAGES.length <= 1) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
     const id = window.setInterval(() => {
       setActiveImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 6200);
@@ -26,7 +28,11 @@ export default function HeroBanner(): React.ReactElement {
 
   const handleScroll = (id: string): void => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (!el) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
   };
 
   return (
@@ -40,10 +46,11 @@ export default function HeroBanner(): React.ReactElement {
           <Image
             key={src}
             src={src}
-            alt="DentCare Hero"
+            alt=""
             fill
-            className={`object-cover transition-[opacity,transform,filter] duration-[2600ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform ${index === activeImageIndex ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-[1.04] blur-[1px]"}`}
+            className={`object-cover transition-[opacity,transform,filter] duration-[2600ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none ${index === activeImageIndex ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-[1.04] blur-[1px]"}`}
             priority={index === 0}
+            aria-hidden={index !== activeImageIndex}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/70 to-primary-950/75" />
@@ -72,14 +79,16 @@ export default function HeroBanner(): React.ReactElement {
           style={{ animationDelay: "0.4s" }}
         >
           <button
+            type="button"
             onClick={() => handleScroll("products")}
-            className="px-8 py-3.5 bg-accent-600 hover:bg-accent-700 text-white font-semibold rounded-lg transition-colors text-base shadow-lg shadow-accent-600/30"
+            className="px-8 py-3.5 bg-accent-600 hover:bg-accent-700 text-white font-semibold rounded-lg transition-colors text-base shadow-lg shadow-accent-600/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-950/80"
           >
             {t("cta")}
           </button>
           <button
+            type="button"
             onClick={() => handleScroll("macro")}
-            className="px-8 py-3.5 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 transition-colors text-base"
+            className="px-8 py-3.5 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-950/80"
           >
             {t("ctaQuote")}
           </button>
@@ -97,7 +106,7 @@ export default function HeroBanner(): React.ReactElement {
               key={`hero-dot-${index}`}
               type="button"
               onClick={() => setActiveImageIndex(index)}
-              className={`h-1 rounded-full transition-all duration-700 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 ${
+              className={`h-1 rounded-full transition-[width,background-color] duration-700 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 ${
                 index === activeImageIndex ? "w-7 bg-white/95" : "w-3.5 bg-white/30 hover:bg-white/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -106,7 +115,10 @@ export default function HeroBanner(): React.ReactElement {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 motion-safe:animate-bounce"
+        aria-hidden
+      >
         <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
           <div className="w-1 h-2.5 rounded-full bg-white/50" />
         </div>

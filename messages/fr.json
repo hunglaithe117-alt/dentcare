@@ -5,7 +5,11 @@
     "clinical": "Cas Clinique",
     "organization": "Organisation",
     "faq": "FAQ",
-    "contact": "Nous Contacter"
+    "contact": "Nous Contacter",
+    "logoHome": "Retour en haut — accueil DentCare",
+    "chooseLanguage": "Choisir la langue",
+    "toggleMenu": "Ouvrir ou fermer le menu",
+    "mainNav": "Navigation principale"
   },
   "hero": {
     "title": "L'Excellence au Service de Votre Sourire",
@@ -152,11 +156,19 @@
     "sectionTitle": "Cas Cliniques",
     "sectionSubtitle": "La preuve par l'image — découvrez nos réalisations",
     "description": "Découvrez notre expertise en esthétique dentaire à travers ces cas cliniques. Chaque réalisation reflète notre engagement envers la qualité et la conservation dentaire.",
-    "caseTitle": "Cas Clinique DentCare",
-    "before": "Avant",
-    "after": "Après",
-    "dragToCompare": "Glissez pour comparer",
-    "beforeAfterPending": "Les visuels avant/apres seront remplaces des reception des nouvelles photos patients validees par le client.",
+    "closePreview": "Fermer l’aperçu",
+    "openGallery": "Ouvrir la série",
+    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "previousImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "galleryItemAlt": "{category} — image {current} sur {total}",
+    "caseCategoryBridge": "Bridge collé",
+    "caseCategoryLevitation": "Facettes — levitation",
+    "caseCategoryMan": "Cas esthétiques (homme)",
+    "caseCategoryTechnique": "Technique & détail",
+    "macroImageAlt": "Photographie macro dentaire {num}",
+    "standaloneAlt": "Photographie laboratoire hors-série, cliché {n} sur {total}",
+    "standaloneEnlarge": "Voir en grand",
     "macroTitle": "Précision Macro",
     "macroSubtitle": "Détails, texture et translucidité — la signature DentCare"
   },
@@ -291,9 +303,13 @@
     "tagline": "Laboratoire spécialisé en Esthétique et Implantologie"
   },
   "cookie": {
+    "bannerLabel": "Cookies et confidentialité",
     "message": "Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies.",
     "accept": "Accepter",
     "decline": "Refuser",
     "learnMore": "En savoir plus"
+  },
+  "a11y": {
+    "scrollToTop": "Remonter en haut de la page"
   }
 }

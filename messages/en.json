@@ -5,7 +5,11 @@
     "clinical": "Clinical Cases",
     "organization": "Organization",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "logoHome": "Back to top — DentCare home",
+    "chooseLanguage": "Choose language",
+    "toggleMenu": "Open or close menu",
+    "mainNav": "Main navigation"
   },
   "hero": {
     "title": "Excellence at the Service of Your Smile",
@@ -152,11 +156,19 @@
     "sectionTitle": "Clinical Cases",
     "sectionSubtitle": "Proof through images — discover our achievements",
     "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
-    "caseTitle": "DentCare Clinical Case",
-    "before": "Before",
-    "after": "After",
-    "dragToCompare": "Drag to compare",
-    "beforeAfterPending": "Before/after patient visuals will be replaced as soon as the client sends the new approved images.",
+    "closePreview": "Close image preview",
+    "openGallery": "Open series",
+    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "galleryItemAlt": "{category} — clinical image {current} of {total}",
+    "caseCategoryBridge": "Bonded bridge",
+    "caseCategoryLevitation": "Veneers — levitation",
+    "caseCategoryMan": "Male aesthetic cases",
+    "caseCategoryTechnique": "Technique & detail",
+    "macroImageAlt": "Dental macro photograph {num}",
+    "standaloneAlt": "Standalone laboratory photograph {n} of {total}",
+    "standaloneEnlarge": "View larger",
     "macroTitle": "Macro Precision",
     "macroSubtitle": "Details, texture and translucency — the DentCare signature"
   },
@@ -291,9 +303,13 @@
     "tagline": "Laboratory specialized in Aesthetics and Implantology"
   },
   "cookie": {
+    "bannerLabel": "Cookies and privacy",
     "message": "This site uses cookies to improve your experience. By continuing, you accept our use of cookies.",
     "accept": "Accept",
     "decline": "Decline",
     "learnMore": "Learn More"
+  },
+  "a11y": {
+    "scrollToTop": "Scroll to top"
   }
 }
