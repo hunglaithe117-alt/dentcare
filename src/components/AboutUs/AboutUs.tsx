@@ -94,10 +94,10 @@ export default function AboutUs(): React.ReactElement {
               <Image
                 src="/images/about/founder-signature.svg"
                 alt={t("signatureAlt")}
-                width={300}
-                height={95}
+                width={450}
+                height={143}
                 unoptimized
-                className="h-28 sm:h-32 w-auto opacity-90"
+                className="h-[168px] sm:h-[192px] w-auto max-w-full opacity-90"
               />
             </div>
           </div>

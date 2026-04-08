@@ -18,7 +18,11 @@ const SHIPPING_PARTNERS = [
   { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
   { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
   { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
-  { name: "Deliverbag", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg" },
+  {
+    name: "Deliverbag",
+    logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg",
+    href: "https://www.deliverbag.com",
+  },
 ] as const;
 
 export default function Organization(): React.ReactElement {
@@ -208,19 +212,39 @@ export default function Organization(): React.ReactElement {
         <div className="mb-4 rounded-2xl border border-accent-200 bg-white p-5 sm:p-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {SHIPPING_PARTNERS.map((partner) => (
-              <div
-                key={partner.name}
-                className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20"
-                title={partner.name}
-              >
-                <Image
-                  src={partner.logoSrc}
-                  alt={partner.name}
-                  width={180}
-                  height={80}
-                  className="max-h-14 w-auto object-contain"
-                />
-              </div>
+              partner.href ? (
+                <a
+                  key={partner.name}
+                  href={partner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+                  title={partner.name}
+                  aria-label={`Open ${partner.name} website`}
+                >
+                  <Image
+                    src={partner.logoSrc}
+                    alt={partner.name}
+                    width={180}
+                    height={80}
+                    className="max-h-14 w-auto object-contain"
+                  />
+                </a>
+              ) : (
+                <div
+                  key={partner.name}
+                  className="rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 flex items-center justify-center h-20"
+                  title={partner.name}
+                >
+                  <Image
+                    src={partner.logoSrc}
+                    alt={partner.name}
+                    width={180}
+                    height={80}
+                    className="max-h-14 w-auto object-contain"
+                  />
+                </div>
+              )
             ))}
           </div>
         </div>
