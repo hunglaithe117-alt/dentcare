@@ -14,7 +14,13 @@ import { useState } from "react";
 
 type PolicyKey = "traceability" | "market" | "warranty" | "terms";
 
-const SHIPPING_PARTNERS = [
+type ShippingPartner = {
+  readonly name: string;
+  readonly logoSrc: string;
+  readonly href?: string;
+};
+
+const SHIPPING_PARTNERS: readonly ShippingPartner[] = [
   { name: "DHL", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1628.jpg" },
   { name: "Chronopost", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1629.jpg" },
   { name: "TNT / FedEx", logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1630.jpg" },
@@ -23,7 +29,7 @@ const SHIPPING_PARTNERS = [
     logoSrc: "/images/wetransfer/Logo livraison dans toute la france/IMG_1631.jpg",
     href: "https://www.deliverbag.com",
   },
-] as const;
+];
 
 export default function Organization(): React.ReactElement {
   const t = useTranslations("organization");
