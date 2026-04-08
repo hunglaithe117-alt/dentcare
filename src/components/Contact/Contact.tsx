@@ -106,7 +106,7 @@ export default function Contact(): React.ReactElement {
             <span className="text-accent-500 font-semibold text-sm tracking-widest uppercase">
               {t("sectionTitle")}
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mt-3">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mt-3 text-pretty">
               {t("sectionSubtitle")}
             </h2>
           </div>
@@ -131,10 +131,11 @@ export default function Contact(): React.ReactElement {
                         id="contact-name"
                         type="text"
                         name="name"
+                        autoComplete="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none transition-colors text-primary-900 placeholder-slate-300 text-base"
+                        className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none focus-visible:ring-2 focus-visible:ring-primary-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm transition-colors text-primary-900 placeholder-slate-300 text-base"
                       />
                     </div>
                     <div className="flex flex-col gap-1 w-full">
@@ -148,10 +149,13 @@ export default function Contact(): React.ReactElement {
                         id="contact-email"
                         type="email"
                         name="email"
+                        autoComplete="email"
+                        spellCheck={false}
+                        inputMode="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none transition-colors text-primary-900 placeholder-slate-300 text-base"
+                        className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none focus-visible:ring-2 focus-visible:ring-primary-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm transition-colors text-primary-900 placeholder-slate-300 text-base"
                       />
                     </div>
                   </div>
@@ -166,9 +170,11 @@ export default function Contact(): React.ReactElement {
                       id="contact-phone"
                       type="tel"
                       name="phone"
+                      autoComplete="tel"
+                      inputMode="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none transition-colors text-primary-900 placeholder-slate-300 text-base"
+                      className="w-full h-12 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none focus-visible:ring-2 focus-visible:ring-primary-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm transition-colors text-primary-900 placeholder-slate-300 text-base"
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
@@ -181,18 +187,19 @@ export default function Contact(): React.ReactElement {
                     <textarea
                       id="contact-message"
                       name="message"
+                      autoComplete="off"
                       value={formData.message}
                       onChange={handleChange}
                       required
                       rows={1}
-                      className="w-full h-auto min-h-[48px] pt-3 pb-2 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none transition-colors text-primary-900 placeholder-slate-300 text-base resize-y"
+                      className="w-full h-auto min-h-[48px] pt-3 pb-2 bg-transparent border-b border-slate-400 focus:border-primary-900 outline-none focus-visible:ring-2 focus-visible:ring-primary-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm transition-colors text-primary-900 placeholder-slate-300 text-base resize-y"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="h-14 px-8 bg-primary-900 hover:bg-primary-800 disabled:bg-slate-400 text-white font-medium text-[14px] uppercase tracking-[0.7px] transition-all flex items-center justify-center gap-2 mt-4 cursor-pointer"
+                    className="h-14 px-8 bg-primary-900 hover:bg-primary-800 disabled:bg-slate-400 text-white font-medium text-[14px] uppercase tracking-[0.7px] transition-[background-color,opacity] flex items-center justify-center gap-2 mt-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-900"
                   >
                     {status === "sending"
                       ? t("form.sending")
@@ -214,17 +221,26 @@ export default function Contact(): React.ReactElement {
                     )}
                   </button>
 
-                  {status === "success" && (
-                    <p className="text-emerald-600 font-medium flex items-center gap-2 text-sm mt-4">
-                      <Check className="w-4 h-4 stroke-[2]" />{" "}
+                  {status === "success" ? (
+                    <p
+                      className="text-emerald-600 font-medium flex items-center gap-2 text-sm mt-4"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      <Check className="w-4 h-4 stroke-[2]" aria-hidden />{" "}
                       {t("form.success")}
                     </p>
-                  )}
-                  {status === "error" && (
-                    <p className="text-red-500 font-medium flex items-center gap-2 text-sm mt-4">
-                      <X className="w-4 h-4 stroke-[2]" /> {t("form.error")}
+                  ) : null}
+                  {status === "error" ? (
+                    <p
+                      className="text-red-500 font-medium flex items-center gap-2 text-sm mt-4"
+                      role="alert"
+                      aria-live="polite"
+                    >
+                      <X className="w-4 h-4 stroke-[2]" aria-hidden />{" "}
+                      {t("form.error")}
                     </p>
-                  )}
+                  ) : null}
                 </form>
               </div>
 
@@ -242,7 +258,7 @@ export default function Contact(): React.ReactElement {
                     }}
                     tabIndex={0}
                     role="button"
-                    className={`p-5 rounded-2xl text-left transition-all border outline-none cursor-pointer ${activeLocation === loc
+                    className={`p-5 rounded-2xl text-left transition-[border-color,background-color,box-shadow] border outline-none cursor-pointer ${activeLocation === loc
                       ? "border-primary-500 bg-primary-50 shadow-md ring-1 ring-primary-500/20"
                       : "border-slate-200 bg-white hover:border-primary-300 hover:bg-slate-50 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary-500"
                       }`}

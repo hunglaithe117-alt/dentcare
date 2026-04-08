@@ -30,19 +30,28 @@ export default function CookieBanner(): React.ReactElement | null {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-fade-in-up">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border border-neutral-100 p-5 flex flex-col sm:flex-row items-center gap-4">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-fade-in-up"
+      role="region"
+      aria-label={t("bannerLabel")}
+    >
+      <div
+        className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border border-neutral-100 p-5 flex flex-col sm:flex-row items-center gap-4"
+        aria-live="polite"
+      >
         <p className="text-sm text-neutral-600 flex-1">{t("message")}</p>
         <div className="flex gap-3 shrink-0">
           <button
+            type="button"
             onClick={handleDecline}
-            className="px-4 py-2 text-sm font-medium text-neutral-500 hover:text-neutral-700 transition-colors rounded-lg hover:bg-neutral-100"
+            className="px-4 py-2 text-sm font-medium text-neutral-500 hover:text-neutral-700 transition-colors rounded-lg hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2"
           >
             {t("decline")}
           </button>
           <button
+            type="button"
             onClick={handleAccept}
-            className="px-5 py-2 text-sm font-semibold text-white bg-primary-900 hover:bg-primary-800 transition-colors rounded-lg"
+            className="px-5 py-2 text-sm font-semibold text-white bg-primary-900 hover:bg-primary-800 transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2"
           >
             {t("accept")}
           </button>

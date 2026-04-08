@@ -5,7 +5,11 @@
     "clinical": "Clinical Cases",
     "organization": "Organization",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "logoHome": "Back to top — DentCare home",
+    "chooseLanguage": "Choose language",
+    "toggleMenu": "Open or close menu",
+    "mainNav": "Main navigation"
   },
   "hero": {
     "title": "Excellence at the Service of Your Smile",
@@ -152,11 +156,19 @@
     "sectionTitle": "Clinical Cases",
     "sectionSubtitle": "Proof through images — discover our achievements",
     "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
-    "caseTitle": "DentCare Clinical Case",
-    "before": "Before",
-    "after": "After",
-    "dragToCompare": "Drag to compare",
-    "beforeAfterPending": "Before/after patient visuals will be replaced as soon as the client sends the new approved images.",
+    "closePreview": "Close image preview",
+    "openGallery": "Open series",
+    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "galleryItemAlt": "{category} — clinical image {current} of {total}",
+    "caseCategoryBridge": "Bonded bridge",
+    "caseCategoryLevitation": "Veneers — levitation",
+    "caseCategoryMan": "Male aesthetic cases",
+    "caseCategoryTechnique": "Technique & detail",
+    "macroImageAlt": "Dental macro photograph {num}",
+    "standaloneAlt": "Standalone laboratory photograph {n} of {total}",
+    "standaloneEnlarge": "View larger",
     "macroTitle": "Macro Precision",
     "macroSubtitle": "Details, texture and translucency — the DentCare signature"
   },
@@ -236,15 +248,15 @@
     "items": [
       {
         "question": "What is the typical turnaround time for prosthesis fabrication?",
-        "answer": "Our standard turnaround time is 5-7 business days for most prostheses, depending on complexity and materials selected. Expedited orders with 2-3 day turnaround are available for urgent cases. We coordinate closely with your clinic to ensure production schedules meet your patient treatment plans."
+        "answer": "Our standard turnaround time is 14 business days on a traditional workflow for most prostheses, depending on complexity and materials. The digital workflow allows us to process orders with a 10-day turnaround. We coordinate closely with your clinic to ensure production schedules align with your appointments."
       },
       {
         "question": "Which materials and brands does DentCare use for manufacturing?",
-        "answer": "We work exclusively with premium-grade materials and respected brands including Vivodent SPE Triumph tooth sets, high-grade zirconia, E.max lithium disilicate ceramic, and titanium implant solutions. All materials are sourced from certified suppliers and comply with ISO 13485 and FDA standards. We can accommodate specific material preferences from our clients."
+        "answer": "We work exclusively with premium-grade materials and recognized brands: Vivodent SPE tooth sets, Triumph, high-performance zirconia, E.max lithium disilicate ceramic. All materials come from certified suppliers and comply with ISO 13485 and FDA standards."
       },
       {
         "question": "Do you offer digital workflow integration with intraoral scanners?",
-        "answer": "Yes, we offer complete digital workflow integration. Our Bordeaux laboratory has integrated scanning services for impression digitization, implant planning, and digital design. We accept digital files from popular scanners including TRIOS, iTero, Cerec Omnicam, and Standard formats (STL, OBJ). This ensures maximum precision and speeds up the design process."
+        "answer": "Yes, we offer complete integration of the digital workflow. Our Bordeaux laboratory also features an integrated scanning service for impression digitization. We accept digital files from major scanners: TRIOS, iTero, Cerec Omnicam, and standard STL formats."
       },
       {
         "question": "Is DentCare certified for medical device manufacturing?",
@@ -252,11 +264,11 @@
       },
       {
         "question": "Can DentCare handle complex implant cases?",
-        "answer": "Absolutely. Our specialized implant team has extensive experience with screw-retained solutions, cement-retained bridges, all-on implant rehabilitations, and complex multi-implant cases. We provide virtual implant planning using advanced CAD software and can create surgical guides and custom abutments as needed."
+        "answer": "Absolutely. Our specialized implantology team has extensive experience with screw-retained solutions, cement-retained bridges, all-on implant rehabilitations, and complex multi-implant cases. We can mill customized abutments."
       },
       {
         "question": "What warranty and after-sales support does DentCare provide?",
-        "answer": "We provide a 5-year warranty against manufacturing defects on all prostheses. Our warranty covers material defects and craftsmanship but excludes damage from handling or patient factors. We offer prompt modifications, repairs, and after-sales service through our Bordeaux coordination center to ensure your patients have ongoing support."
+        "answer": "We offer a 3-year warranty against manufacturing defects. The warranty covers material and manufacturing defects, but excludes damage related to handling or the patient. We offer quick modifications, repairs, and after-sales service through our coordination laboratory in Bordeaux."
       },
       {
         "question": "How does DentCare ensure precision in digital design?",
@@ -264,17 +276,19 @@
       },
       {
         "question": "Does DentCare ship internationally?",
-        "answer": "Yes, we ship throughout France and internationally. We work with reputable logistics partners to ensure secure, timely delivery. International orders are handled with proper customs documentation and packaging. We can accommodate urgent international shipments when required. Contact our team for specific international quotes."
+        "answer": "Yes, we deliver in France and Europe. We work with reputable logistics partners to ensure secure and fast delivery."
       },
       {
         "question": "What is the difference between monolithic and layered zirconia?",
-        "answer": "Monolithic zirconia restorations feature full-thickness zirconia material, offering superior strength and fracture resistance—ideal for high-stress posterior areas. Layered zirconia combines a zirconia core with hand-applied ceramic veneering, providing exceptional esthetic results with natural translucency and shade variation—perfect for visible anterior regions."
+        "answer": "Monolithic zirconia offers superior strength and fracture resistance — ideal for posterior areas. Layered zirconia combines a zirconia framework with hand-applied ceramic, delivering exceptional esthetic results with natural translucency and shade variation — perfect for anterior areas."
       },
       {
         "question": "Can DentCare accommodate custom specifications for complex cases?",
-        "answer": "Yes, we specialize in handling complex and customized cases. Our experienced team can work with custom anatomical specifications, unique color requirements, and specialized designs. We encourage direct communication with your clinic during the design phase to ensure the final prosthesis perfectly matches your clinical requirements."
+        "answer": "Yes, we excel in the treatment of complex and customized cases. We encourage direct communication during the design phase to guarantee a perfect match with your clinical requirements."
       }
-    ]
+    ],
+    "additionalInfo": "Didn't find your answer? We're here to help!",
+    "contactUs": "Contact Us"
   },
   "footer": {
     "company": "Dentcare Consultation SASU",
@@ -289,9 +303,13 @@
     "tagline": "Laboratory specialized in Aesthetics and Implantology"
   },
   "cookie": {
+    "bannerLabel": "Cookies and privacy",
     "message": "This site uses cookies to improve your experience. By continuing, you accept our use of cookies.",
     "accept": "Accept",
     "decline": "Decline",
     "learnMore": "Learn More"
+  },
+  "a11y": {
+    "scrollToTop": "Scroll to top"
   }
 }

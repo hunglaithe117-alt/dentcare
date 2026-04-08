@@ -104,7 +104,7 @@ export default function Organization(): React.ReactElement {
         {/* Lab Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-10">
           {/* Hanoi Lab */}
-          <div className="bg-white rounded-2xl border border-neutral-100 p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="bg-white rounded-2xl border border-neutral-100 p-8 hover:shadow-xl transition-[transform,box-shadow] hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center shrink-0 border border-red-100">
                 <span className="text-xl font-heading font-bold text-red-600">
@@ -155,7 +155,7 @@ export default function Organization(): React.ReactElement {
           </div>
 
           {/* Bordeaux Lab */}
-          <div className="bg-white rounded-2xl border border-neutral-100 p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="bg-white rounded-2xl border border-neutral-100 p-8 hover:shadow-xl transition-[transform,box-shadow] hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 border border-blue-100">
                 <span className="text-xl font-heading font-bold text-blue-600">
