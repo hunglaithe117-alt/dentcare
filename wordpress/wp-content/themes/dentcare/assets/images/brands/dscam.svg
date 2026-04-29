@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-labelledby="title">
+  <title>DScam logo placeholder</title>
+  <rect x="2" y="2" width="356" height="116" rx="20" fill="#f3e8ff" stroke="#7e22ce" stroke-width="4"/>
+  <circle cx="56" cy="60" r="22" fill="#7e22ce"/>
+  <circle cx="56" cy="60" r="8" fill="#fff"/>
+  <text x="95" y="66" font-family="Tahoma, sans-serif" font-size="34" font-weight="700" fill="#6b21a8">DScam</text>
+</svg>

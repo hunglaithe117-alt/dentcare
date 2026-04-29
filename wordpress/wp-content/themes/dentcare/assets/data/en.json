@@ -1,0 +1,315 @@
+{
+  "header": {
+    "about": "About Us",
+    "products": "Products",
+    "clinical": "Clinical Cases",
+    "organization": "Organization",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "logoHome": "Back to top — DentCare home",
+    "chooseLanguage": "Choose language",
+    "toggleMenu": "Open or close menu",
+    "mainNav": "Main navigation"
+  },
+  "hero": {
+    "title": "Excellence at the Service of Your Smile",
+    "subtitle": "Laboratory Specialized in Aesthetics and Implantology — Over 30 Years of Expertise Serving Dental Professionals",
+    "cta": "Discover Our Products",
+    "ctaQuote": "Our Achievements"
+  },
+  "about": {
+    "sectionTitle": "DentCare DNA",
+    "sectionSubtitle": "Our story, our passion, our commitment",
+    "founderName": "Mr. Casteran Olivier",
+    "founderRole": "Founder — DentCare Consultation",
+    "signatureAlt": "Founder signature",
+    "history": {
+      "title": "Mr. Casteran Olivier",
+      "description": "My professional journey has led me to numerous experiences across France and internationally, as well as the creation of structures ranging from 15 to 120 employees.\n\nI possess an in-depth understanding of the demands of our activities, and the necessary close collaboration between the Dental clinic and the laboratory.\n\nOver my 30 years of professional practice, into which I have invested heavily and achieved much my experience, my expertise, and my choices led me to create DentCare Consultation in 2017 to meet the precise needs of dental practices.\n\nTo achieve this, I rely on two production sites: Hanoi (Vietnam) and Bordeaux (France).\n\nSupporting your clinic daily in all prosthetic projects; our availability, attentiveness, communication, and proximity are our greatest assets.\n\nMy teams and I are fully invested and committed to quality, adhering strictly to working procedures and protocols. The Hanoi laboratory is ISO 13485 certified.\n\nMy ambition is to deliver excellent work at a reasonable cost."
+    },
+    "method": {
+      "title": "Working Method",
+      "description": "Complete mastery of the digital workflow: intraoral scanner, 3D printing, Zirconia milling, and implantology. Every step is controlled to guarantee absolute precision and results that exceed your expectations. Our team utilizes state-of-the-art CAD software for digital design, high-precision manufacturing equipment, and rigorous quality control protocols at every stage of production. We combine traditional craftsmanship with cutting-edge technology to deliver prosthetics that are both functionally superior and esthetically superior. Each prosthesis undergoes multiple quality checks before delivery to ensure it meets the highest international standards. Our commitment to excellence means your patients receive restorations that restore not just function, but also natural appearance and long-term durability.",
+      "scanner": "Intraoral Scanner",
+      "printing": "3D Printing",
+      "milling": "Zirconia Milling",
+      "implant": "Implantology"
+    },
+    "certification": {
+      "title": "Quality Certification",
+      "description": "ISO 13485 certified production — a guarantee of quality, traceability, and compliance with the most demanding international standards.",
+      "badge": "ISO 13485 Certified"
+    }
+  },
+  "products": {
+    "sectionTitle": "Our Products",
+    "sectionSubtitle": "High-precision prosthetic solutions",
+    "labels": {
+      "materials": "Raw Materials",
+      "digitalFlow": "Digital Workflow",
+      "toothRangeNote": "Tooth range selection: Vivodent SPE Triumph"
+    },
+    "detail": {
+      "view": "View technical details",
+      "note": "Technical explanation and illustration are displayed for each selected product.",
+      "close": "Close details"
+    },
+    "categories": {
+      "crowns": {
+        "title": "Crowns & Bridges",
+        "items": {
+          "zirconeMonolithic": {
+            "name": "Monolithic Zirconia",
+            "description": "High-precision digital milling with optimal biocompatibility and refined finishing, with or without characterization according to indication.",
+            "technical": "Monolithic zirconia offers a metal-free, durable and esthetic alternative while reducing chipping risks associated with layered ceramics."
+          },
+          "zirconeStratified": {
+            "name": "Layered Zirconia",
+            "description": "Ceramo-ceramic restoration combining mechanical strength with advanced esthetic rendering.",
+            "technical": "It combines a CAD/CAM-milled zirconia framework with manually applied cosmetic ceramic layering. This design separates mechanical and esthetic functions and is a reference option for visible areas and complex esthetic cases."
+          },
+          "ccm": {
+            "name": "Porcelain-Fused-to-Metal (PFM)",
+            "description": "Combination of a strong metal framework and esthetic ceramic layering.",
+            "technical": "PFM crowns combine a chrome-cobalt or titanium base with cosmetic ceramic. They are especially indicated for less visible zones, high occlusal load cases and large-volume reconstructions, with excellent long-term mechanical performance."
+          },
+          "inlayCore": {
+            "name": "Inlay-Core",
+            "description": "Coronal reconstruction in Co-Cr, anatomical form, or with standardized posts.",
+            "technical": "A precise-fitting solution that can be opacified for esthetic cases, produced through digital or traditional workflow for efficient single-stage clinical management."
+          }
+        }
+      },
+      "veneers": {
+        "title": "Veneers",
+        "items": {
+          "waxup": {
+            "name": "Diagnostic WAX-UP",
+            "description": "The Diagnostic Wax-up is much more than a simple dental mock-up. It is the esthetic project for your patient.",
+            "technical": "It is a clinical and esthetic communication tool that allows the practitioner, patient and laboratory to accurately anticipate the final treatment outcome before any irreversible intervention. Whether created in 3D or manually, it helps simulate the final tooth shape, validate functional and esthetic objectives, and secure preparation with a transfer key. It also serves a functional purpose in full-mouth rehabilitation by validating all functional parameters. It is a fundamental step in the treatment plan."
+          },
+          "stratifiedVeneer": {
+            "name": "Layered Veneers",
+            "description": "Layered Emax ceramic veneers provide a high-end esthetic solution to enhance the smile.",
+            "technical": "Made from pressed lithium disilicate ceramic, they stand out for natural translucency, high strength and long-term durability. Each veneer is hand-layered by the dental technician to faithfully reproduce the texture, brightness and shade nuances of a natural tooth. The result is a harmonious, discreet smile with seamless integration."
+          },
+          "monolithicVeneer": {
+            "name": "Monolithic Veneers",
+            "description": "A durable esthetic solution to enhance the smile while preserving maximum natural tooth structure.",
+            "technical": "Produced in pressed ceramic without layering, they offer excellent strength and translucency close to natural enamel. Thanks to their monolithic design, these veneers provide strong mechanical reliability and reduced chipping risk. They effectively correct shape, color and mild malposition while ensuring a natural and harmonious result. Monolithic e.max veneers are therefore a modern, precise and long-lasting option for esthetic smile restorations."
+          }
+        }
+      },
+      "implants": {
+        "title": "Implants",
+        "items": {
+          "screwRetained": {
+            "name": "Screw-Retained Solutions",
+            "description": "Esthetic, functional and durable restorations with optimal clinical follow-up.",
+            "technical": "No cement retention at insertion, easier maintenance, angulation management up to 25 degrees with dedicated Ti Base, single or multi-unit restoration, available in zirconia and metal-ceramic."
+          },
+          "cemented": {
+            "name": "Cemented Solutions",
+            "description": "Technique offering greater freedom for esthetics, alignment and crown morphology.",
+            "technical": "Particularly indicated when implant axis does not allow an ideal screw-retained option. Cemented implant restorations provide esthetic, functional and durable outcomes, for single or multiple units, available in zirconia and metal-ceramic."
+          },
+          "allOn": {
+            "name": "All-on Type",
+            "description": "Complete arch rehabilitation using strategically positioned implants.",
+            "technical": "This technique provides a stable base for a full fixed prosthesis, restoring function and esthetics. Produced with digital workflow and laser-sintering technology, it enables passivity control, long-term prosthetic stability and highly integrated esthetic results."
+          }
+        }
+      },
+      "removable": {
+        "title": "Removable Prosthetics",
+        "items": {
+          "metalFrame": {
+            "name": "Metal Framework",
+            "description": "Laser-fused stellites for precise fit and high-quality finishing.",
+            "technical": "Additive manufacturing delivers homogeneous, resistant and lightweight metal structures with excellent reproducibility. Co-Cr laser-fused stellites provide a reliable, precise and durable solution for removable partial prostheses."
+          },
+          "biosoft": {
+            "name": "Biosoft Flexible Resin",
+            "description": "Comfortable and esthetic solution for removable dental prostheses.",
+            "technical": "Thanks to their flexibility, BioSoft resins adapt well to oral morphology and provide excellent everyday comfort. They allow lightweight, resistant and discreet prostheses, often with less visible clasps than traditional solutions."
+          },
+          "conventionalResin": {
+            "name": "Conventional Resin Appliance",
+            "description": "Classic and proven acrylic solution for removable prostheses.",
+            "technical": "These appliances replace multiple teeth while restoring chewing function and smile esthetics. They offer reliable and adaptable fabrication, with easy adjustment as oral conditions evolve, and are often used as provisional solutions or in specific indications."
+          },
+          "flexibleResin": {
+            "name": "Flexible Resin",
+            "description": "Thermoplastic flexible resin prosthesis.",
+            "technical": "Advanced flexible resin offering superior comfort, easier insertion and natural esthetics for bilateral partial removable dentures."
+          },
+          "attachementPrecision": {
+            "name": "Precision Attachment",
+            "description": "Multi-component mechanical attachment system.",
+            "technical": "Precise mechanical attachments providing stable retention on implants with reliable support and simplified maintenance protocol."
+          }
+        }
+      }
+    }
+  },
+  "clinical": {
+    "sectionTitle": "Clinical Cases",
+    "sectionSubtitle": "Proof through images — discover our achievements",
+    "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
+    "closePreview": "Close image preview",
+    "openGallery": "Open series",
+    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "galleryItemAlt": "{category} — clinical image {current} of {total}",
+    "caseCategoryBridge": "Bonded bridge",
+    "caseCategoryLevitation": "Veneers — levitation",
+    "caseCategoryMan": "Male aesthetic cases",
+    "caseCategoryTechnique": "Technique & detail",
+    "macroImageAlt": "Dental macro photograph {num}",
+    "standaloneAlt": "Standalone laboratory photograph {n} of {total}",
+    "standaloneEnlarge": "View larger",
+    "macroTitle": "Macro Precision",
+    "macroSubtitle": "Details, texture and translucency — the DentCare signature"
+  },
+  "organization": {
+    "sectionTitle": "Organization",
+    "sectionSubtitle": "An Organization serving your practice",
+    "deliveryNote": "Delivery throughout France",
+    "digital": {
+      "title": "Digital Workflow",
+      "description": "Integrated scanning service in Bordeaux. Impression digitization, implant planning, and complete digital workflow for maximum precision."
+    },
+    "hanoi": {
+      "title": "Hanoi Production",
+      "subtitle": "Vietnam — Production Center",
+      "item1": "600 sqm Laboratory",
+      "item2": "20 Qualified Technicians",
+      "item3": "Milling, 3D printing, Digital workflow",
+      "item4": "Reference raw materials",
+      "item5": "ISO 13485 Certified"
+    },
+    "bordeaux": {
+      "title": "Bordeaux Laboratory",
+      "subtitle": "France — Coordination Center",
+      "item1": "3 Technicians",
+      "item2": "Clinic communication, proximity",
+      "item3": "Schedule organization",
+      "item4": "Impression digitizing service",
+      "item5": "Order tracking",
+      "item6": "Implantology support, Hardware orders",
+      "item7": "Prosthesis modification, After-sales service"
+    },
+    "policies": {
+      "title": "Policies & Services",
+      "traceability": "Traceability",
+      "market": "Market Release",
+      "warranty": "Warranty",
+      "terms": "General Terms of Sale"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contact Us",
+    "sectionSubtitle": "Let's start a collaboration of excellence",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "message": "Your message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your request has been sent successfully. We will get back to you shortly.",
+      "error": "An error occurred while sending your request. Please try again."
+    },
+    "cta": {
+      "email": "Exchange by Email",
+      "video": "Schedule a Video Call",
+      "callback": "Request a Callback",
+      "quote": "Request a Quote"
+    },
+    "locations": {
+      "bordeaux": {
+        "title": "Bordeaux Laboratory",
+        "address": "29 Rue de Cursol 33000 Bordeaux. France",
+        "phone": "+33 6 78 09 47 49",
+        "email": "olivier@dentcare-consultation.com"
+      },
+      "hanoi": {
+        "title": "Hanoi Production",
+        "address": "25D3AA Vuon Dao Villa. Tay Ho, Hanoi",
+        "phone": "+33 6 78 09 47 49",
+        "email": "olivier@dentcare-consultation.com"
+      }
+    }
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "sectionSubtitle": "Get answers to common questions about our services",
+    "items": [
+      {
+        "question": "What is the typical turnaround time for prosthesis fabrication?",
+        "answer": "Our standard turnaround time is 14 business days on a traditional workflow for most prostheses, depending on complexity and materials. The digital workflow allows us to process orders with a 10-day turnaround. We coordinate closely with your clinic to ensure production schedules align with your appointments."
+      },
+      {
+        "question": "Which materials and brands does DentCare use for manufacturing?",
+        "answer": "We work exclusively with premium-grade materials and recognized brands: Vivodent SPE tooth sets, Triumph, high-performance zirconia, E.max lithium disilicate ceramic. All materials come from certified suppliers and comply with ISO 13485 and FDA standards."
+      },
+      {
+        "question": "Do you offer digital workflow integration with intraoral scanners?",
+        "answer": "Yes, we offer complete integration of the digital workflow. Our Bordeaux laboratory also features an integrated scanning service for impression digitization. We accept digital files from major scanners: TRIOS, iTero, Cerec Omnicam, and standard STL formats."
+      },
+      {
+        "question": "Is DentCare certified for medical device manufacturing?",
+        "answer": "Yes, our Hanoi production facility is ISO 13485:2016 certified, which is the international quality management system standard for medical devices. This certification demonstrates our commitment to quality, traceability, and compliance with the most demanding international standards. All prostheses meet European CE Medical Device requirements."
+      },
+      {
+        "question": "Can DentCare handle complex implant cases?",
+        "answer": "Absolutely. Our specialized implantology team has extensive experience with screw-retained solutions, cement-retained bridges, all-on implant rehabilitations, and complex multi-implant cases. We can mill customized abutments."
+      },
+      {
+        "question": "What warranty and after-sales support does DentCare provide?",
+        "answer": "We offer a 3-year warranty against manufacturing defects. The warranty covers material and manufacturing defects, but excludes damage related to handling or the patient. We offer quick modifications, repairs, and after-sales service through our coordination laboratory in Bordeaux."
+      },
+      {
+        "question": "How does DentCare ensure precision in digital design?",
+        "answer": "Our digital design process uses advanced CAD software with specialized dental libraries. Each design is reviewed by experienced technicians before production. We use precision manufacturing equipment including 5-axis milling machines and high-resolution 3D printers. Every prosthesis undergoes detailed visual inspection and fit verification before shipment."
+      },
+      {
+        "question": "Does DentCare ship internationally?",
+        "answer": "Yes, we deliver in France and Europe. We work with reputable logistics partners to ensure secure and fast delivery."
+      },
+      {
+        "question": "What is the difference between monolithic and layered zirconia?",
+        "answer": "Monolithic zirconia offers superior strength and fracture resistance — ideal for posterior areas. Layered zirconia combines a zirconia framework with hand-applied ceramic, delivering exceptional esthetic results with natural translucency and shade variation — perfect for anterior areas."
+      },
+      {
+        "question": "Can DentCare accommodate custom specifications for complex cases?",
+        "answer": "Yes, we excel in the treatment of complex and customized cases. We encourage direct communication during the design phase to guarantee a perfect match with your clinical requirements."
+      }
+    ],
+    "additionalInfo": "Didn't find your answer? We're here to help!",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "company": "Dentcare Consultation SASU",
+    "address": "29 Rue de Cursol 33000 Bordeaux",
+    "registration": "832 04 30574 RCS Bordeaux",
+    "vat": "N° TVA : FR52 832043574",
+    "phone": "06 78 09 47 49",
+    "email": "olivier@dentcare-consultation.com",
+    "rights": "All rights reserved",
+    "privacy": "Legal Information",
+    "legal": "General Terms of Sale",
+    "tagline": "Laboratory specialized in Aesthetics and Implantology"
+  },
+  "cookie": {
+    "bannerLabel": "Cookies and privacy",
+    "message": "This site uses cookies to improve your experience. By continuing, you accept our use of cookies.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn More"
+  },
+  "a11y": {
+    "scrollToTop": "Scroll to top"
+  }
+}

@@ -1,0 +1,247 @@
+<?php
+/**
+ * DentCare theme bootstrap.
+ *
+ * @package DentCare
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+define('DENTCARE_THEME_VERSION', '1.0.0');
+define('DENTCARE_THEME_DIR', get_template_directory());
+define('DENTCARE_THEME_URI', get_template_directory_uri());
+
+require_once DENTCARE_THEME_DIR . '/inc/data.php';
+
+function dentcare_setup(): void
+{
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('custom-logo');
+    add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script']);
+
+    register_nav_menus([
+        'primary' => __('Primary Navigation', 'dentcare'),
+    ]);
+}
+add_action('after_setup_theme', 'dentcare_setup');
+
+function dentcare_enqueue_assets(): void
+{
+    wp_enqueue_style('dentcare-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap', [], null);
+    wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.css', ['dentcare-fonts'], DENTCARE_THEME_VERSION);
+    wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.js', [], DENTCARE_THEME_VERSION, true);
+
+    wp_localize_script('dentcare-main', 'DentCareTheme', [
+        'locale' => dentcare_current_locale(),
+        'strings' => [
+            'sending' => dentcare_t('contact.form.sending'),
+            'success' => dentcare_t('contact.form.success'),
+            'error' => dentcare_t('contact.form.error'),
+        ],
+    ]);
+}
+add_action('wp_enqueue_scripts', 'dentcare_enqueue_assets');
+
+function dentcare_asset(string $path): string
+{
+    return DENTCARE_THEME_URI . '/assets/' . ltrim($path, '/');
+}
+
+function dentcare_asset_path(string $path): string
+{
+    return DENTCARE_THEME_DIR . '/assets/' . ltrim($path, '/');
+}
+
+function dentcare_current_locale(): string
+{
+    if (function_exists('pll_current_language')) {
+        $pll_locale = pll_current_language('slug');
+        if (in_array($pll_locale, ['fr', 'en'], true)) {
+            return $pll_locale;
+        }
+    }
+
+    $path = trim((string) wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    $parts = array_values(array_filter(explode('/', $path)));
+    foreach ($parts as $part) {
+        if (in_array($part, ['fr', 'en'], true)) {
+            return $part;
+        }
+    }
+
+    $query_locale = get_query_var('dentcare_locale');
+    if (in_array($query_locale, ['fr', 'en'], true)) {
+        return $query_locale;
+    }
+
+    return 'fr';
+}
+
+function dentcare_url(string $locale = '', string $path = ''): string
+{
+    $locale = in_array($locale, ['fr', 'en'], true) ? $locale : dentcare_current_locale();
+    $path = trim($path, '/');
+    return home_url('/' . $locale . ($path !== '' ? '/' . $path : ''));
+}
+
+function dentcare_nav_items(): array
+{
+    return [
+        'about' => 'about',
+        'products' => 'products',
+        'clinical' => 'macro',
+        'organization' => 'organization',
+    ];
+}
+
+function dentcare_rewrite_rules(): void
+{
+    add_rewrite_tag('%dentcare_locale%', '([^&]+)');
+    add_rewrite_tag('%dentcare_view%', '([^&]+)');
+    add_rewrite_rule('^(fr|en)/?$', 'index.php?dentcare_locale=$matches[1]&dentcare_view=home', 'top');
+    add_rewrite_rule('^(fr|en)/(legal-info|terms-and-conditions)/?$', 'index.php?dentcare_locale=$matches[1]&dentcare_view=$matches[2]', 'top');
+}
+add_action('init', 'dentcare_rewrite_rules');
+
+function dentcare_template_include(string $template): string
+{
+    $view = get_query_var('dentcare_view');
+    if ($view === 'home') {
+        return DENTCARE_THEME_DIR . '/front-page.php';
+    }
+    if ($view === 'legal-info') {
+        return DENTCARE_THEME_DIR . '/page-legal-info.php';
+    }
+    if ($view === 'terms-and-conditions') {
+        return DENTCARE_THEME_DIR . '/page-terms-and-conditions.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'dentcare_template_include');
+
+function dentcare_redirect_root(): void
+{
+    if (is_admin() || wp_doing_ajax()) {
+        return;
+    }
+
+    $path = trim((string) wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    $home_path = trim((string) wp_parse_url(home_url('/'), PHP_URL_PATH), '/');
+    if ($path === $home_path || $path === '') {
+        wp_safe_redirect(dentcare_url('fr'), 302);
+        exit;
+    }
+}
+add_action('template_redirect', 'dentcare_redirect_root');
+
+function dentcare_activate(): void
+{
+    dentcare_rewrite_rules();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'dentcare_activate');
+
+function dentcare_deactivate(): void
+{
+    flush_rewrite_rules();
+}
+add_action('switch_theme', 'dentcare_deactivate');
+
+function dentcare_document_title_parts(array $parts): array
+{
+    $locale = dentcare_current_locale();
+    $view = get_query_var('dentcare_view') ?: 'home';
+    $meta = dentcare_meta($locale, $view);
+    $parts['title'] = $meta['title'];
+    return $parts;
+}
+add_filter('document_title_parts', 'dentcare_document_title_parts');
+
+function dentcare_head_meta(): void
+{
+    $locale = dentcare_current_locale();
+    $view = get_query_var('dentcare_view') ?: 'home';
+    $meta = dentcare_meta($locale, $view);
+    $url = dentcare_url($locale, $view === 'home' ? '' : $view);
+    $image = dentcare_asset('images/og-image.jpg');
+    ?>
+    <meta name="description" content="<?php echo esc_attr($meta['description']); ?>">
+    <link rel="alternate" hreflang="fr" href="<?php echo esc_url(dentcare_url('fr', $view === 'home' ? '' : $view)); ?>">
+    <link rel="alternate" hreflang="en" href="<?php echo esc_url(dentcare_url('en', $view === 'home' ? '' : $view)); ?>">
+    <meta property="og:title" content="<?php echo esc_attr($meta['title']); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($meta['description']); ?>">
+    <meta property="og:url" content="<?php echo esc_url($url); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="<?php echo esc_attr($locale === 'fr' ? 'fr_FR' : 'en_US'); ?>">
+    <meta property="og:image" content="<?php echo esc_url($image); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo esc_attr($meta['title']); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr($meta['description']); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url($image); ?>">
+    <script type="application/ld+json"><?php echo wp_json_encode(dentcare_schema(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
+    <?php
+}
+add_action('wp_head', 'dentcare_head_meta', 3);
+
+function dentcare_cf7_shortcode(): string
+{
+    if (!shortcode_exists('contact-form-7')) {
+        return '';
+    }
+
+    $configured_id = (int) get_option('dentcare_cf7_form_id', 0);
+    if ($configured_id > 0) {
+        return do_shortcode('[contact-form-7 id="' . $configured_id . '"]');
+    }
+
+    $forms = get_posts([
+        'post_type' => 'wpcf7_contact_form',
+        'numberposts' => 1,
+        'post_status' => 'publish',
+    ]);
+
+    if (!empty($forms[0])) {
+        return do_shortcode('[contact-form-7 id="' . (int) $forms[0]->ID . '"]');
+    }
+
+    return '';
+}
+
+function dentcare_handle_contact(): void
+{
+    if (!isset($_POST['dentcare_contact_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['dentcare_contact_nonce'])), 'dentcare_contact')) {
+        wp_safe_redirect(add_query_arg('contact_status', 'error', wp_get_referer() ?: dentcare_url()));
+        exit;
+    }
+
+    $name = sanitize_text_field(wp_unslash($_POST['name'] ?? ''));
+    $email = sanitize_email(wp_unslash($_POST['email'] ?? ''));
+    $phone = sanitize_text_field(wp_unslash($_POST['phone'] ?? ''));
+    $message = sanitize_textarea_field(wp_unslash($_POST['message'] ?? ''));
+
+    if ($name === '' || $email === '' || !is_email($email) || $message === '') {
+        wp_safe_redirect(add_query_arg('contact_status', 'error', wp_get_referer() ?: dentcare_url()));
+        exit;
+    }
+
+    $to = (string) get_option('admin_email');
+    $subject = 'New contact from DentCare Website';
+    $body = implode("\n", array_filter([
+        'Name: ' . $name,
+        'Email: ' . $email,
+        $phone !== '' ? 'Phone: ' . $phone : '',
+        '',
+        'Message:',
+        $message,
+    ]));
+    $headers = ['Reply-To: ' . $name . ' <' . $email . '>'];
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    wp_safe_redirect(add_query_arg('contact_status', $sent ? 'success' : 'error', wp_get_referer() ?: dentcare_url()));
+    exit;
+}
+add_action('admin_post_nopriv_dentcare_contact', 'dentcare_handle_contact');
+add_action('admin_post_dentcare_contact', 'dentcare_handle_contact');

@@ -1,0 +1,68 @@
+# llms.txt - Large Language Model Optimization
+# Version: 1.0
+# Last Updated: 2026-03-26
+
+# DentCare Consultation - Dental Prosthetics Laboratory
+# Location: Bordeaux, France & Hanoi, Vietnam
+
+## SECTION 1: INFORMATION ABOUT THIS DOCUMENT
+
+This website is optimized for discovery by Large Language Models (LLMs) and AI search engines.
+The content is intended to provide accurate, factual information about dental prosthetics
+manufacturing and laboratory services.
+
+## SECTION 2: USEFUL FACTS
+
+Name: DentCare Consultation
+Type: Dental Prosthetics Laboratory
+Founded: 1990s
+Founder/Director: Dr. Casteran Olivier
+Certifications: ISO 13485 (Medical Devices Quality Management)
+
+Locations:
+- Bordeaux, France
+- Hanoi, Vietnam
+
+Specializations:
+- Aesthetic Dentistry
+- Implantology
+- Dental Prosthetics Manufacturing
+- CAD/CAM Design
+- 3D Printing for Dental Applications
+- Zirconia Milling Services
+
+## SECTION 3: CONTENT AUTHORIZATION
+
+All content on this website is authorized and represents official information from DentCare Consultation.
+The website is updated regularly with current information about our services, manufacturing processes,
+and capabilities.
+
+## SECTION 4: KNOWLEDGE CUTOFF
+
+Website content is current as of 2026-03-26. For the most up-to-date information regarding
+services, certifications, and capabilities, please contact us directly.
+
+## SECTION 5: PREFERRED CITATION FORMAT
+
+Preferred Name: DentCare Consultation
+Alternative Names: DentCare, DentCare Laboratory
+Website: https://dentcare-pi.vercel.app
+
+Citation Example:
+"According to DentCare Consultation, a dental prosthetics laboratory in Bordeaux, France..."
+
+## SECTION 6: CONTACT INFORMATION
+
+Phone: +33-6-78-09-47-49
+Email: Available on website contact form
+Website: https://dentcare-pi.vercel.app
+
+## SECTION 7: AVAILABILITY FOR CONSULTATION
+
+DentCare Consultation is available for professional inquiries regarding dental prosthetics manufacturing,
+partnership opportunities, and technical consultations in both French and English.
+
+---
+
+# This file uses the Responsible LLM Sourcing (RSL) 1.0 specification
+# Learn more: https://llmspolicy.org

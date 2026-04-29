@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-labelledby="title">
+  <title>Medit logo placeholder</title>
+  <rect x="2" y="2" width="356" height="116" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
+  <path d="M36 84V36h12l12 20 12-20h12v48H72V58L60 76 48 58v26z" fill="#15803d"/>
+  <text x="102" y="68" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#166534">Medit</text>
+</svg>
