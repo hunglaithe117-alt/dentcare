@@ -87,16 +87,24 @@ $brands = dentcare_brand_groups();
     <div class="modal" data-product-modal aria-hidden="true">
         <div class="modal__backdrop" data-modal-close></div>
         <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
-            <button class="modal__close" type="button" data-modal-close aria-label="<?php echo esc_attr(dentcare_t('products.detail.close')); ?>">×</button>
-            <div class="modal__media">
-                <img src="" alt="" data-modal-image>
-                <div class="modal__thumbs" data-modal-thumbs></div>
+            <div class="modal__header">
+                <div class="modal__title-area">
+                    <h3 id="product-modal-title" data-modal-title></h3>
+                    <p class="modal__description" data-modal-description></p>
+                </div>
+                <button class="modal__close-btn" type="button" data-modal-close>
+                    <?php echo esc_html(dentcare_t('products.detail.close')); ?>
+                </button>
             </div>
-            <div class="modal__copy">
-                <span><?php echo esc_html(dentcare_t('products.detail.note')); ?></span>
-                <h3 id="product-modal-title" data-modal-title></h3>
-                <p data-modal-description></p>
-                <p data-modal-technical></p>
+
+            <div class="modal__technical-box" data-modal-technical></div>
+
+            <div class="modal__media">
+                <div class="modal__image-frame">
+                    <img src="" alt="" data-modal-image>
+                </div>
+                <div class="modal__thumbs" data-modal-thumbs></div>
+                <div class="modal__media-footer" data-modal-image-count></div>
             </div>
         </div>
     </div>

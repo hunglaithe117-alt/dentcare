@@ -158,7 +158,7 @@
     "description": "Découvrez notre expertise en esthétique dentaire à travers ces cas cliniques. Chaque réalisation reflète notre engagement envers la qualité et la conservation dentaire.",
     "closePreview": "Fermer l’aperçu",
     "openGallery": "Ouvrir la série",
-    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "galleryPhotoCount": "{count} images",
     "previousImage": "Image précédente",
     "nextImage": "Image suivante",
     "galleryItemAlt": "{category} — image {current} sur {total}",
@@ -205,7 +205,8 @@
       "traceability": "Traçabilité",
       "market": "Mise sur le Marché",
       "warranty": "Garantie",
-      "terms": "Conditions Générales de Vente"
+      "terms": "Conditions Générales de Vente",
+      "viewDoc": "Ouvrir le document des conditions"
     }
   },
   "contact": {

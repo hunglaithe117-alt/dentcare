@@ -46,6 +46,35 @@
     });
   }
 
+  function initLanguageSwitcher() {
+    const root = $("[data-language-switcher]");
+    if (!root) return;
+    const toggle = $(".language-switcher__toggle", root);
+    if (!toggle) return;
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = !root.classList.contains("is-open");
+      root.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!root.contains(e.target)) {
+        root.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && root.classList.contains("is-open")) {
+        root.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
+  }
+
   function prefersReducedMotion() {
     return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
@@ -113,6 +142,8 @@
       });
     });
 
+    const modalImageCount = $("[data-modal-image-count]", modal);
+
     const setImage = (src, alt, activeButton) => {
       if (!modalImage) return;
       modalImage.src = src;
@@ -128,6 +159,8 @@
       if (modalThumbs) modalThumbs.innerHTML = "";
 
       const images = Array.isArray(payload.images) ? payload.images : [];
+      if (modalImageCount) modalImageCount.textContent = `${images.length} images`;
+
       images.forEach((src, index) => {
         const button = document.createElement("button");
         button.type = "button";
@@ -184,26 +217,60 @@
     if (!modal) return;
 
     const image = $("[data-lightbox-image]", modal);
-    const caption = $("[data-lightbox-caption]", modal);
+    const title = $("[data-lightbox-title]", modal);
+    const counter = $("[data-lightbox-counter]", modal);
+    const thumbs = $("[data-lightbox-thumbs]", modal);
     const prev = $("[data-lightbox-prev]", modal);
     const next = $("[data-lightbox-next]", modal);
     const closeButtons = $$("[data-lightbox-close]", modal);
-    let state = { items: [], index: 0, opener: null };
+    let state = { type: "single", title: "", items: [], index: 0, opener: null };
 
     const render = () => {
       const current = state.items[state.index];
       if (!current) return;
+
       image.src = current.src;
       image.alt = current.alt || "";
-      caption.textContent = current.alt || "";
+
+      if (state.type === "gallery") {
+        title.textContent = state.title;
+        counter.textContent = `${state.index + 1} / ${state.items.length}`;
+        title.hidden = false;
+        counter.hidden = false;
+      } else {
+        title.hidden = true;
+        counter.hidden = true;
+      }
+
       const multiple = state.items.length > 1;
-      prev.hidden = !multiple;
-      next.hidden = !multiple;
+      prev.style.display = multiple ? "flex" : "none";
+      next.style.display = multiple ? "flex" : "none";
+
+      // Thumbs
+      thumbs.innerHTML = "";
+      if (multiple) {
+        state.items.forEach((item, idx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = `lightbox__thumb ${idx === state.index ? "is-active" : ""}`;
+          btn.innerHTML = `<img src="${item.src}" alt="">`;
+          btn.addEventListener("click", () => {
+            state.index = idx;
+            render();
+          });
+          thumbs.appendChild(btn);
+        });
+        thumbs.style.display = "flex";
+      } else {
+        thumbs.style.display = "none";
+      }
     };
 
     const open = (payload, opener) => {
       state.opener = opener;
+      state.type = payload.type;
       if (payload.type === "gallery") {
+        state.title = payload.title || "";
         state.items = payload.items || [];
         state.index = payload.index || 0;
       } else {
@@ -214,8 +281,8 @@
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       setBodyLock(true);
-      const close = $("[data-lightbox-close]", modal);
-      if (close) close.focus();
+      const closeBtn = $("[data-lightbox-close]", modal);
+      if (closeBtn) closeBtn.focus();
     };
 
     const close = () => {
@@ -256,15 +323,35 @@
   function initPolicies() {
     const root = $("[data-policies]");
     if (!root) return;
-    const buttons = $$("[data-policy]", root);
-    const output = $("[data-policy-output]", root);
-    buttons.forEach((button, index) => {
-      if (index === 0) button.classList.add("is-active");
-      button.addEventListener("click", () => {
-        buttons.forEach((item) => item.classList.toggle("is-active", item === button));
-        if (output) output.textContent = button.dataset.policyDetail || "";
-      });
+    const tabs = $$("[data-policy-tab]", root);
+    const panel = $("[data-policy-panel]", root);
+    const panelTitle = $("[data-policy-panel-title]", panel);
+    const panelDescription = $("[data-policy-panel-description]", panel);
+    const panelAction = $("[data-policy-panel-action]", panel);
+
+    if (!tabs.length) return;
+
+    const activate = (tab) => {
+      const { policyTab, policyTitle, policyDescription } = tab.dataset;
+      
+      // Update UI
+      tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+      
+      if (panelTitle) panelTitle.textContent = policyTitle || "";
+      if (panelDescription) panelDescription.textContent = policyDescription || "";
+      
+      // Show action button only for 'terms' (CGV)
+      if (panelAction) {
+        panelAction.style.display = (policyTab === "terms") ? "block" : "none";
+      }
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => activate(tab));
     });
+
+    // Auto-activate first tab
+    activate(tabs[0]);
   }
 
   function initFaq() {
@@ -309,6 +396,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initHeader();
+    initLanguageSwitcher();
     initHero();
     initProducts();
     initClinical();

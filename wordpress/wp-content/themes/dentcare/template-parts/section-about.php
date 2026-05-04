@@ -15,9 +15,11 @@ $video_title = dentcare_current_locale() === 'fr' ? 'Video de presentation' : 'I
 $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Consultation en video.' : 'Discover DentCare Consultation in video.';
 ?>
 <section id="about" class="section section--white about">
+    <div class="about__decor" aria-hidden="true"></div>
+
     <div class="container">
         <div class="section-heading">
-            <span><?php echo esc_html(dentcare_t('about.sectionTitle')); ?></span>
+            <span class="eyebrow"><?php echo esc_html(dentcare_t('about.sectionTitle')); ?></span>
             <h2><?php echo esc_html(dentcare_t('about.sectionSubtitle')); ?></h2>
         </div>
 
@@ -30,10 +32,13 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
                 </div>
             </div>
             <div class="about__portrait">
-                <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>">
-                <div class="about__portrait-caption">
-                    <p><?php echo esc_html(dentcare_t('about.founderName')); ?></p>
-                    <p><?php echo esc_html(dentcare_t('about.founderRole')); ?></p>
+                <div class="about__portrait-frame">
+                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>">
+                    <div class="about__portrait-overlay"></div>
+                    <div class="about__portrait-caption">
+                        <p><?php echo esc_html(dentcare_t('about.founderName')); ?></p>
+                        <p><?php echo esc_html(dentcare_t('about.founderRole')); ?></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,7 +67,9 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
             <div class="workflow-grid">
                 <?php foreach ($method_items as $item) : ?>
                     <article>
-                        <img src="<?php echo esc_url(dentcare_asset($item['image'])); ?>" alt="<?php echo esc_attr(dentcare_t('about.method.' . $item['key'])); ?>">
+                        <div class="image-wrapper">
+                            <img src="<?php echo esc_url(dentcare_asset($item['image'])); ?>" alt="<?php echo esc_attr(dentcare_t('about.method.' . $item['key'])); ?>">
+                        </div>
                         <strong><?php echo esc_html(dentcare_t('about.method.' . $item['key'])); ?></strong>
                     </article>
                 <?php endforeach; ?>

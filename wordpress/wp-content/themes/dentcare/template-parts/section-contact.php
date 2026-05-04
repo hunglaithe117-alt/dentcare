@@ -45,15 +45,24 @@ $shipping_note = dentcare_current_locale() === 'fr'
                 </div>
 
                 <div class="contact__locations">
-                    <article class="location-card">
+                    <article class="location-card location-card--active">
                         <div class="location-card__head">
                             <h3><?php echo esc_html(dentcare_t('contact.locations.bordeaux.title')); ?></h3>
-                            <span aria-hidden="true"></span>
+                            <div class="location-card__dot"></div>
                         </div>
                         <div class="location-card__body">
-                            <p><?php echo esc_html(dentcare_t('contact.locations.bordeaux.address')); ?></p>
-                            <p><a href="tel:+33678094749"><?php echo esc_html(dentcare_t('contact.locations.bordeaux.phone')); ?></a></p>
-                            <p><a href="mailto:<?php echo esc_attr(dentcare_t('contact.locations.bordeaux.email')); ?>"><?php echo esc_html(dentcare_t('contact.locations.bordeaux.email')); ?></a></p>
+                            <div class="info-row">
+                                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span><?php echo esc_html(dentcare_t('contact.locations.bordeaux.address')); ?></span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 8"/><path d="M14.05 5.95a5 5 0 0 1 4 4"/></svg>
+                                <a href="tel:+33678094749"><?php echo esc_html(dentcare_t('contact.locations.bordeaux.phone')); ?></a>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <a href="mailto:<?php echo esc_attr(dentcare_t('contact.locations.bordeaux.email')); ?>"><?php echo esc_html(dentcare_t('contact.locations.bordeaux.email')); ?></a>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -76,7 +85,10 @@ $shipping_note = dentcare_current_locale() === 'fr'
                 <div class="contact-shipping">
                     <div class="contact-shipping__head">
                         <div>
-                            <h3><?php echo esc_html($shipping_title); ?></h3>
+                            <h3>
+                                <svg class="shipping-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><path d="M14 9h5a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><circle cx="17" cy="18" r="2"/><path d="M19 18h1"/></svg>
+                                <?php echo esc_html($shipping_title); ?>
+                            </h3>
                             <p><?php echo esc_html($shipping_note); ?></p>
                         </div>
                         <?php if (dentcare_asset_path('images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg')) : ?>
@@ -85,7 +97,7 @@ $shipping_note = dentcare_current_locale() === 'fr'
                     </div>
                     <div class="shipping-grid">
                         <?php foreach (dentcare_shipping_partners() as $partner) : ?>
-                            <div><img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>" alt="<?php echo esc_attr($partner['name']); ?>"></div>
+                            <div class="shipping-card"><img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>" alt="<?php echo esc_attr($partner['name']); ?>"></div>
                         <?php endforeach; ?>
                     </div>
                 </div>

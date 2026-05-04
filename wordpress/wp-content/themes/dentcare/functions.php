@@ -35,7 +35,7 @@ function dentcare_enqueue_assets(): void
     $main_css_version = file_exists($main_css) ? (string) filemtime($main_css) : DENTCARE_THEME_VERSION;
     $main_js_version = file_exists($main_js) ? (string) filemtime($main_js) : DENTCARE_THEME_VERSION;
 
-    wp_enqueue_style('dentcare-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap', [], null);
+    wp_enqueue_style('dentcare-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap', [], null);
     wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.css', ['dentcare-fonts'], $main_css_version);
     wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.js', [], $main_js_version, true);
 
