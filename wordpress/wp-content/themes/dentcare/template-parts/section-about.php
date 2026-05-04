@@ -6,11 +6,13 @@
  */
 
 $method_items = [
-    ['key' => 'scanner', 'image' => 'images/workflow/intraoral-scanner.png'],
+    ['key' => 'scanner', 'image' => 'images/wetransfer/Pict 3 scanner intra oral/Capture d’écran 2026-03-15 à 09.10.39.png'],
     ['key' => 'printing', 'image' => 'images/workflow/impression-3d.jpg'],
     ['key' => 'milling', 'image' => 'images/workflow/usinage-zircone.jpg'],
     ['key' => 'implant', 'image' => 'images/workflow/implantologie.jpg'],
 ];
+$video_title = dentcare_current_locale() === 'fr' ? 'Video de presentation' : 'Introduction Video';
+$video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Consultation en video.' : 'Discover DentCare Consultation in video.';
 ?>
 <section id="about" class="section section--white about">
     <div class="container">
@@ -20,22 +22,40 @@ $method_items = [
         </div>
 
         <div class="about__grid">
-            <div class="about__portrait">
-                <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>">
-                <div class="about__signature">
-                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-signature.svg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.signatureAlt')); ?>">
-                    <p><?php echo esc_html(dentcare_t('about.founderRole')); ?></p>
-                </div>
-            </div>
             <div class="about__copy">
                 <h3><?php echo esc_html(dentcare_t('about.history.title')); ?></h3>
-                <p><?php echo nl2br(esc_html(dentcare_t('about.history.description'))); ?></p>
+                <p><?php echo esc_html(dentcare_t('about.history.description')); ?></p>
+                <div class="about__signature">
+                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-signature.svg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.signatureAlt')); ?>">
+                </div>
+            </div>
+            <div class="about__portrait">
+                <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>">
+                <div class="about__portrait-caption">
+                    <p><?php echo esc_html(dentcare_t('about.founderName')); ?></p>
+                    <p><?php echo esc_html(dentcare_t('about.founderRole')); ?></p>
+                </div>
             </div>
         </div>
 
         <div class="about__method">
-            <div>
-                <span class="eyebrow"><?php echo esc_html(dentcare_t('about.certification.badge')); ?></span>
+            <div class="about__video">
+                <h3><?php echo esc_html($video_title); ?></h3>
+                <p><?php echo esc_html($video_description); ?></p>
+                <div class="about__video-rule" aria-hidden="true"></div>
+                <div class="about__video-frame">
+                    <iframe
+                        src="https://www.youtube.com/embed/Gp1mmmbTzJk?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=Gp1mmmbTzJk&amp;rel=0"
+                        title="DentCare Consultation Introduction"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+
+            <div class="about__method-heading">
                 <h3><?php echo esc_html(dentcare_t('about.method.title')); ?></h3>
                 <p><?php echo esc_html(dentcare_t('about.method.description')); ?></p>
             </div>
@@ -50,4 +70,3 @@ $method_items = [
         </div>
     </div>
 </section>
-

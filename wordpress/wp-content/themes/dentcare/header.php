@@ -6,6 +6,7 @@
  */
 
 $locale = dentcare_current_locale();
+$view = dentcare_current_view();
 ?><!doctype html>
 <html lang="<?php echo esc_attr($locale === 'fr' ? 'fr-FR' : 'en-US'); ?>">
 <head>
@@ -30,8 +31,8 @@ $locale = dentcare_current_locale();
 
         <div class="site-header__actions">
             <div class="language-switcher" aria-label="<?php echo esc_attr(dentcare_t('header.chooseLanguage')); ?>">
-                <a class="<?php echo $locale === 'fr' ? 'is-active' : ''; ?>" href="<?php echo esc_url(dentcare_url('fr', get_query_var('dentcare_view') !== 'home' ? get_query_var('dentcare_view') : '')); ?>">FR</a>
-                <a class="<?php echo $locale === 'en' ? 'is-active' : ''; ?>" href="<?php echo esc_url(dentcare_url('en', get_query_var('dentcare_view') !== 'home' ? get_query_var('dentcare_view') : '')); ?>">EN</a>
+                <a class="<?php echo $locale === 'fr' ? 'is-active' : ''; ?>" href="<?php echo esc_url(dentcare_url('fr', $view !== 'home' ? $view : '')); ?>">FR</a>
+                <a class="<?php echo $locale === 'en' ? 'is-active' : ''; ?>" href="<?php echo esc_url(dentcare_url('en', $view !== 'home' ? $view : '')); ?>">EN</a>
             </div>
             <div class="social-links" aria-label="Social">
                 <a href="https://www.instagram.com/dentcare.consultation?IGsh=dnRid2s3b3plc2l2&utm_sour" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

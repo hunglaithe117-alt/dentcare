@@ -14,8 +14,6 @@ import { useLocale } from "next-intl";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 
-const STATICFORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_STATICFORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
-
 interface FormData {
   name: string;
   email: string;
@@ -78,14 +76,10 @@ export default function Contact(): React.ReactElement {
       setStatus("sending");
 
       try {
-        const response = await fetch("https://api.staticforms.xyz/submit", {
+        const response = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            accessKey: STATICFORMS_ACCESS_KEY,
-            ...formData,
-            subject: "New contact from DentCare Website",
-          }),
+          body: JSON.stringify(formData),
         });
 
         if (response.ok) {

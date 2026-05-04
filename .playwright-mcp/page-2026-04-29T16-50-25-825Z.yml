@@ -1,0 +1,397 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Retour en haut — accueil DentCare" [ref=e4] [cursor=pointer]:
+        - /url: http://localhost:8080/fr
+        - img "DentCare" [ref=e5]
+      - navigation "Navigation principale" [ref=e6]:
+        - link "À propos" [ref=e7] [cursor=pointer]:
+          - /url: "#about"
+        - link "Produits" [ref=e8] [cursor=pointer]:
+          - /url: "#products"
+        - link "Cas Clinique" [ref=e9] [cursor=pointer]:
+          - /url: "#macro"
+        - link "Organisation" [ref=e10] [cursor=pointer]:
+          - /url: "#organization"
+      - generic [ref=e11]:
+        - generic "Choisir la langue" [ref=e12]:
+          - link "FR" [ref=e13] [cursor=pointer]:
+            - /url: http://localhost:8080/fr
+          - link "EN" [ref=e14] [cursor=pointer]:
+            - /url: http://localhost:8080/en
+        - generic "Social" [ref=e15]:
+          - link "Instagram" [ref=e16] [cursor=pointer]:
+            - /url: https://www.instagram.com/dentcare.consultation?IGsh=dnRid2s3b3plc2l2&utm_sour
+            - generic [ref=e17]: ◎
+          - link "Facebook" [ref=e18] [cursor=pointer]:
+            - /url: https://facebook.com
+            - generic [ref=e19]: f
+        - link "Nous Contacter" [ref=e20] [cursor=pointer]:
+          - /url: "#contact"
+    - generic:
+      - generic:
+        - img
+      - generic:
+        - img
+      - generic:
+        - img
+      - generic:
+        - img
+      - generic:
+        - img
+      - generic:
+        - img
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e25]:
+        - heading "L'Excellence au Service de Votre Sourire" [level=1] [ref=e26]
+        - paragraph [ref=e27]: Laboratoire spécialisé en Esthétique et Implantologie — Plus de 30 ans d'expertise au service des professionnels dentaires
+        - generic [ref=e28]:
+          - link "Découvrir Nos Produits" [ref=e29] [cursor=pointer]:
+            - /url: "#products"
+          - link "Nos Réalisations" [ref=e30] [cursor=pointer]:
+            - /url: "#macro"
+      - generic "Hero slides" [ref=e31]:
+        - generic [ref=e32]: 01 / 05
+        - generic [ref=e33]:
+          - button "Go to slide 1" [ref=e34] [cursor=pointer]
+          - button "Go to slide 2" [ref=e35] [cursor=pointer]
+          - button "Go to slide 3" [ref=e36] [cursor=pointer]
+          - button "Go to slide 4" [ref=e37] [cursor=pointer]
+          - button "Go to slide 5" [ref=e38] [cursor=pointer]
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: À Propos
+        - heading "Le Mot du Fondateur" [level=2] [ref=e45]
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - heading "Mr. Casteran Olivier" [level=3] [ref=e48]
+          - paragraph [ref=e49]: "Mon parcours professionnel m'a conduit à de nombreuses expériences en France et à l'étranger, mais aussi dans la création de structures allant de 15 salariés à 120 salariés Je connais parfaitement les exigences de nos activités, la nécessaire collaboration étroite entre le cabinet Dentaire et le laboratoire. 30 ans d'exercice professionnel dans lequel je me suis beaucoup investi et accompli, Mon expérience, mon expertise, mes choix m'ont conduit a créer en 2017 DentCare Consultation pour répondre aux besoins du cabinet. Pour cela, je m'appuie sur deux sites productions: Hanoï (Vietnam), Bordeaux (France) Accompagner votre cabinet au quotidien dans tous les projets prothétiques, notre disponibilité , notre écoute , notre communication et notre proximité sont nos atouts. Mes équipes et moi-même sommes totalement investies et attachées à la qualité, au respect des procédures et des protocoles de travail, le laboratoire de Hanoï est certifié ISO 13485 Mon ambition est de produire de l'excellent travail pour un coût raisonné ."
+          - img "Signature du fondateur" [ref=e51]
+        - generic [ref=e52]:
+          - img "Mr. Casteran Olivier" [ref=e53]
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: Mr. Casteran Olivier
+            - paragraph [ref=e56]: Fondateur — DentCare Consultation
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Video de presentation" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Decouvrez DentCare Consultation en video.
+          - iframe [ref=e63]:
+            - generic "YouTube Video Player" [ref=f59e3]
+        - generic [ref=e64]:
+          - heading "Maîtrise & Savoir-faire" [level=3] [ref=e65]
+          - paragraph [ref=e66]: "Nous maîtrisons parfaitement le flux numérique : scanner intra-oral, impression 3D, usinage zircone et implantologie. Nous possédons le savoir-faire nécessaire pour les reconstitutions complètes, smile design, facettes et restaurations zircone. Notre équipe utilise des logiciels CAO spécialisés en dentisterie pour la conception numérique précise. Chaque étape du processus de fabrication est contrôlée pour garantir une précision absolue et des résultats qui dépassent les attentes. Nous combinons l'artisanat traditionnel avec la technologie de pointe pour livrer des prothèses à la fois supérieures sur le plan fonctionnel et esthétique."
+        - generic [ref=e67]:
+          - article [ref=e68]:
+            - img "Scanner Intra-oral" [ref=e69]
+            - strong [ref=e70]: Scanner Intra-oral
+          - article [ref=e71]:
+            - img "Impression 3D" [ref=e72]
+            - strong [ref=e73]: Impression 3D
+          - article [ref=e74]:
+            - img "Usinage Zircone" [ref=e75]
+            - strong [ref=e76]: Usinage Zircone
+          - article [ref=e77]:
+            - img "Implantologie" [ref=e78]
+            - strong [ref=e79]: Implantologie
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - generic [ref=e83]: Nos Produits
+        - heading "Solutions prothétiques de haute précision" [level=2] [ref=e84]
+      - tablist "Nos Produits" [ref=e85]:
+        - button "Couronnes et Bridges" [ref=e86] [cursor=pointer]
+        - button "Facettes (Veneers)" [ref=e87] [cursor=pointer]
+        - button "Implant" [ref=e88] [cursor=pointer]
+        - button "Prothèse Amovible" [ref=e89] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - button "Zircone Monolithique Zircone Monolithique Usinage numérique haute précision, biocompatibilité optimale et finition soignée, avec ou sans maquillage selon l'indication. Voir les détails techniques" [ref=e92]:
+            - img "Zircone Monolithique" [ref=e94]
+            - heading "Zircone Monolithique" [level=3] [ref=e95]
+            - paragraph [ref=e96]: Usinage numérique haute précision, biocompatibilité optimale et finition soignée, avec ou sans maquillage selon l'indication.
+            - strong [ref=e97]: Voir les détails techniques
+          - button "Zircone Stratifiée +2 Zircone Stratifiée Restauration céramo-céramique alliant résistance mécanique et rendu esthétique avancé. Voir les détails techniques" [ref=e98]:
+            - generic [ref=e99]:
+              - img "Zircone Stratifiée" [ref=e100]
+              - generic [ref=e101]: "+2"
+            - heading "Zircone Stratifiée" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Restauration céramo-céramique alliant résistance mécanique et rendu esthétique avancé.
+            - strong [ref=e104]: Voir les détails techniques
+          - button "Céramo-Métallique (CCM) +1 Céramo-Métallique (CCM) Association d'une armature métallique résistante et d'une stratification céramique esthétique. Voir les détails techniques" [ref=e105]:
+            - generic [ref=e106]:
+              - img "Céramo-Métallique (CCM)" [ref=e107]
+              - generic [ref=e108]: "+1"
+            - heading "Céramo-Métallique (CCM)" [level=3] [ref=e109]
+            - paragraph [ref=e110]: Association d'une armature métallique résistante et d'une stratification céramique esthétique.
+            - strong [ref=e111]: Voir les détails techniques
+          - button "Inlay-Core Inlay-Core Reconstitution coronaire en Co-Cr, anatomique ou à l'aide de tenons normalisés. Voir les détails techniques" [ref=e112]:
+            - img "Inlay-Core" [ref=e114]
+            - heading "Inlay-Core" [level=3] [ref=e115]
+            - paragraph [ref=e116]: Reconstitution coronaire en Co-Cr, anatomique ou à l'aide de tenons normalisés.
+            - strong [ref=e117]: Voir les détails techniques
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - heading "Matière Première" [level=3] [ref=e120]
+            - generic [ref=e121]:
+              - img "Material 1" [ref=e123]
+              - img "Material 2" [ref=e125]
+              - img "Material 3" [ref=e127]
+              - img "Material 4" [ref=e129]
+              - img "Material 5" [ref=e131]
+              - img "Material 6" [ref=e133]
+              - img "Material 7" [ref=e135]
+              - img "Material 8" [ref=e137]
+              - img "Material 9" [ref=e139]
+          - generic [ref=e140]:
+            - heading "Flux numérique" [level=3] [ref=e141]
+            - generic [ref=e142]:
+              - img "Camera 1" [ref=e144]
+              - img "Camera 2" [ref=e146]
+              - img "Camera 3" [ref=e148]
+              - img "Camera 4" [ref=e150]
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]: Cas Cliniques
+        - heading "La preuve par l'image — découvrez nos réalisations" [level=2] [ref=e155]
+        - paragraph [ref=e156]: Découvrez notre expertise en esthétique dentaire à travers ces cas cliniques. Chaque réalisation reflète notre engagement envers la qualité et la conservation dentaire.
+      - generic [ref=e163]:
+        - button "01 Bridge collé Bridge collé Ouvrir la série" [ref=e164] [cursor=pointer]:
+          - generic [ref=e165]: "01"
+          - generic [ref=e166]: Bridge collé
+          - img "Bridge collé" [ref=e167]
+          - generic [ref=e168]: Ouvrir la série
+        - button "02 Facettes — levitation Facettes — levitation Ouvrir la série" [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]: "02"
+          - generic [ref=e171]: Facettes — levitation
+          - img "Facettes — levitation" [ref=e172]
+          - generic [ref=e173]: Ouvrir la série
+        - button "03 Cas esthétiques (homme) Cas esthétiques (homme) Ouvrir la série" [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]: "03"
+          - generic [ref=e176]: Cas esthétiques (homme)
+          - img "Cas esthétiques (homme)" [ref=e177]
+          - generic [ref=e178]: Ouvrir la série
+        - button "04 Technique & détail Technique & détail Ouvrir la série" [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]: "04"
+          - generic [ref=e181]: Technique & détail
+          - img "Technique & détail" [ref=e182]
+          - generic [ref=e183]: Ouvrir la série
+        - button "05 Photographie laboratoire hors-série, cliché 1 sur 7 Voir en grand" [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]: "05"
+          - img "Photographie laboratoire hors-série, cliché 1 sur 7" [ref=e186]
+          - generic [ref=e187]: Voir en grand
+        - button "06 Photographie laboratoire hors-série, cliché 2 sur 7 Voir en grand" [ref=e188] [cursor=pointer]:
+          - generic [ref=e189]: "06"
+          - img "Photographie laboratoire hors-série, cliché 2 sur 7" [ref=e190]
+          - generic [ref=e191]: Voir en grand
+        - button "07 Photographie laboratoire hors-série, cliché 3 sur 7 Voir en grand" [ref=e192] [cursor=pointer]:
+          - generic [ref=e193]: "07"
+          - img "Photographie laboratoire hors-série, cliché 3 sur 7" [ref=e194]
+          - generic [ref=e195]: Voir en grand
+        - button "08 Photographie laboratoire hors-série, cliché 4 sur 7 Voir en grand" [ref=e196] [cursor=pointer]:
+          - generic [ref=e197]: "08"
+          - img "Photographie laboratoire hors-série, cliché 4 sur 7" [ref=e198]
+          - generic [ref=e199]: Voir en grand
+        - button "09 Photographie laboratoire hors-série, cliché 5 sur 7 Voir en grand" [ref=e200] [cursor=pointer]:
+          - generic [ref=e201]: "09"
+          - img "Photographie laboratoire hors-série, cliché 5 sur 7" [ref=e202]
+          - generic [ref=e203]: Voir en grand
+        - button "10 Photographie laboratoire hors-série, cliché 6 sur 7 Voir en grand" [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]: "10"
+          - img "Photographie laboratoire hors-série, cliché 6 sur 7" [ref=e206]
+          - generic [ref=e207]: Voir en grand
+        - button "11 Photographie laboratoire hors-série, cliché 7 sur 7 Voir en grand" [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: "11"
+          - img "Photographie laboratoire hors-série, cliché 7 sur 7" [ref=e210]
+          - generic [ref=e211]: Voir en grand
+      - generic [ref=e212]:
+        - heading "Précision Macro" [level=3] [ref=e213]
+        - paragraph [ref=e214]: Détails, texture et translucidité — la signature DentCare
+      - generic [ref=e215]:
+        - button "Photographie macro dentaire 1" [ref=e216] [cursor=pointer]:
+          - img "Photographie macro dentaire 1" [ref=e217]
+        - button "Photographie macro dentaire 2" [ref=e218] [cursor=pointer]:
+          - img "Photographie macro dentaire 2" [ref=e219]
+        - button "Photographie macro dentaire 3" [ref=e220] [cursor=pointer]:
+          - img "Photographie macro dentaire 3" [ref=e221]
+        - button "Photographie macro dentaire 4" [ref=e222] [cursor=pointer]:
+          - img "Photographie macro dentaire 4" [ref=e223]
+        - button "Photographie macro dentaire 6" [ref=e224] [cursor=pointer]:
+          - img "Photographie macro dentaire 6" [ref=e225]
+    - generic [ref=e227]:
+      - generic [ref=e228]:
+        - generic [ref=e229]: Organisation
+        - heading "Une Organisation au service du cabinet" [level=2] [ref=e230]
+      - generic [ref=e231]:
+        - img "Flux Numérique" [ref=e232]
+        - generic [ref=e233]:
+          - heading "Flux Numérique" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Service de scannage intégré à Bordeaux. Numérisation des empreintes, planification implantaire et workflow digital complet pour une précision maximale.
+      - generic [ref=e236]:
+        - article [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]: VN
+            - generic [ref=e240]:
+              - heading "Production Hanoï" [level=3] [ref=e241]
+              - paragraph [ref=e242]: Vietnam — Centre de Production
+          - img "Production Hanoï" [ref=e243]
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: Laboratoire de 600 m2
+            - paragraph [ref=e246]: 20 techniciens Qualifiés
+            - paragraph [ref=e247]: Usinage, impression 3D, Flux numérique
+            - paragraph [ref=e248]: Matière première de référence
+            - paragraph [ref=e249]: Certifié ISO 13485
+            - paragraph [ref=e250]:
+              - img "ISO 13485" [ref=e251]
+        - article [ref=e252]:
+          - generic [ref=e253]:
+            - generic [ref=e254]: FR
+            - generic [ref=e255]:
+              - heading "Laboratoire Bordeaux" [level=3] [ref=e256]
+              - paragraph [ref=e257]: France — Centre de Coordination
+          - img "Laboratoire Bordeaux" [ref=e258]
+          - generic [ref=e259]:
+            - paragraph [ref=e260]: 3 Techniciens
+            - paragraph [ref=e261]: Communication cabinet, proximité
+            - paragraph [ref=e262]: Organisation des plannings
+            - paragraph [ref=e263]: Service de numérisation des empreintes
+            - paragraph [ref=e264]: Suivi des commandes
+            - paragraph [ref=e265]: Support implantologie, Commandes des accastillages
+            - paragraph [ref=e266]: Modification des prothèses, SAV
+      - generic [ref=e267]:
+        - heading "Livraison dans toute la France" [level=3] [ref=e268]
+        - generic [ref=e269]:
+          - img "DHL" [ref=e271]
+          - img "Chronopost" [ref=e273]
+          - img "TNT / FedEx" [ref=e275]
+          - link "Deliverbag" [ref=e276] [cursor=pointer]:
+            - /url: https://www.deliverbag.com
+            - img "Deliverbag" [ref=e277]
+      - generic [ref=e278]:
+        - heading "Politique & Services" [level=3] [ref=e279]
+        - generic [ref=e280]:
+          - button "Traçabilité" [ref=e281] [cursor=pointer]
+          - button "Mise sur le Marché" [ref=e282] [cursor=pointer]
+          - button "Garantie" [ref=e283] [cursor=pointer]
+          - button "Conditions Générales de Vente" [ref=e284] [cursor=pointer]
+        - paragraph [ref=e285]: Traçabilité complète des dispositifs et matières premières selon les procédures internes de suivi et d'archivage.
+    - generic [ref=e287]:
+      - generic [ref=e288]:
+        - generic [ref=e289]: Questions Fréquentes
+        - heading "Trouvez les réponses à vos questions" [level=2] [ref=e290]
+      - generic [ref=e291]:
+        - article [ref=e292]:
+          - button "Quel est le délai de fabrication standard pour une prothèse?" [expanded] [ref=e293] [cursor=pointer]:
+            - generic [ref=e294]: Quel est le délai de fabrication standard pour une prothèse?
+            - generic [ref=e295]: ⌄
+          - paragraph [ref=e297]: Notre délai standard est de 14 jours ouvrables sur un flux traditionnel pour la plupart des prothèses, selon la complexité et les matériaux. Le flux numérique permet de traiter les commandes avec un délai de 10 jours. Nous coordonnons étroitement avec votre cabinet pour que les délais de production correspondent à vos agendas.
+        - article [ref=e298]:
+          - button "Quels matériaux et marques DentCare utilise-t-il?" [ref=e299] [cursor=pointer]:
+            - generic [ref=e300]: Quels matériaux et marques DentCare utilise-t-il?
+            - generic [ref=e301]: ⌄
+        - article [ref=e302]:
+          - button "Proposez-vous l'intégration du flux numérique avec scanners intra-oraux?" [ref=e303] [cursor=pointer]:
+            - generic [ref=e304]: Proposez-vous l'intégration du flux numérique avec scanners intra-oraux?
+            - generic [ref=e305]: ⌄
+        - article [ref=e306]:
+          - button "DentCare est-il certifié pour la fabrication de dispositifs médicaux?" [ref=e307] [cursor=pointer]:
+            - generic [ref=e308]: DentCare est-il certifié pour la fabrication de dispositifs médicaux?
+            - generic [ref=e309]: ⌄
+        - article [ref=e310]:
+          - button "DentCare peut-il gérer les cas implantaires complexes?" [ref=e311] [cursor=pointer]:
+            - generic [ref=e312]: DentCare peut-il gérer les cas implantaires complexes?
+            - generic [ref=e313]: ⌄
+        - article [ref=e314]:
+          - button "Quelle garantie et support après-vente propose DentCare?" [ref=e315] [cursor=pointer]:
+            - generic [ref=e316]: Quelle garantie et support après-vente propose DentCare?
+            - generic [ref=e317]: ⌄
+        - article [ref=e318]:
+          - button "Comment DentCare assure-t-il la précision en conception numérique?" [ref=e319] [cursor=pointer]:
+            - generic [ref=e320]: Comment DentCare assure-t-il la précision en conception numérique?
+            - generic [ref=e321]: ⌄
+        - article [ref=e322]:
+          - button "DentCare livre-t-il à l'international?" [ref=e323] [cursor=pointer]:
+            - generic [ref=e324]: DentCare livre-t-il à l'international?
+            - generic [ref=e325]: ⌄
+        - article [ref=e326]:
+          - button "Quelle est la différence entre zircone monolithique et stratifiée?" [ref=e327] [cursor=pointer]:
+            - generic [ref=e328]: Quelle est la différence entre zircone monolithique et stratifiée?
+            - generic [ref=e329]: ⌄
+        - article [ref=e330]:
+          - button "DentCare peut-il accommoder des spécifications customisées pour les cas complexes?" [ref=e331] [cursor=pointer]:
+            - generic [ref=e332]: DentCare peut-il accommoder des spécifications customisées pour les cas complexes?
+            - generic [ref=e333]: ⌄
+      - generic [ref=e334]:
+        - paragraph [ref=e335]: Vous n'avez pas trouvé votre réponse ? Nous sommes là pour vous aider !
+        - link "Contactez-nous" [ref=e336] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e338]:
+      - generic [ref=e339]:
+        - generic [ref=e340]: Contactez-Nous
+        - heading "Démarrons une collaboration d'excellence" [level=2] [ref=e341]
+      - generic [ref=e342]:
+        - generic [ref=e343]:
+          - generic [ref=e345]:
+            - generic [ref=e346]:
+              - generic [ref=e347]:
+                - text: Nom complet *
+                - textbox "Nom complet *" [ref=e348]
+              - generic [ref=e349]:
+                - text: Adresse email *
+                - textbox "Adresse email *" [ref=e350]
+            - generic [ref=e351]:
+              - text: Téléphone
+              - textbox "Téléphone" [ref=e352]
+            - generic [ref=e353]:
+              - text: Votre message *
+              - textbox "Votre message *" [ref=e354]
+            - button "Envoyer le Message →" [ref=e355] [cursor=pointer]
+          - article [ref=e357]:
+            - heading "Laboratoire Bordeaux" [level=3] [ref=e359]
+            - generic [ref=e361]:
+              - paragraph [ref=e362]: 29 Rue de Cursol 33000 Bordeaux. France
+              - paragraph [ref=e363]:
+                - link "+33 6 78 09 47 49" [ref=e364] [cursor=pointer]:
+                  - /url: tel:+33678094749
+              - paragraph [ref=e365]:
+                - link "olivier@dentcare-consultation.com" [ref=e366] [cursor=pointer]:
+                  - /url: mailto:olivier@dentcare-consultation.com
+        - generic [ref=e367]:
+          - iframe [ref=e369]
+          - generic [ref=e370]:
+            - generic [ref=e371]:
+              - generic [ref=e372]:
+                - heading "Partenaires de livraison en France" [level=3] [ref=e373]
+                - paragraph [ref=e374]: Expedition securisee sur toute la France avec nos transporteurs partenaires.
+              - img "France" [ref=e375]
+            - generic [ref=e376]:
+              - img "DHL" [ref=e378]
+              - img "Chronopost" [ref=e380]
+              - img "TNT / FedEx" [ref=e382]
+              - img "Deliverbag" [ref=e384]
+  - contentinfo [ref=e385]:
+    - generic [ref=e386]:
+      - generic [ref=e387]:
+        - img "DentCare" [ref=e388]
+        - paragraph [ref=e389]: Laboratoire spécialisé en Esthétique et Implantologie
+      - generic [ref=e390]:
+        - paragraph [ref=e391]:
+          - strong [ref=e392]: Dentcare Consultation SASU
+        - paragraph [ref=e393]: 29 Rue de Cursol 33000 Bordeaux
+        - paragraph [ref=e394]: 832 04 30574 RCS Bordeaux
+        - paragraph [ref=e395]: "N° TVA : FR52 832043574"
+      - generic [ref=e396]:
+        - paragraph [ref=e397]:
+          - link "06 78 09 47 49" [ref=e398] [cursor=pointer]:
+            - /url: tel:+33678094749
+        - paragraph [ref=e399]:
+          - link "olivier@dentcare-consultation.com" [ref=e400] [cursor=pointer]:
+            - /url: mailto:olivier@dentcare-consultation.com
+        - paragraph [ref=e401]:
+          - link "Informations légales" [ref=e402] [cursor=pointer]:
+            - /url: http://localhost:8080/fr/legal-info
+        - paragraph [ref=e403]:
+          - link "Conditions générales de vente" [ref=e404] [cursor=pointer]:
+            - /url: http://localhost:8080/fr/terms-and-conditions
+    - generic [ref=e405]: © 2026 DentCare Consultation. Tous droits réservés.
+  - button "Remonter en haut de la page": ↑

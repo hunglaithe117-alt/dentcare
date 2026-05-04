@@ -30,9 +30,14 @@ add_action('after_setup_theme', 'dentcare_setup');
 
 function dentcare_enqueue_assets(): void
 {
+    $main_css = DENTCARE_THEME_DIR . '/assets/css/main.css';
+    $main_js = DENTCARE_THEME_DIR . '/assets/js/main.js';
+    $main_css_version = file_exists($main_css) ? (string) filemtime($main_css) : DENTCARE_THEME_VERSION;
+    $main_js_version = file_exists($main_js) ? (string) filemtime($main_js) : DENTCARE_THEME_VERSION;
+
     wp_enqueue_style('dentcare-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap', [], null);
-    wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.css', ['dentcare-fonts'], DENTCARE_THEME_VERSION);
-    wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.js', [], DENTCARE_THEME_VERSION, true);
+    wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.css', ['dentcare-fonts'], $main_css_version);
+    wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.js', [], $main_js_version, true);
 
     wp_localize_script('dentcare-main', 'DentCareTheme', [
         'locale' => dentcare_current_locale(),
@@ -80,6 +85,35 @@ function dentcare_current_locale(): string
     return 'fr';
 }
 
+function dentcare_current_view(): string
+{
+    $query_view = get_query_var('dentcare_view');
+    if (in_array($query_view, ['home', 'legal-info', 'terms-and-conditions'], true)) {
+        return $query_view;
+    }
+
+    $path = trim((string) wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    $parts = array_values(array_filter(explode('/', $path)));
+    $locale_index = null;
+    foreach ($parts as $index => $part) {
+        if (in_array($part, ['fr', 'en'], true)) {
+            $locale_index = $index;
+            break;
+        }
+    }
+
+    if ($locale_index === null) {
+        return 'home';
+    }
+
+    $view = $parts[$locale_index + 1] ?? '';
+    if (in_array($view, ['legal-info', 'terms-and-conditions'], true)) {
+        return $view;
+    }
+
+    return 'home';
+}
+
 function dentcare_url(string $locale = '', string $path = ''): string
 {
     $locale = in_array($locale, ['fr', 'en'], true) ? $locale : dentcare_current_locale();
@@ -108,7 +142,7 @@ add_action('init', 'dentcare_rewrite_rules');
 
 function dentcare_template_include(string $template): string
 {
-    $view = get_query_var('dentcare_view');
+    $view = dentcare_current_view();
     if ($view === 'home') {
         return DENTCARE_THEME_DIR . '/front-page.php';
     }
@@ -153,7 +187,7 @@ add_action('switch_theme', 'dentcare_deactivate');
 function dentcare_document_title_parts(array $parts): array
 {
     $locale = dentcare_current_locale();
-    $view = get_query_var('dentcare_view') ?: 'home';
+    $view = dentcare_current_view();
     $meta = dentcare_meta($locale, $view);
     $parts['title'] = $meta['title'];
     return $parts;
@@ -163,7 +197,7 @@ add_filter('document_title_parts', 'dentcare_document_title_parts');
 function dentcare_head_meta(): void
 {
     $locale = dentcare_current_locale();
-    $view = get_query_var('dentcare_view') ?: 'home';
+    $view = dentcare_current_view();
     $meta = dentcare_meta($locale, $view);
     $url = dentcare_url($locale, $view === 'home' ? '' : $view);
     $image = dentcare_asset('images/og-image.jpg');
