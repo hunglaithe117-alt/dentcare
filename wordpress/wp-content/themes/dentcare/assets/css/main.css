@@ -2542,7 +2542,10 @@ section[id] {
 }
 
 .modal.is-open {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .lightbox {
@@ -2565,6 +2568,155 @@ section[id] {
   inset: 0;
   background: rgba(10, 25, 47, 0.88);
   backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 30px 100px rgba(10, 25, 47, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modal-enter 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-enter {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal__header {
+  padding: 32px 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.modal__title-area h3 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  color: var(--primary-900);
+  line-height: 1.1;
+}
+
+.modal__description {
+  margin: 0;
+  color: var(--neutral-500);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.modal__close-btn {
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--neutral-100);
+  border: 0;
+  color: var(--neutral-700);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 200ms ease;
+}
+
+.modal__close-btn:hover {
+  background: var(--neutral-200);
+  color: var(--primary-900);
+}
+
+.modal__technical-box {
+  padding: 24px 40px;
+  background: var(--accent-50);
+  border-bottom: 1px solid var(--accent-100);
+  color: var(--accent-800);
+  font-size: 15px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.modal__technical-box::before {
+  content: "Technical Detail:";
+  display: block;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-500);
+  margin-bottom: 8px;
+}
+
+.modal__media {
+  padding: 40px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal__image-frame {
+  aspect-ratio: 16 / 9;
+  background: var(--neutral-50);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--neutral-100);
+}
+
+.modal__image-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal__thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.modal__thumbs button {
+  width: 80px;
+  height: 60px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--neutral-100);
+  transition: all 200ms ease;
+  opacity: 0.6;
+}
+
+.modal__thumbs button.is-active {
+  border-color: var(--accent-500);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(175, 127, 39, 0.2);
+}
+
+.modal__thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__media-footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--neutral-400);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .lightbox__dialog {
@@ -2832,9 +2984,24 @@ section[id] {
   .digital-card,
   .lab-grid,
   .contact__grid,
-  .modal__dialog,
   .site-footer__inner {
     grid-template-columns: 1fr;
+  }
+
+  .modal__dialog {
+    max-height: 95vh;
+  }
+
+  .modal__header {
+    padding: 24px 32px;
+  }
+
+  .modal__title-area h3 {
+    font-size: 26px;
+  }
+
+  .modal__media {
+    padding: 32px;
   }
 
   .about__copy,
@@ -2942,9 +3109,33 @@ section[id] {
   }
 
   .modal__dialog {
-    margin: 10px auto;
-    max-height: calc(100vh - 20px);
-    padding: 18px;
+    margin: 0;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .modal__header {
+    padding: 20px 24px;
+  }
+
+  .modal__title-area h3 {
+    font-size: 22px;
+  }
+
+  .modal__technical-box {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
+  .modal__media {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .modal__thumbs button {
+    width: 60px;
+    height: 45px;
   }
 }
 
