@@ -14,6 +14,8 @@ define('DENTCARE_THEME_DIR', get_template_directory());
 define('DENTCARE_THEME_URI', get_template_directory_uri());
 
 require_once DENTCARE_THEME_DIR . '/inc/data.php';
+require_once DENTCARE_THEME_DIR . '/inc/admin-settings.php';
+require_once DENTCARE_THEME_DIR . '/inc/mail.php';
 
 function dentcare_setup(): void
 {
@@ -244,38 +246,3 @@ function dentcare_cf7_shortcode(): string
     return '';
 }
 
-function dentcare_handle_contact(): void
-{
-    if (!isset($_POST['dentcare_contact_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['dentcare_contact_nonce'])), 'dentcare_contact')) {
-        wp_safe_redirect(add_query_arg('contact_status', 'error', wp_get_referer() ?: dentcare_url()));
-        exit;
-    }
-
-    $name = sanitize_text_field(wp_unslash($_POST['name'] ?? ''));
-    $email = sanitize_email(wp_unslash($_POST['email'] ?? ''));
-    $phone = sanitize_text_field(wp_unslash($_POST['phone'] ?? ''));
-    $message = sanitize_textarea_field(wp_unslash($_POST['message'] ?? ''));
-
-    if ($name === '' || $email === '' || !is_email($email) || $message === '') {
-        wp_safe_redirect(add_query_arg('contact_status', 'error', wp_get_referer() ?: dentcare_url()));
-        exit;
-    }
-
-    $to = (string) get_option('admin_email');
-    $subject = 'New contact from DentCare Website';
-    $body = implode("\n", array_filter([
-        'Name: ' . $name,
-        'Email: ' . $email,
-        $phone !== '' ? 'Phone: ' . $phone : '',
-        '',
-        'Message:',
-        $message,
-    ]));
-    $headers = ['Reply-To: ' . $name . ' <' . $email . '>'];
-    $sent = wp_mail($to, $subject, $body, $headers);
-
-    wp_safe_redirect(add_query_arg('contact_status', $sent ? 'success' : 'error', wp_get_referer() ?: dentcare_url()));
-    exit;
-}
-add_action('admin_post_nopriv_dentcare_contact', 'dentcare_handle_contact');
-add_action('admin_post_dentcare_contact', 'dentcare_handle_contact');
