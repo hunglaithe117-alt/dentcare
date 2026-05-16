@@ -143,7 +143,7 @@ function dentcare_products(): array
                     'images/wetransfer/Pict 9 CCM/PHOTO-2026-03-15-08-39-23.jpg',
                     'images/wetransfer/Pict 9 CCM/PHOTO-2026-03-15-08-48-36.jpg',
                 ],
-                'inlayCore' => ['images/wetransfer/pict 10 inlay-core/Capture d’écran 2017-04-12 à 08.52.13.png'],
+                'inlayCore' => ['images/wetransfer/pict 10 inlay-core/inlay-core.png'],
             ],
             'veneers' => [
                 'waxup' => [
@@ -158,7 +158,7 @@ function dentcare_products(): array
                     'images/wetransfer/pict 12 Facettes stratifiees/PHOTO-2026-03-15-08-41-17.jpg',
                 ],
                 'monolithicVeneer' => [
-                    'images/wetransfer/Pict 11 Facette emax/Capture d’écran 2018-01-20 à 19.27.56.png',
+                    'images/wetransfer/Pict 11 Facette emax/facette-emax.png',
                     'images/wetransfer/Pict 11 Facette emax/PHOTO-2026-03-15-08-36-20.jpg',
                     'images/wetransfer/Pict 11 Facette emax/PHOTO-2026-03-15-08-38-03.jpg',
                     'images/wetransfer/Pict 11 Facette emax/PHOTO-2026-03-15-08-38-52.jpg',
@@ -195,7 +195,7 @@ function dentcare_products(): array
                     'images/wetransfer/Pict 18 resine flex/PHOTO-2026-03-24-14-34-28.jpg',
                 ],
                 'conventionalResin' => [
-                    'images/wetransfer/Pict 19 Resine/Capture d’écran 2026-03-21 à 11.55.13.png',
+                    'images/wetransfer/Pict 19 Resine/resine-conventionnelle.png',
                     'images/products/removable/pict-1670.jpg',
                 ],
                 'attachementPrecision' => [

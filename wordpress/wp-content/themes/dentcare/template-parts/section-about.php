@@ -6,7 +6,7 @@
  */
 
 $method_items = [
-    ['key' => 'scanner', 'image' => 'images/wetransfer/Pict 3 scanner intra oral/Capture d’écran 2026-03-15 à 09.10.39.png'],
+    ['key' => 'scanner', 'image' => 'images/wetransfer/Pict 3 scanner intra oral/scanner-intra-oral.png'],
     ['key' => 'printing', 'image' => 'images/workflow/impression-3d.jpg'],
     ['key' => 'milling', 'image' => 'images/workflow/usinage-zircone.jpg'],
     ['key' => 'implant', 'image' => 'images/workflow/implantologie.jpg'],

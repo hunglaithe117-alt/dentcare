@@ -158,7 +158,7 @@
     "description": "Discover our expertise in dental aesthetics through these clinical cases. Each work reflects our commitment to quality and dental preservation.",
     "closePreview": "Close image preview",
     "openGallery": "Open series",
-    "galleryPhotoCount": "{count, plural, one {# image} other {# images}}",
+    "galleryPhotoCount": "{count} images",
     "previousImage": "Previous image",
     "nextImage": "Next image",
     "galleryItemAlt": "{category} — clinical image {current} of {total}",
