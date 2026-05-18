@@ -109,6 +109,3 @@ $standalone_total = count($gallery['standalone']);
         </div>
     </div>
 </section>
-                                    <img src="<?php echo esc_url(dentcare_asset($collection['imageSrcs'][0])); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" width="380" height="280">
-                                    <img src="<?php echo esc_url(dentcare_asset($src)); ?>" alt="<?php echo esc_attr(str_replace(['{n}', '{total}'], [(string) ($index + 1), (string) $standalone_total], dentcare_t('clinical.standaloneAlt'))); ?>" loading="lazy" width="380" height="280">
-                    <img src="<?php echo esc_url(dentcare_asset('images/clinical/macro/macro-' . $num . '.jpg')); ?>" alt="<?php echo esc_attr(str_replace('{num}', (string) $num, dentcare_t('clinical.macroImageAlt'))); ?>" loading="lazy" width="220" height="220">
