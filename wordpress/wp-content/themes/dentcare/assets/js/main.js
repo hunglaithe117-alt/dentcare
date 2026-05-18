@@ -16,10 +16,16 @@
     const mobileMenu = $("[data-mobile-menu]", header);
     const scrollTopLinks = $$("[data-scroll-top]");
 
+    let scrollTick = false;
     const applyScrolled = () => {
-      header.classList.toggle("is-scrolled", window.scrollY > 50);
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        header.classList.toggle("is-scrolled", window.scrollY > 50);
+        scrollTick = false;
+      });
     };
-    applyScrolled();
+    requestAnimationFrame(() => applyScrolled());
     window.addEventListener("scroll", applyScrolled, { passive: true });
 
     if (toggle && mobileMenu) {
@@ -376,8 +382,16 @@
   function initScrollTop() {
     const button = $("[data-scroll-top-button]");
     if (!button) return;
-    const toggle = () => button.classList.toggle("is-visible", window.scrollY > 300);
-    toggle();
+    let scrollTick = false;
+    const toggle = () => {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        button.classList.toggle("is-visible", window.scrollY > 300);
+        scrollTick = false;
+      });
+    };
+    requestAnimationFrame(() => toggle());
     window.addEventListener("scroll", toggle, { passive: true });
     button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" }));
   }
