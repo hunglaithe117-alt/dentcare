@@ -43,7 +43,7 @@ $standalone_total = count($gallery['standalone']);
                                         </span>
                                     </div>
 
-                                    <img src="<?php echo esc_url(dentcare_asset($collection['imageSrcs'][0])); ?>" alt="<?php echo esc_attr($title); ?>">
+                                    <img src="<?php echo esc_url(dentcare_asset($collection['imageSrcs'][0])); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" decoding="async" width="400" height="300">
                                     <span class="film-card__action"><?php echo esc_html(dentcare_t('clinical.openGallery')); ?></span>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ $standalone_total = count($gallery['standalone']);
                                 <div class="film-card__line"></div>
                                 <div class="film-card__frame">
                                     <span class="film-card__index"><?php echo esc_html(str_pad((string) ($index + 1 + count($gallery['collections'])), 2, '0', STR_PAD_LEFT)); ?></span>
-                                    <img src="<?php echo esc_url(dentcare_asset($src)); ?>" alt="<?php echo esc_attr(str_replace(['{n}', '{total}'], [(string) ($index + 1), (string) $standalone_total], dentcare_t('clinical.standaloneAlt'))); ?>">
+                                    <img src="<?php echo esc_url(dentcare_asset($src)); ?>" alt="<?php echo esc_attr(str_replace(['{n}', '{total}'], [(string) ($index + 1), (string) $standalone_total], dentcare_t('clinical.standaloneAlt'))); ?>" loading="lazy" decoding="async" width="400" height="300">
                                     <span class="film-card__action"><?php echo esc_html(dentcare_t('clinical.standaloneEnlarge')); ?></span>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ $standalone_total = count($gallery['standalone']);
         <div class="macro-grid">
             <?php foreach ([1, 2, 3, 4, 6] as $num) : ?>
                 <button type="button" class="macro-card" data-lightbox="<?php echo esc_attr(wp_json_encode(['type' => 'single', 'src' => dentcare_asset('images/clinical/macro/macro-' . $num . '.jpg'), 'alt' => dentcare_t('clinical.macroImageAlt') . ' ' . $num])); ?>">
-                    <img src="<?php echo esc_url(dentcare_asset('images/clinical/macro/macro-' . $num . '.jpg')); ?>" alt="<?php echo esc_attr(str_replace('{num}', (string) $num, dentcare_t('clinical.macroImageAlt'))); ?>">
+                    <img src="<?php echo esc_url(dentcare_asset('images/clinical/macro/macro-' . $num . '.jpg')); ?>" alt="<?php echo esc_attr(str_replace('{num}', (string) $num, dentcare_t('clinical.macroImageAlt'))); ?>" loading="lazy" decoding="async" width="400" height="400">
                 </button>
             <?php endforeach; ?>
         </div>

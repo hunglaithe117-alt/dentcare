@@ -37,7 +37,7 @@ $brands = dentcare_brand_groups();
                         ?>
                         <article class="product-card" tabindex="0" role="button" data-product-detail="<?php echo esc_attr(wp_json_encode($payload)); ?>">
                             <div class="product-card__image">
-                                <img src="<?php echo esc_url(dentcare_asset($image_list[0])); ?>" alt="<?php echo esc_attr($payload['title']); ?>" loading="lazy" width="360" height="260">
+                                <img src="<?php echo esc_url(dentcare_asset($image_list[0])); ?>" alt="<?php echo esc_attr($payload['title']); ?>" loading="lazy" fetchpriority="low" decoding="async" width="360" height="260">
                                 <?php if (count($image_list) > 1) : ?>
                                     <span>+<?php echo esc_html(count($image_list) - 1); ?></span>
                                 <?php endif; ?>
