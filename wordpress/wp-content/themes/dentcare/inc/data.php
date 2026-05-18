@@ -87,12 +87,13 @@ function dentcare_schema(): array
 {
     return [
         '@context' => 'https://schema.org',
-        '@type' => 'Organization',
+        '@type' => 'MedicalOrganization',
+        'medicalSpecialty' => 'Dentist',
         '@id' => home_url('/'),
         'name' => 'DentCare Consultation',
         'url' => home_url('/'),
         'logo' => dentcare_asset('logo-light.svg'),
-        'description' => 'Laboratory specialized in Aesthetics and Implantology with over 30 years of experience and ISO 13485 certification',
+        'description' => 'Laboratoire spécialisé en Esthétique et Implantologie. Plus de 30 ans d\'expérience. Production certifiée ISO 13485. Bordeaux & Hanoï.',
         'address' => [
             [
                 '@type' => 'PostalAddress',
@@ -100,6 +101,7 @@ function dentcare_schema(): array
                 'addressLocality' => 'Bordeaux',
                 'postalCode' => '33000',
                 'addressCountry' => 'FR',
+                'addressRegion' => 'Nouvelle-Aquitaine',
             ],
             [
                 '@type' => 'PostalAddress',
@@ -109,6 +111,20 @@ function dentcare_schema(): array
                 'addressCountry' => 'VN',
             ],
         ],
+        'geo' => [
+            '@type' => 'GeoCoordinates',
+            'latitude' => '44.8378',
+            'longitude' => '-0.5792',
+        ],
+        'openingHoursSpecification' => [
+            [
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                'opens' => '09:00',
+                'closes' => '18:00',
+            ],
+        ],
+        'priceRange' => '$$',
         'contactPoint' => [
             '@type' => 'ContactPoint',
             'contactType' => 'Customer Service',
@@ -117,6 +133,44 @@ function dentcare_schema(): array
         ],
         'areaServed' => ['FR', 'VN', 'EU'],
         'knowsAbout' => ['Dental Prosthetics', 'Implantology', 'Aesthetic Dentistry', 'CAD/CAM Design', '3D Printing', 'Zirconia Manufacturing'],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'Dental Services',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Couronnes Dentaires',
+                        'category' => 'Couronnes',
+                    ],
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Facettes',
+                        'category' => 'Esthétique',
+                    ],
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Implantologie',
+                        'category' => 'Implants',
+                    ],
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Prothèses Amovibles',
+                        'category' => 'Removable',
+                    ],
+                ],
+            ],
+        ],
         'certifications' => 'ISO 13485:2016 - Medical Devices Quality Management Systems',
     ];
 }
@@ -419,4 +473,3 @@ function dentcare_terms_content(string $locale = ''): array
 
     return $content[$locale] ?? $content['fr'];
 }
-

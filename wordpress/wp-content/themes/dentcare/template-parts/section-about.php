@@ -28,12 +28,12 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
                 <h3><?php echo esc_html(dentcare_t('about.history.title')); ?></h3>
                 <p><?php echo esc_html(dentcare_t('about.history.description')); ?></p>
                 <div class="about__signature">
-                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-signature.svg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.signatureAlt')); ?>">
+                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-signature.svg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.signatureAlt')); ?>" loading="lazy" width="200" height="80">
                 </div>
             </div>
             <div class="about__portrait">
                 <div class="about__portrait-frame">
-                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>">
+                    <img src="<?php echo esc_url(dentcare_asset('images/about/founder-portrait.jpg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.founderName')); ?>" loading="lazy" width="400" height="500">
                     <div class="about__portrait-overlay"></div>
                     <div class="about__portrait-caption">
                         <p><?php echo esc_html(dentcare_t('about.founderName')); ?></p>
@@ -68,7 +68,7 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
                 <?php foreach ($method_items as $item) : ?>
                     <article>
                         <div class="image-wrapper">
-                            <img src="<?php echo esc_url(dentcare_asset($item['image'])); ?>" alt="<?php echo esc_attr(dentcare_t('about.method.' . $item['key'])); ?>">
+                            <img src="<?php echo esc_url(dentcare_asset($item['image'])); ?>" alt="<?php echo esc_attr(dentcare_t('about.method.' . $item['key'])); ?>" loading="lazy" width="320" height="240">
                         </div>
                         <strong><?php echo esc_html(dentcare_t('about.method.' . $item['key'])); ?></strong>
                     </article>

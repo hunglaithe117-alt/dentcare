@@ -37,7 +37,7 @@ $brands = dentcare_brand_groups();
                         ?>
                         <article class="product-card" tabindex="0" role="button" data-product-detail="<?php echo esc_attr(wp_json_encode($payload)); ?>">
                             <div class="product-card__image">
-                                <img src="<?php echo esc_url(dentcare_asset($image_list[0])); ?>" alt="<?php echo esc_attr($payload['title']); ?>">
+                                <img src="<?php echo esc_url(dentcare_asset($image_list[0])); ?>" alt="<?php echo esc_attr($payload['title']); ?>" loading="lazy" width="360" height="260">
                                 <?php if (count($image_list) > 1) : ?>
                                     <span>+<?php echo esc_html(count($image_list) - 1); ?></span>
                                 <?php endif; ?>
@@ -55,7 +55,7 @@ $brands = dentcare_brand_groups();
                             <h3><?php echo esc_html(dentcare_t('products.labels.materials')); ?></h3>
                             <div class="logo-grid">
                                 <?php foreach ($brands['materials'] as $brand) : ?>
-                                    <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>"></div>
+                                    <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>" loading="lazy" width="160" height="90"></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ $brands = dentcare_brand_groups();
                             <h3><?php echo esc_html(dentcare_t('products.labels.digitalFlow')); ?></h3>
                             <div class="logo-grid">
                                 <?php foreach ($brands['digitalFlow'] as $brand) : ?>
-                                    <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>"></div>
+                                    <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>" loading="lazy" width="160" height="90"></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ $brands = dentcare_brand_groups();
                         <h3><?php echo esc_html(dentcare_t('products.labels.toothRangeNote')); ?></h3>
                         <div class="logo-grid logo-grid--two">
                             <?php foreach ($brands['toothChoices'] as $brand) : ?>
-                                <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>"></div>
+                                <div><img src="<?php echo esc_url(dentcare_asset($brand['src'])); ?>" alt="<?php echo esc_attr($brand['name']); ?>" loading="lazy" width="160" height="90"></div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -109,4 +109,3 @@ $brands = dentcare_brand_groups();
         </div>
     </div>
 </section>
-

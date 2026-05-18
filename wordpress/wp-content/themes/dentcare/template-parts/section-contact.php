@@ -92,12 +92,12 @@ $shipping_note = dentcare_current_locale() === 'fr'
                             <p><?php echo esc_html($shipping_note); ?></p>
                         </div>
                         <?php if (dentcare_asset_path('images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg')) : ?>
-                            <img src="<?php echo esc_url(dentcare_asset('images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg')); ?>" alt="France">
+                            <img src="<?php echo esc_url(dentcare_asset('images/wetransfer/Logo livraison dans toute la france/IMG_1634.jpg')); ?>" alt="France" loading="lazy" width="80" height="80">
                         <?php endif; ?>
                     </div>
                     <div class="shipping-grid">
                         <?php foreach (dentcare_shipping_partners() as $partner) : ?>
-                            <div class="shipping-card"><img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>" alt="<?php echo esc_attr($partner['name']); ?>"></div>
+                            <div class="shipping-card"><img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>" alt="<?php echo esc_attr($partner['name']); ?>" loading="lazy" width="100" height="50"></div>
                         <?php endforeach; ?>
                     </div>
                 </div>

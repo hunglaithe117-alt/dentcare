@@ -10,7 +10,7 @@ $year = gmdate('Y');
 <footer class="site-footer">
     <div class="site-footer__inner">
         <div class="site-footer__col">
-            <img src="<?php echo esc_url(dentcare_asset('logo-light.svg')); ?>" alt="DentCare" class="site-footer__logo">
+            <img src="<?php echo esc_url(dentcare_asset('logo-light.svg')); ?>" alt="DentCare" class="site-footer__logo" loading="lazy" width="160" height="160">
             <p class="site-footer__tagline"><?php echo esc_html(dentcare_t('footer.tagline')); ?></p>
         </div>
         <div class="site-footer__col">
@@ -42,4 +42,3 @@ $year = gmdate('Y');
 <?php wp_footer(); ?>
 </body>
 </html>
-

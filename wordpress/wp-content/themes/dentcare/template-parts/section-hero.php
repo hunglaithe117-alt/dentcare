@@ -10,7 +10,7 @@ $images = dentcare_hero_images();
 <section id="hero" class="hero" data-hero-slider>
     <div class="hero__media">
         <?php foreach ($images as $index => $image) : ?>
-            <img class="hero__image <?php echo $index === 0 ? 'is-active' : ''; ?>" src="<?php echo esc_url(dentcare_asset($image)); ?>" alt="" data-hero-image>
+            <img class="hero__image <?php echo $index === 0 ? 'is-active' : ''; ?>" src="<?php echo esc_url(dentcare_asset($image)); ?>" alt="" width="1920" height="1080" <?php echo $index === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'; ?> data-hero-image>
         <?php endforeach; ?>
         <div class="hero__overlay"></div>
     </div>
@@ -32,4 +32,3 @@ $images = dentcare_hero_images();
     </div>
     <div class="hero__scroll" aria-hidden="true"><span></span></div>
 </section>
-

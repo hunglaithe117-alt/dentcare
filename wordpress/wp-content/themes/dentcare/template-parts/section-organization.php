@@ -17,7 +17,7 @@ $shipping = dentcare_shipping_partners();
 
         <div class="digital-card">
             <img src="<?php echo esc_url(dentcare_asset('images/organization/pict-31.jpg')); ?>"
-                alt="<?php echo esc_attr(dentcare_t('organization.digital.title')); ?>">
+                alt="<?php echo esc_attr(dentcare_t('organization.digital.title')); ?>" loading="lazy" width="600" height="400">
             <div>
                 <h3><?php echo esc_html(dentcare_t('organization.digital.title')); ?></h3>
                 <p><?php echo esc_html(dentcare_t('organization.digital.description')); ?></p>
@@ -35,7 +35,7 @@ $shipping = dentcare_shipping_partners();
                 </div>
                 <div class="lab-card__image-frame">
                     <img src="<?php echo esc_url(dentcare_asset('images/organization/pict-8319.jpg')); ?>"
-                        alt="<?php echo esc_attr(dentcare_t('organization.hanoi.title')); ?>">
+                        alt="<?php echo esc_attr(dentcare_t('organization.hanoi.title')); ?>" loading="lazy" width="500" height="350">
                 </div>
                 <div class="lab-card__items">
                     <?php foreach (['item1', 'item2', 'item3', 'item4', 'item5'] as $key): ?>
@@ -47,7 +47,7 @@ $shipping = dentcare_shipping_partners();
                     <?php endforeach; ?>
                     <div class="lab-item lab-item--cert">
                         <img src="<?php echo esc_url(dentcare_asset('images/brands/certifications/pict-5456.png')); ?>"
-                            alt="ISO 13485">
+                            alt="ISO 13485" loading="lazy" width="120" height="120">
                     </div>
                 </div>
             </article>
@@ -62,7 +62,7 @@ $shipping = dentcare_shipping_partners();
                 </div>
                 <div class="lab-card__image-frame">
                     <img src="<?php echo esc_url(dentcare_asset('images/organization/bordeaux-lab.jpg')); ?>"
-                        alt="<?php echo esc_attr(dentcare_t('organization.bordeaux.title')); ?>">
+                        alt="<?php echo esc_attr(dentcare_t('organization.bordeaux.title')); ?>" loading="lazy" width="500" height="350">
                 </div>
                 <div class="lab-card__items">
                     <?php foreach (['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7'] as $key): ?>
@@ -83,12 +83,12 @@ $shipping = dentcare_shipping_partners();
                         <a href="<?php echo esc_url($partner['href']); ?>" target="_blank" rel="noopener noreferrer"
                             class="shipping-item" title="<?php echo esc_attr($partner['name']); ?>">
                             <img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>"
-                                alt="<?php echo esc_attr($partner['name']); ?>">
+                                alt="<?php echo esc_attr($partner['name']); ?>" loading="lazy" width="140" height="80">
                         </a>
                     <?php else: ?>
                         <div class="shipping-item" title="<?php echo esc_attr($partner['name']); ?>">
                             <img src="<?php echo esc_url(dentcare_asset($partner['logoSrc'])); ?>"
-                                alt="<?php echo esc_attr($partner['name']); ?>">
+                                alt="<?php echo esc_attr($partner['name']); ?>" loading="lazy" width="140" height="80">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
