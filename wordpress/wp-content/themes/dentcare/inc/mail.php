@@ -43,6 +43,11 @@ function dentcare_phpmailer_init($phpmailer): void
     $user = dentcare_get_mail_setting('SMTP_USER');
     $pass = dentcare_get_mail_setting('SMTP_PASS');
 
+    // Temp debug log to see why it returns early
+    $log_file = get_theme_file_path('mail-error.log');
+    $time = current_time('mysql');
+    file_put_contents($log_file, "[$time] INIT CHECK: host='$host', user='$user', pass='" . ($pass ? '***' : '') . "'\n", FILE_APPEND);
+
     if (empty($host) || empty($user) || empty($pass)) {
         return;
     }
@@ -68,8 +73,41 @@ function dentcare_phpmailer_init($phpmailer): void
         $phpmailer->From = $from_email;
         $phpmailer->FromName = !empty($from_name) ? $from_name : get_bloginfo('name');
     }
+
+    // Enable SMTP debugging to a file
+    $phpmailer->SMTPDebug = 2;
+    $phpmailer->Debugoutput = function($str, $level) {
+        $log_file = get_theme_file_path('mail-error.log');
+        $time = current_time('mysql');
+        file_put_contents($log_file, "[$time] [SMTP Debug $level] " . trim($str) . "\n", FILE_APPEND);
+    };
 }
 add_action('phpmailer_init', 'dentcare_phpmailer_init');
+
+/**
+ * Log mail failures for debugging.
+ */
+function dentcare_wp_mail_failed($wp_error): void
+{
+    $log_file = get_theme_file_path('mail-error.log');
+    $time = current_time('mysql');
+    $error_msg = '';
+    
+    if (is_wp_error($wp_error)) {
+        $error_msg = sprintf(
+            "[%s] WP_MAIL FAILED:\n- Error Codes: %s\n- Error Message: %s\n- Data: %s\n\n",
+            $time,
+            implode(', ', $wp_error->get_error_codes()),
+            $wp_error->get_error_message(),
+            print_r($wp_error->get_error_data(), true)
+        );
+    } else {
+        $error_msg = sprintf("[%s] WP_MAIL FAILED: Unknown error type.\n\n", $time);
+    }
+    
+    file_put_contents($log_file, $error_msg, FILE_APPEND);
+}
+add_action('wp_mail_failed', 'dentcare_wp_mail_failed');
 
 /**
  * Set default mail content type to HTML.
@@ -143,3 +181,23 @@ function dentcare_handle_contact(): void
 }
 add_action('admin_post_nopriv_dentcare_contact', 'dentcare_handle_contact');
 add_action('admin_post_dentcare_contact', 'dentcare_handle_contact');
+
+/**
+ * Override default WordPress From address to prevent phpmailer validation error.
+ */
+function dentcare_wp_mail_from($from_email): string
+{
+    $setting_from = dentcare_get_mail_setting('MAIL_FROM');
+    return !empty($setting_from) ? $setting_from : $from_email;
+}
+add_filter('wp_mail_from', 'dentcare_wp_mail_from');
+
+/**
+ * Override default WordPress From name.
+ */
+function dentcare_wp_mail_from_name($from_name): string
+{
+    $setting_name = dentcare_get_mail_setting('MAIL_FROM_NAME');
+    return !empty($setting_name) ? $setting_name : $from_name;
+}
+add_filter('wp_mail_from_name', 'dentcare_wp_mail_from_name');
