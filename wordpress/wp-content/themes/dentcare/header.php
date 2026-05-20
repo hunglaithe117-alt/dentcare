@@ -16,7 +16,7 @@ $view = dentcare_current_view();
 </head>
 <body <?php body_class('dentcare-site'); ?>>
 <?php wp_body_open(); ?>
-<header class="site-header" data-site-header>
+<header class="site-header <?php echo $view !== 'home' ? 'site-header--solid is-scrolled' : ''; ?>" data-site-header>
     <div class="site-header__inner">
         <a class="site-header__logo" href="<?php echo esc_url(dentcare_url($locale)); ?>" aria-label="<?php echo esc_attr(dentcare_t('header.logoHome')); ?>" data-scroll-top>
             <img class="site-header__logo-img site-header__logo-img--light" src="<?php echo esc_url(dentcare_asset('logo-light.svg')); ?>" alt="DentCare" fetchpriority="high" width="160" height="160">
@@ -25,7 +25,7 @@ $view = dentcare_current_view();
 
         <nav class="site-header__nav" aria-label="<?php echo esc_attr(dentcare_t('header.mainNav')); ?>">
             <?php foreach (dentcare_nav_items() as $key => $hash) : ?>
-                <a href="#<?php echo esc_attr($hash); ?>"><?php echo esc_html(dentcare_t('header.' . $key)); ?></a>
+                <a href="<?php echo $view !== 'home' ? esc_url(dentcare_url($locale)) . '#' . esc_attr($hash) : '#' . esc_attr($hash); ?>"><?php echo esc_html(dentcare_t('header.' . $key)); ?></a>
             <?php endforeach; ?>
         </nav>
 
@@ -50,7 +50,7 @@ $view = dentcare_current_view();
                     <svg class="icon-social" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
                 </a>
             </div>
-            <a class="site-header__cta" href="#contact"><?php echo esc_html(dentcare_t('header.contact')); ?></a>
+            <a class="site-header__cta" href="<?php echo $view !== 'home' ? esc_url(dentcare_url($locale)) . '#contact' : '#contact'; ?>"><?php echo esc_html(dentcare_t('header.contact')); ?></a>
             <button class="site-header__menu" type="button" aria-expanded="false" aria-label="<?php echo esc_attr(dentcare_t('header.toggleMenu')); ?>" data-menu-toggle>
                 <div class="menu-icon" aria-hidden="true">
                     <span></span><span></span><span></span>
@@ -61,9 +61,9 @@ $view = dentcare_current_view();
 
     <div class="mobile-menu" data-mobile-menu>
         <?php foreach (dentcare_nav_items() as $key => $hash) : ?>
-            <a href="#<?php echo esc_attr($hash); ?>"><?php echo esc_html(dentcare_t('header.' . $key)); ?></a>
+            <a href="<?php echo $view !== 'home' ? esc_url(dentcare_url($locale)) . '#' . esc_attr($hash) : '#' . esc_attr($hash); ?>"><?php echo esc_html(dentcare_t('header.' . $key)); ?></a>
         <?php endforeach; ?>
-        <a class="mobile-menu__cta" href="#contact"><?php echo esc_html(dentcare_t('header.contact')); ?></a>
+        <a class="mobile-menu__cta" href="<?php echo $view !== 'home' ? esc_url(dentcare_url($locale)) . '#contact' : '#contact'; ?>"><?php echo esc_html(dentcare_t('header.contact')); ?></a>
     </div>
 
     <div class="partner-rail" aria-hidden="true">
