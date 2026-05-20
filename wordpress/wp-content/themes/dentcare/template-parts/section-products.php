@@ -13,6 +13,7 @@ $brands = dentcare_brand_groups();
         <div class="section-heading">
             <span><?php echo esc_html(dentcare_t('products.sectionTitle')); ?></span>
             <h2><?php echo esc_html(dentcare_t('products.sectionSubtitle')); ?></h2>
+            <p class="section-heading__lead"><?php echo dentcare_current_locale() === 'fr' ? 'Laboratoire de prothese dentaire certifie ISO 13485. Solutions en <a href="#about">implantologie</a> et <a href="#clinical">esthetique dentaire</a>.' : 'ISO 13485 certified dental prosthetics laboratory. Solutions in <a href="#about">implantology</a> and <a href="#clinical">aesthetic dentistry</a>.'; ?></p>
         </div>
 
         <div class="tabs" role="tablist" aria-label="<?php echo esc_attr(dentcare_t('products.sectionTitle')); ?>">

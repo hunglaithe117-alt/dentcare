@@ -13,7 +13,7 @@ $standalone_total = count($gallery['standalone']);
         <div class="section-heading">
             <span><?php echo esc_html(dentcare_t('clinical.sectionTitle')); ?></span>
             <h2><?php echo esc_html(dentcare_t('clinical.sectionSubtitle')); ?></h2>
-            <p><?php echo esc_html(dentcare_t('clinical.description')); ?></p>
+            <p><?php echo esc_html(dentcare_t('clinical.description')); ?> <?php echo dentcare_current_locale() === 'fr' ? 'Voir aussi nos <a href="#products">produits</a> et notre savoir-faire en <a href="#about">laboratoire prothetique</a>.' : 'See also our <a href="#products">products</a> and our expertise in <a href="#about">prosthetic laboratory</a>.'; ?></p>
         </div>
 
         <div id="standalone" class="filmstrip-shell">

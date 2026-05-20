@@ -26,7 +26,7 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
         <div class="about__grid">
             <div class="about__copy">
                 <h3><?php echo esc_html(dentcare_t('about.history.title')); ?></h3>
-                <p><?php echo esc_html(dentcare_t('about.history.description')); ?></p>
+                <p><?php echo esc_html(dentcare_t('about.history.description')); ?> <?php echo dentcare_current_locale() === 'fr' ? 'Découvrez notre <a href="#products">gamme de prothèses dentaires</a> et nos <a href="#macro">cas cliniques</a>.' : 'Discover our <a href="#products">dental prosthetics range</a> and our <a href="#macro">clinical cases</a>.'; ?></p>
                 <div class="about__signature">
                     <img src="<?php echo esc_url(dentcare_asset('images/about/founder-signature.svg')); ?>" alt="<?php echo esc_attr(dentcare_t('about.signatureAlt')); ?>" loading="lazy" width="200" height="80">
                 </div>

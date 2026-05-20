@@ -32,13 +32,13 @@ add_action('after_setup_theme', 'dentcare_setup');
 
 function dentcare_enqueue_assets(): void
 {
-    $main_css = DENTCARE_THEME_DIR . '/assets/css/main.css';
-    $main_js = DENTCARE_THEME_DIR . '/assets/js/main.js';
+    $main_css = DENTCARE_THEME_DIR . '/assets/css/main.min.css';
+    $main_js = DENTCARE_THEME_DIR . '/assets/js/main.min.js';
     $main_css_version = file_exists($main_css) ? (string) filemtime($main_css) : DENTCARE_THEME_VERSION;
     $main_js_version = file_exists($main_js) ? (string) filemtime($main_js) : DENTCARE_THEME_VERSION;
 
-    wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.css', [], $main_css_version);
-    wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.js', [], $main_js_version, true);
+    wp_enqueue_style('dentcare-main', DENTCARE_THEME_URI . '/assets/css/main.min.css', [], $main_css_version);
+    wp_enqueue_script('dentcare-main', DENTCARE_THEME_URI . '/assets/js/main.min.js', [], $main_js_version, true);
 
     wp_localize_script('dentcare-main', 'DentCareTheme', [
         'locale' => dentcare_current_locale(),
@@ -53,15 +53,16 @@ add_action('wp_enqueue_scripts', 'dentcare_enqueue_assets');
 
 function dentcare_preload_critical_assets(): void
 {
-    $main_css = DENTCARE_THEME_URI . '/assets/css/main.css';
-    $mtime = file_exists(DENTCARE_THEME_DIR . '/assets/css/main.css') ? (string) filemtime(DENTCARE_THEME_DIR . '/assets/css/main.css') : DENTCARE_THEME_VERSION;
+    $main_css = DENTCARE_THEME_URI . '/assets/css/main.min.css';
+    $mtime = file_exists(DENTCARE_THEME_DIR . '/assets/css/main.min.css') ? (string) filemtime(DENTCARE_THEME_DIR . '/assets/css/main.min.css') : DENTCARE_THEME_VERSION;
 
     echo '<link rel="preload" href="' . esc_url($main_css) . '?ver=' . esc_attr($mtime) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
     echo '<noscript><link rel="stylesheet" href="' . esc_url($main_css) . '?ver=' . esc_attr($mtime) . '"></noscript>' . "\n";
 
     $hero_images = dentcare_hero_images();
     if (!empty($hero_images[0])) {
-        echo '<link rel="preload" as="image" href="' . esc_url(dentcare_asset($hero_images[0])) . '" fetchpriority="high">' . "\n";
+        $hero_src = is_array($hero_images[0]) ? $hero_images[0]['src'] : $hero_images[0];
+        echo '<link rel="preload" as="image" href="' . esc_url(dentcare_asset($hero_src)) . '" fetchpriority="high">' . "\n";
     }
 
     echo '<link rel="preload" as="image" href="' . esc_url(dentcare_asset('logo-light.svg')) . '">' . "\n";
@@ -158,6 +159,37 @@ function dentcare_asset(string $path): string
         return DENTCARE_THEME_URI . '/assets/' . ltrim($webp_rel, '/');
     }
     return $uri;
+}
+
+function dentcare_generate_webp(string $path): ?string
+{
+    $ext = strtolower((string) pathinfo($path, PATHINFO_EXTENSION));
+    if (!in_array($ext, ['jpg', 'jpeg', 'png'], true)) {
+        return null;
+    }
+    $webp_rel = preg_replace('/\.(jpe?g|png)$/i', '.webp', $path);
+    $webp_file = DENTCARE_THEME_DIR . '/assets/' . ltrim($webp_rel, '/');
+    if (!file_exists($webp_file)) {
+        return null;
+    }
+    return DENTCARE_THEME_URI . '/assets/' . ltrim($webp_rel, '/');
+}
+
+function dentcare_responsive_image(string $path, int $width = 0, int $height = 0, string $alt = '', string $loading = 'lazy', string $class = ''): string
+{
+    $src = dentcare_asset($path);
+    $webp_src = dentcare_generate_webp($path);
+    $ext = strtolower((string) pathinfo($path, PATHINFO_EXTENSION));
+    $width_attr = $width > 0 ? ' width="' . $width . '"' : '';
+    $height_attr = $height > 0 ? ' height="' . $height . '"' : '';
+    $class_attr = $class ? ' class="' . esc_attr($class) . '"' : '';
+    
+    $srcset = '';
+    if ($webp_src && in_array($ext, ['jpg', 'jpeg', 'png'], true)) {
+        $srcset = ' srcset="' . esc_attr($webp_src) . '" type="image/webp"';
+    }
+    
+    return '<img src="' . esc_url($src) . '" alt="' . esc_attr($alt) . '"' . $width_attr . $height_attr . $class_attr . ' loading="' . esc_attr($loading) . '" decoding="async"' . $srcset . '>';
 }
 
 function dentcare_asset_path(string $path): string

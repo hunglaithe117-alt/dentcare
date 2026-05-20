@@ -36,6 +36,7 @@ $items = dentcare_data_get('faq.items');
         </div>
         <div class="faq-cta">
             <p><?php echo esc_html(dentcare_t('faq.additionalInfo')); ?></p>
+            <p class="faq-cta__links"><?php echo dentcare_current_locale() === 'fr' ? 'Explorez notre <a href="#products">gamme de protheses dentaires</a>, nos <a href="#clinical">cas cliniques</a> ou consultez nos <a href="#about">methodes de laboratoire</a>.' : 'Explore our <a href="#products">dental prosthetics range</a>, our <a href="#clinical">clinical cases</a>, or learn about our <a href="#about">laboratory methods</a>.'; ?></p>
             <a class="button button--gold" href="#contact">
                 <?php echo esc_html(dentcare_t('faq.contactUs')); ?>
                 <span class="icon-arrow">→</span>
@@ -43,4 +44,3 @@ $items = dentcare_data_get('faq.items');
         </div>
     </div>
 </section>
-

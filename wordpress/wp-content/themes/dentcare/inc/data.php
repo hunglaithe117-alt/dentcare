@@ -52,30 +52,30 @@ function dentcare_meta(string $locale, string $view = 'home'): array
     $meta = [
         'fr' => [
             'home' => [
-                'title' => 'DentCare Consultation — Laboratoire Prothèse Dentaire Bordeaux',
-                'description' => "Laboratoire spécialisé en Esthétique et Implantologie. Plus de 30 ans d'expérience. Production certifiée ISO 13485. Bordeaux & Hanoï.",
+                'title' => 'DentCare Consultation — Laboratoire de prothese dentaire a Bordeaux',
+                'description' => "Laboratoire de prothese dentaire specialise en implantologie, esthetique dentaire et restaurations dentaires certifiees ISO 13485 a Bordeaux et Hanoi.",
             ],
             'legal-info' => [
                 'title' => 'Informations légales — DentCare Consultation',
-                'description' => 'Informations légales de DentCare Consultation SASU.',
+                'description' => 'Informations legales du laboratoire de prothese dentaire DentCare Consultation SASU a Bordeaux.',
             ],
             'terms-and-conditions' => [
                 'title' => 'Conditions Générales de Vente — DentCare Consultation',
-                'description' => 'Conditions générales de vente de DentCare Consultation.',
+                'description' => 'Conditions generales de vente du laboratoire de prothese dentaire DentCare Consultation.',
             ],
         ],
         'en' => [
             'home' => [
-                'title' => 'DentCare Consultation — Dental Prosthetics Laboratory Bordeaux',
-                'description' => 'Laboratory specialized in Aesthetics and Implantology. Over 30 years of experience. ISO 13485 certified production. Bordeaux & Hanoi.',
+                'title' => 'DentCare Consultation — Dental Prosthetics Laboratory in Bordeaux',
+                'description' => 'Dental prosthetics laboratory specialized in implantology, aesthetic dentistry, and ISO 13485 certified dental restorations in Bordeaux and Hanoi.',
             ],
             'legal-info' => [
                 'title' => 'Legal Information — DentCare Consultation',
-                'description' => 'Legal information for DentCare Consultation SASU.',
+                'description' => 'Legal information for DentCare Consultation dental prosthetics laboratory SASU in Bordeaux.',
             ],
             'terms-and-conditions' => [
                 'title' => 'General Terms of Sale — DentCare Consultation',
-                'description' => 'General terms and conditions of sale for DentCare Consultation.',
+                'description' => 'General terms and conditions of sale for DentCare Consultation dental prosthetics laboratory.',
             ],
         ],
     ];
@@ -93,7 +93,7 @@ function dentcare_schema(): array
         'name' => 'DentCare Consultation',
         'url' => home_url('/'),
         'logo' => dentcare_asset('logo-light.svg'),
-        'description' => 'Laboratoire spécialisé en Esthétique et Implantologie. Plus de 30 ans d\'expérience. Production certifiée ISO 13485. Bordeaux & Hanoï.',
+        'description' => 'Laboratoire de prothese dentaire specialise en implantologie, esthetique dentaire et restaurations dentaires certifiees ISO 13485 a Bordeaux et Hanoi.',
         'address' => [
             [
                 '@type' => 'PostalAddress',
@@ -347,11 +347,26 @@ function dentcare_gallery(): array
 function dentcare_hero_images(): array
 {
     return [
-        'images/wetransfer/Pict 1 presentation/IMG_9271.jpg',
-        'images/wetransfer/Pict 1 presentation/IMG_9279.jpg',
-        'images/wetransfer/Pict 1 presentation/IMG_9280.jpg',
-        'images/wetransfer/Pict 1 presentation/PHOTO-2026-03-15-08-02-51.jpg',
-        'images/wetransfer/Pict 1 presentation/PHOTO-2026-03-15-08-03-08.jpg',
+        [
+            'src' => 'images/wetransfer/Pict 1 presentation/IMG_9271.jpg',
+            'alt' => 'Professional dental consultation and treatment presentation',
+        ],
+        [
+            'src' => 'images/wetransfer/Pict 1 presentation/IMG_9279.jpg',
+            'alt' => 'Dental laboratory and clinical workspace overview',
+        ],
+        [
+            'src' => 'images/wetransfer/Pict 1 presentation/IMG_9280.jpg',
+            'alt' => 'Advanced dental equipment and treatment setup',
+        ],
+        [
+            'src' => 'images/wetransfer/Pict 1 presentation/PHOTO-2026-03-15-08-02-51.jpg',
+            'alt' => 'Dental restoration and prosthetic showcase',
+        ],
+        [
+            'src' => 'images/wetransfer/Pict 1 presentation/PHOTO-2026-03-15-08-03-08.jpg',
+            'alt' => 'Professional dental care and patient treatment demonstration',
+        ],
     ];
 }
 

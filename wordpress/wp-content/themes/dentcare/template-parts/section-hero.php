@@ -1,16 +1,20 @@
 <?php
-/**
- * Hero section.
- *
- * @package DentCare
- */
+ /**
+  * Hero section.
+  *
+  * @package DentCare
+  */
 
 $images = dentcare_hero_images();
 ?>
 <section id="hero" class="hero" data-hero-slider>
     <div class="hero__media">
         <?php foreach ($images as $index => $image) : ?>
-            <img class="hero__image <?php echo $index === 0 ? 'is-active' : ''; ?>" src="<?php echo esc_url(dentcare_asset($image)); ?>" alt="" width="1920" height="1080" <?php echo $index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'; ?> decoding="async" data-hero-image>
+            <?php
+            $src = is_array($image) ? $image['src'] : $image;
+            $alt = is_array($image) && isset($image['alt']) ? $image['alt'] : '';
+            ?>
+            <img class="hero__image <?php echo $index === 0 ? 'is-active' : ''; ?>" src="<?php echo esc_url(dentcare_asset($src)); ?>" alt="<?php echo esc_attr($alt); ?>" width="1920" height="1080" <?php echo $index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'; ?> decoding="async" data-hero-image>
         <?php endforeach; ?>
         <div class="hero__overlay"></div>
     </div>
