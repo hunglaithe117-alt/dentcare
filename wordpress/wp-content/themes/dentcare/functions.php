@@ -146,6 +146,43 @@ function dentcare_defer_scripts(string $tag, string $handle): string
 }
 add_filter('script_loader_tag', 'dentcare_defer_scripts', 10, 2);
 
+function dentcare_disable_jetpack_sitemaps(bool $enabled): bool
+{
+    return false;
+}
+add_filter('jetpack_sitemap_enabled', 'dentcare_disable_jetpack_sitemaps');
+
+function dentcare_custom_sitemap_template(): void
+{
+    if (!isset($_SERVER['REQUEST_URI'])) {
+        return;
+    }
+
+    $path = trim((string) wp_parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    if (!in_array($path, ['sitemap.xml', 'sitemap_index.xml'], true)) {
+        return;
+    }
+
+    $urls = [
+        dentcare_url('fr'),
+        dentcare_url('en'),
+        dentcare_url('fr', 'legal-info'),
+        dentcare_url('fr', 'terms-and-conditions'),
+    ];
+
+    status_header(200);
+    header('Content-Type: application/xml; charset=UTF-8');
+
+    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    foreach ($urls as $url) {
+        echo '<url><loc>' . esc_url($url) . '</loc></url>';
+    }
+    echo '</urlset>';
+    exit;
+}
+add_action('template_redirect', 'dentcare_custom_sitemap_template', 0);
+
 function dentcare_asset(string $path): string
 {
     $uri = DENTCARE_THEME_URI . '/assets/' . ltrim($path, '/');
