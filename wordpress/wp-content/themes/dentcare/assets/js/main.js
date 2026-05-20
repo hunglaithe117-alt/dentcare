@@ -8,13 +8,50 @@
     document.body.classList.toggle("is-locked", locked);
   }
 
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function getHeaderHeight() {
+    const header = $("[data-site-header]");
+    return header ? header.offsetHeight : 80;
+  }
+
+  function scrollToTarget(targetY) {
+    if (prefersReducedMotion()) {
+      window.scrollTo(0, targetY);
+      return;
+    }
+    const start = window.scrollY;
+    const diff = targetY - start;
+    const duration = Math.max(350, Math.min(Math.abs(diff) * 0.55, 1000));
+    const startTime = performance.now();
+    const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + diff * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   function initHeader() {
     const header = $("[data-site-header]");
     if (!header) return;
 
     const toggle = $("[data-menu-toggle]", header);
     const mobileMenu = $("[data-mobile-menu]", header);
-    const scrollTopLinks = $$("[data-scroll-top]");
+    const allNavLinks = $$("a[href^='#']", header);
+
+    const navLinksMap = new Map();
+    allNavLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href && href !== "#") {
+        const section = document.querySelector(href);
+        if (section) navLinksMap.set(section, link);
+      }
+    });
 
     let scrollTick = false;
     const applyScrolled = () => {
@@ -27,6 +64,32 @@
     };
     requestAnimationFrame(() => applyScrolled());
     window.addEventListener("scroll", applyScrolled, { passive: true });
+
+    // Active section tracking (scrollspy)
+    let activeTick = false;
+    const updateActiveLink = () => {
+      if (activeTick) return;
+      activeTick = true;
+      requestAnimationFrame(() => {
+        const scrollMiddle = window.scrollY + window.innerHeight / 3;
+        let activeSection = null;
+        for (const [section] of navLinksMap) {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top + window.scrollY;
+          const sectionBottom = sectionTop + rect.height;
+          if (scrollMiddle >= sectionTop && scrollMiddle < sectionBottom) {
+            activeSection = section;
+            break;
+          }
+        }
+        navLinksMap.forEach((link, section) => {
+          link.classList.toggle("is-active", section === activeSection);
+        });
+        activeTick = false;
+      });
+    };
+    requestAnimationFrame(() => updateActiveLink());
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
 
     if (toggle && mobileMenu) {
       toggle.addEventListener("click", () => {
@@ -43,11 +106,17 @@
       });
     }
 
-    scrollTopLinks.forEach((link) => {
+    allNavLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
-        if (link.getAttribute("href") && link.getAttribute("href") !== "#") return;
+        const href = link.getAttribute("href");
+        if (!href || href === "#") return;
+        const target = document.querySelector(href);
+        if (!target) return;
         event.preventDefault();
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+        const offset = getHeaderHeight();
+        scrollToTarget(target.getBoundingClientRect().top + window.scrollY - offset);
+        // Immediately highlight the clicked nav link
+        navLinksMap.forEach((l, section) => l.classList.toggle("is-active", l === link));
       });
     });
   }
@@ -79,10 +148,6 @@
         toggle.focus();
       }
     });
-  }
-
-  function prefersReducedMotion() {
-    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
   function initHero() {
@@ -393,7 +458,7 @@
     };
     requestAnimationFrame(() => toggle());
     window.addEventListener("scroll", toggle, { passive: true });
-    button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" }));
+    button.addEventListener("click", () => scrollToTarget(0));
   }
 
   function initContactFormState() {
@@ -420,4 +485,3 @@
     initContactFormState();
   });
 })();
-
