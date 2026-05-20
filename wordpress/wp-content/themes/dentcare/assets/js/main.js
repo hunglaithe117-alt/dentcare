@@ -58,7 +58,8 @@
       if (scrollTick) return;
       scrollTick = true;
       requestAnimationFrame(() => {
-        header.classList.toggle("is-scrolled", window.scrollY > 50);
+        const isSolid = header.classList.contains("site-header--solid");
+        header.classList.toggle("is-scrolled", isSolid || window.scrollY > 50);
         scrollTick = false;
       });
     };
