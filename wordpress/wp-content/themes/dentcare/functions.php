@@ -101,6 +101,10 @@ function dentcare_remove_block_styles(): void
 add_action('wp_enqueue_scripts', 'dentcare_remove_block_styles', 100);
 add_action('wp_print_styles', 'dentcare_remove_block_styles', 100);
 
+add_filter('jetpack_disable_carousel', '__return_true');
+add_filter('jp_carousel_force_enable', '__return_false');
+add_filter('tiled_gallery_nocarousel', '__return_true');
+
 function dentcare_disable_emojis(): void
 {
     remove_action('wp_head', 'print_emoji_detection_script', 7);
