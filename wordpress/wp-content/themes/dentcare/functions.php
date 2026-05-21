@@ -94,8 +94,26 @@ function dentcare_remove_block_styles(): void
         wp_dequeue_style('wpcom-blocks-code-style');
         wp_dequeue_style('layout-grid');
         wp_dequeue_style('wpcom-template-preview');
+        wp_dequeue_style('core-block-supports');
+        wp_dequeue_style('gutenberg-block-library');
+
+        wp_deregister_style('wp-block-library');
+        wp_deregister_style('wp-block-library-theme');
+        wp_deregister_style('wc-blocks-style');
+        wp_deregister_style('global-styles');
+        wp_deregister_style('classic-theme-styles');
+        wp_deregister_style('jetpack-carousel');
+        wp_deregister_style('jetpack-forms-layout');
+        wp_deregister_style('wpcom-blocks-code-style');
+        wp_deregister_style('layout-grid');
+        wp_deregister_style('wpcom-template-preview');
+        wp_deregister_style('core-block-supports');
+        wp_deregister_style('gutenberg-block-library');
+
         wp_dequeue_script('jetpack-carousel');
         wp_dequeue_script('wpcom-template-preview');
+        wp_deregister_script('jetpack-carousel');
+        wp_deregister_script('wpcom-template-preview');
     }
 }
 add_action('wp_enqueue_scripts', 'dentcare_remove_block_styles', 100);
@@ -193,11 +211,7 @@ function dentcare_asset(string $path): string
         return $uri;
     }
     $webp_rel = preg_replace('/\.(jpe?g|png)$/i', '.webp', $path);
-    $webp_file = DENTCARE_THEME_DIR . '/assets/' . ltrim($webp_rel, '/');
-    if (file_exists($webp_file)) {
-        return DENTCARE_THEME_URI . '/assets/' . ltrim($webp_rel, '/');
-    }
-    return $uri;
+    return DENTCARE_THEME_URI . '/assets/' . ltrim($webp_rel, '/');
 }
 
 function dentcare_generate_webp(string $path): ?string
@@ -207,28 +221,17 @@ function dentcare_generate_webp(string $path): ?string
         return null;
     }
     $webp_rel = preg_replace('/\.(jpe?g|png)$/i', '.webp', $path);
-    $webp_file = DENTCARE_THEME_DIR . '/assets/' . ltrim($webp_rel, '/');
-    if (!file_exists($webp_file)) {
-        return null;
-    }
     return DENTCARE_THEME_URI . '/assets/' . ltrim($webp_rel, '/');
 }
 
 function dentcare_responsive_image(string $path, int $width = 0, int $height = 0, string $alt = '', string $loading = 'lazy', string $class = ''): string
 {
     $src = dentcare_asset($path);
-    $webp_src = dentcare_generate_webp($path);
-    $ext = strtolower((string) pathinfo($path, PATHINFO_EXTENSION));
     $width_attr = $width > 0 ? ' width="' . $width . '"' : '';
     $height_attr = $height > 0 ? ' height="' . $height . '"' : '';
     $class_attr = $class ? ' class="' . esc_attr($class) . '"' : '';
     
-    $srcset = '';
-    if ($webp_src && in_array($ext, ['jpg', 'jpeg', 'png'], true)) {
-        $srcset = ' srcset="' . esc_attr($webp_src) . '" type="image/webp"';
-    }
-    
-    return '<img src="' . esc_url($src) . '" alt="' . esc_attr($alt) . '"' . $width_attr . $height_attr . $class_attr . ' loading="' . esc_attr($loading) . '" decoding="async"' . $srcset . '>';
+    return '<img src="' . esc_url($src) . '" alt="' . esc_attr($alt) . '"' . $width_attr . $height_attr . $class_attr . ' loading="' . esc_attr($loading) . '" decoding="async">';
 }
 
 function dentcare_asset_path(string $path): string

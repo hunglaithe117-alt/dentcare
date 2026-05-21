@@ -48,16 +48,15 @@ $video_description = dentcare_current_locale() === 'fr' ? 'Decouvrez DentCare Co
                 <h3><?php echo esc_html($video_title); ?></h3>
                 <p><?php echo esc_html($video_description); ?></p>
                 <div class="about__video-rule" aria-hidden="true"></div>
-                <div class="about__video-frame">
-                    <iframe
-                        src="https://www.youtube.com/embed/Gp1mmmbTzJk?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=Gp1mmmbTzJk&amp;rel=0"
-                        title="DentCare Consultation Introduction"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                        loading="lazy"
-                    ></iframe>
+                <div class="about__video-frame about__video-frame--lazy" data-video-id="Gp1mmmbTzJk" data-video-title="<?php echo esc_attr($video_title); ?>">
+                    <div class="about__video-placeholder">
+                        <img src="https://img.youtube.com/vi/Gp1mmmbTzJk/maxresdefault.jpg" alt="<?php echo esc_attr($video_title); ?>" loading="lazy" width="560" height="315">
+                        <button type="button" class="about__video-play-btn" aria-label="<?php echo esc_attr($video_title); ?>">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
