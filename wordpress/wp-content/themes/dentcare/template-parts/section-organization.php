@@ -99,10 +99,18 @@ $shipping = dentcare_shipping_partners();
         <div class="policies" data-policies>
             <h3 class="policies__title"><?php echo esc_html(dentcare_t('organization.policies.title')); ?></h3>
             
-            <div class="policies__tabs">
+            <?php 
+            $policy_keys = array_keys($policies);
+            $first_policy_key = !empty($policy_keys) ? $policy_keys[0] : '';
+            ?>
+            <div class="policies__tabs" role="tablist" aria-label="<?php echo esc_attr(dentcare_t('organization.policies.title')); ?>">
                 <?php foreach ($policies as $key => $detail): ?>
                     <button type="button" 
                             class="policy-card" 
+                            id="policy-tab-<?php echo esc_attr($key); ?>"
+                            role="tab"
+                            aria-selected="<?php echo $key === $first_policy_key ? 'true' : 'false'; ?>"
+                            aria-controls="policy-panel"
                             data-policy-tab="<?php echo esc_attr($key); ?>"
                             data-policy-title="<?php echo esc_html(dentcare_t('organization.policies.' . $key)); ?>"
                             data-policy-description="<?php echo esc_attr($detail); ?>">
@@ -122,7 +130,7 @@ $shipping = dentcare_shipping_partners();
                 <?php endforeach; ?>
             </div>
 
-            <div class="policies__panel" data-policy-panel>
+            <div class="policies__panel" id="policy-panel" role="tabpanel" aria-labelledby="policy-tab-<?php echo esc_attr($first_policy_key); ?>" data-policy-panel>
                 <div class="policies__panel-content">
                     <h4 class="policies__panel-title" data-policy-panel-title></h4>
                     <p class="policies__panel-description" data-policy-panel-description></p>

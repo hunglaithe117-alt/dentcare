@@ -193,7 +193,7 @@ section[id] {
 .section-heading span,
 .eyebrow {
   display: inline-block;
-  color: var(--accent-500);
+  color: var(--accent-700);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -247,13 +247,13 @@ section[id] {
 }
 
 .button--gold {
-  background: var(--accent-600);
+  background: var(--accent-700);
   color: #fff;
   box-shadow: 0 18px 40px rgba(175, 127, 39, 0.22);
 }
 
 .button--gold:hover {
-  background: var(--accent-700);
+  background: var(--accent-800);
 }
 
 .button--ghost {
@@ -736,16 +736,28 @@ section[id] {
 .hero__controls div {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .hero__controls button {
+  position: relative;
   width: 14px;
   height: 5px;
   border: 0;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.32);
   transition: width 400ms ease, background 180ms ease;
+  cursor: pointer;
+}
+
+.hero__controls button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
 }
 
 .hero__controls button.is-active {
@@ -1763,7 +1775,7 @@ section[id] {
 .policy-card__label {
   font-size: 15px;
   font-weight: 600;
-  color: #64748b;
+  color: var(--neutral-600);
   transition: color 280ms ease;
   line-height: 1.4;
 }
@@ -1774,16 +1786,16 @@ section[id] {
 
 .policy-card.is-active {
   background: #fff;
-  border-color: #C5A267;
-  box-shadow: 0 12px 30px rgba(197, 162, 103, 0.12);
+  border-color: var(--accent-700);
+  box-shadow: 0 12px 30px rgba(140, 96, 34, 0.12);
 }
 
 .policy-card.is-active .policy-card__icon {
-  color: #C5A267;
+  color: var(--accent-700);
 }
 
 .policy-card.is-active .policy-card__label {
-  color: #C5A267;
+  color: var(--accent-700);
 }
 
 .policies__panel {

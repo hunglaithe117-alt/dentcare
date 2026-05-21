@@ -265,8 +265,16 @@
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         const key = tab.dataset.productTab;
-        tabs.forEach((item) => item.classList.toggle("is-active", item === tab));
-        panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.productPanel === key));
+        tabs.forEach((item) => {
+          const isActive = item === tab;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        panels.forEach((panel) => {
+          const isActive = panel.dataset.productPanel === key;
+          panel.classList.toggle("is-active", isActive);
+          panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+        });
       });
     });
 
@@ -463,7 +471,15 @@
       const { policyTab, policyTitle, policyDescription } = tab.dataset;
       
       // Update UI
-      tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+      tabs.forEach((t) => {
+        const isActive = t === tab;
+        t.classList.toggle("is-active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      
+      if (panel) {
+        panel.setAttribute("aria-labelledby", tab.id || "");
+      }
       
       if (panelTitle) panelTitle.textContent = policyTitle || "";
       if (panelDescription) panelDescription.textContent = policyDescription || "";
@@ -534,7 +550,8 @@
     const lazyVideo = $(".about__video-frame--lazy");
     if (!lazyVideo) return;
 
-    lazyVideo.addEventListener("click", () => {
+    lazyVideo.addEventListener("click", (event) => {
+      if (event && event.isTrusted === false) return;
       const videoId = lazyVideo.dataset.videoId;
       const videoTitle = lazyVideo.dataset.videoTitle || "Video player";
       if (!videoId) return;

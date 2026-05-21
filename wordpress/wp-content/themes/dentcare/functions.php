@@ -143,7 +143,7 @@ function dentcare_clean_preconnect(array $hints, string $relation): array
     }
     return array_values($hints);
 }
-add_filter('wp_resource_hints', 'dentcare_clean_preconnect', 10, 2);
+add_filter('wp_resource_hints', 'dentcare_clean_preconnect', 9999, 2);
 
 function dentcare_defer_scripts(string $tag, string $handle): string
 {
@@ -390,6 +390,7 @@ function dentcare_head_meta(): void
     <?php
 }
 add_action('wp_head', 'dentcare_head_meta', 3);
+remove_action('wp_head', 'rel_canonical');
 
 function dentcare_cf7_shortcode(): string
 {

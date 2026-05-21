@@ -18,14 +18,25 @@ $brands = dentcare_brand_groups();
 
         <div class="tabs" role="tablist" aria-label="<?php echo esc_attr(dentcare_t('products.sectionTitle')); ?>">
             <?php foreach ($products['categories'] as $index => $category) : ?>
-                <button type="button" class="<?php echo $index === 0 ? 'is-active' : ''; ?>" data-product-tab="<?php echo esc_attr($category); ?>">
+                <button type="button" 
+                        class="<?php echo $index === 0 ? 'is-active' : ''; ?>" 
+                        id="product-tab-<?php echo esc_attr($category); ?>"
+                        role="tab"
+                        aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>"
+                        aria-controls="product-panel-<?php echo esc_attr($category); ?>"
+                        data-product-tab="<?php echo esc_attr($category); ?>">
                     <?php echo esc_html(dentcare_t('products.categories.' . $category . '.title')); ?>
                 </button>
             <?php endforeach; ?>
         </div>
 
         <?php foreach ($products['categories'] as $cat_index => $category) : ?>
-            <div class="product-panel <?php echo $cat_index === 0 ? 'is-active' : ''; ?>" data-product-panel="<?php echo esc_attr($category); ?>">
+            <div class="product-panel <?php echo $cat_index === 0 ? 'is-active' : ''; ?>" 
+                 id="product-panel-<?php echo esc_attr($category); ?>"
+                 role="tabpanel"
+                 aria-labelledby="product-tab-<?php echo esc_attr($category); ?>"
+                 aria-hidden="<?php echo $cat_index === 0 ? 'false' : 'true'; ?>"
+                 data-product-panel="<?php echo esc_attr($category); ?>">
                 <div class="product-grid">
                     <?php foreach ($products['keys'][$category] as $key) :
                         $image_list = $products['images'][$category][$key] ?? ['images/hero/hero-dental-closeup.jpg'];
