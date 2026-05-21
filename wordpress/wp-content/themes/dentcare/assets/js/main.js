@@ -474,6 +474,29 @@
     });
   }
 
+  function initLazyVideo() {
+    const lazyVideo = $(".about__video-frame--lazy");
+    if (!lazyVideo) return;
+
+    lazyVideo.addEventListener("click", () => {
+      const videoId = lazyVideo.dataset.videoId;
+      const videoTitle = lazyVideo.dataset.videoTitle || "Video player";
+      if (!videoId) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("src", `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${videoId}&rel=0`);
+      iframe.setAttribute("title", videoTitle);
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      iframe.setAttribute("allowfullscreen", "");
+
+      lazyVideo.innerHTML = "";
+      lazyVideo.appendChild(iframe);
+      lazyVideo.classList.remove("about__video-frame--lazy");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initHeader();
     initLanguageSwitcher();
@@ -484,5 +507,6 @@
     initFaq();
     initScrollTop();
     initContactFormState();
+    initLazyVideo();
   });
 })();
