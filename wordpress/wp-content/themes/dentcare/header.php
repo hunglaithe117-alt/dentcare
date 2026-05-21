@@ -20,7 +20,7 @@ $view = dentcare_current_view();
     <div class="site-header__inner">
         <a class="site-header__logo" href="<?php echo esc_url(dentcare_url($locale)); ?>" aria-label="<?php echo esc_attr(dentcare_t('header.logoHome')); ?>" data-scroll-top>
             <img class="site-header__logo-img site-header__logo-img--light" src="<?php echo esc_url(dentcare_asset('logo-light.svg')); ?>" alt="DentCare" fetchpriority="high" width="160" height="160">
-            <img class="site-header__logo-img site-header__logo-img--dark" src="<?php echo esc_url(dentcare_asset('logo-dark.svg')); ?>" alt="DentCare" fetchpriority="high" width="160" height="160">
+            <img class="site-header__logo-img site-header__logo-img--dark" src="<?php echo esc_url(dentcare_asset('logo-dark.svg')); ?>" alt="DentCare" width="160" height="160">
         </a>
 
         <nav class="site-header__nav" aria-label="<?php echo esc_attr(dentcare_t('header.mainNav')); ?>">

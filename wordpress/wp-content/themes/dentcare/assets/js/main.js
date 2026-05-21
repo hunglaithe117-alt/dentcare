@@ -66,31 +66,60 @@
     requestAnimationFrame(() => applyScrolled());
     window.addEventListener("scroll", applyScrolled, { passive: true });
 
-    // Active section tracking (scrollspy)
-    let activeTick = false;
-    const updateActiveLink = () => {
-      if (activeTick) return;
-      activeTick = true;
-      requestAnimationFrame(() => {
-        const scrollMiddle = window.scrollY + window.innerHeight / 3;
-        let activeSection = null;
-        for (const [section] of navLinksMap) {
-          const rect = section.getBoundingClientRect();
-          const sectionTop = rect.top + window.scrollY;
-          const sectionBottom = sectionTop + rect.height;
-          if (scrollMiddle >= sectionTop && scrollMiddle < sectionBottom) {
-            activeSection = section;
-            break;
+    // Active section tracking (scrollspy) using IntersectionObserver to prevent layout reflows
+    if (typeof IntersectionObserver !== "undefined") {
+      const observerOptions = {
+        root: null,
+        rootMargin: "-25% 0px -55% 0px", // triggers when section is in the middle viewport range
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        let visibleSection = null;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleSection = entry.target;
+          }
+        });
+        if (visibleSection) {
+          const activeLink = navLinksMap.get(visibleSection);
+          if (activeLink) {
+            allNavLinks.forEach((link) => link.classList.remove("is-active"));
+            activeLink.classList.add("is-active");
           }
         }
-        navLinksMap.forEach((link, section) => {
-          link.classList.toggle("is-active", section === activeSection);
-        });
-        activeTick = false;
+      }, observerOptions);
+
+      navLinksMap.forEach((link, section) => {
+        observer.observe(section);
       });
-    };
-    requestAnimationFrame(() => updateActiveLink());
-    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    } else {
+      // Fallback scrollspy for legacy browsers
+      let activeTick = false;
+      const updateActiveLink = () => {
+        if (activeTick) return;
+        activeTick = true;
+        requestAnimationFrame(() => {
+          const scrollMiddle = window.scrollY + window.innerHeight / 3;
+          let activeSection = null;
+          for (const [section] of navLinksMap) {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top + window.scrollY;
+            const sectionBottom = sectionTop + rect.height;
+            if (scrollMiddle >= sectionTop && scrollMiddle < sectionBottom) {
+              activeSection = section;
+              break;
+            }
+          }
+          navLinksMap.forEach((link, section) => {
+            link.classList.toggle("is-active", section === activeSection);
+          });
+          activeTick = false;
+        });
+      };
+      requestAnimationFrame(() => updateActiveLink());
+      window.addEventListener("scroll", updateActiveLink, { passive: true });
+    }
 
     if (toggle && mobileMenu) {
       toggle.addEventListener("click", () => {
@@ -107,17 +136,44 @@
       });
     }
 
-    allNavLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
-        if (!href || href === "#") return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        event.preventDefault();
-        const offset = getHeaderHeight();
-        scrollToTarget(target.getBoundingClientRect().top + window.scrollY - offset);
-        // Immediately highlight the clicked nav link
-        navLinksMap.forEach((l, section) => l.classList.toggle("is-active", l === link));
+    // Global listener for all section hash links and logo scroll-to-top on the page
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+
+      // Handle logo click scroll-to-top
+      if (link.hasAttribute("data-scroll-top")) {
+        const isHome = document.body.classList.contains("home") || !header.classList.contains("site-header--solid");
+        if (isHome) {
+          event.preventDefault();
+          scrollToTarget(0);
+          return;
+        }
+      }
+
+      if (!href || !href.startsWith("#") || href === "#") return;
+
+      let target = document.querySelector(href);
+      if (!target) {
+        if (href === "#clinical") {
+          target = document.getElementById("macro");
+        } else if (href === "#macro") {
+          target = document.getElementById("clinical");
+        }
+      }
+
+      if (!target) return;
+
+      event.preventDefault();
+      const offset = getHeaderHeight();
+      scrollToTarget(target.getBoundingClientRect().top + window.scrollY - offset);
+
+      // Highlight the matching header link if this section matches a menu item
+      allNavLinks.forEach((navLink) => {
+        const nhref = navLink.getAttribute("href");
+        navLink.classList.toggle("is-active", nhref === href);
       });
     });
   }

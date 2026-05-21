@@ -66,20 +66,10 @@ function dentcare_preload_critical_assets(): void
     }
 
     echo '<link rel="preload" as="image" href="' . esc_url(dentcare_asset('logo-light.svg')) . '">' . "\n";
-    echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
-    echo '<link rel="dns-prefetch" href="//fonts.gstatic.com">' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
-    echo '<link rel="preconnect" href="https://pixel.wp.com" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . esc_url(DENTCARE_THEME_URI . '/assets/fonts/inter-latin.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . esc_url(DENTCARE_THEME_URI . '/assets/fonts/cormorant-garamond-normal-latin.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
 }
 add_action('wp_head', 'dentcare_preload_critical_assets', 1);
-
-function dentcare_load_fonts_async(): void
-{
-    ?><link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"></noscript><?php
-}
-add_action('wp_head', 'dentcare_load_fonts_async', 2);
 
 function dentcare_remove_block_styles(): void
 {
@@ -116,8 +106,8 @@ function dentcare_remove_block_styles(): void
         wp_deregister_script('wpcom-template-preview');
     }
 }
-add_action('wp_enqueue_scripts', 'dentcare_remove_block_styles', 100);
-add_action('wp_print_styles', 'dentcare_remove_block_styles', 100);
+add_action('wp_enqueue_scripts', 'dentcare_remove_block_styles', 9999);
+add_action('wp_print_styles', 'dentcare_remove_block_styles', 9999);
 
 function dentcare_disable_emojis(): void
 {
@@ -133,19 +123,19 @@ add_action('init', 'dentcare_disable_emojis');
 
 function dentcare_clean_preconnect(array $hints, string $relation): array
 {
-    if ($relation !== 'preconnect') {
+    if ($relation !== 'preconnect' && $relation !== 'dns-prefetch') {
         return $hints;
     }
     $remove = [
-        '//c0.wp.com',
-        'https://c0.wp.com',
-        '//i.ytimg.com',
-        'https://i.ytimg.com',
+        'wp.com',
+        'ytimg.com',
+        'googleapis.com',
+        'gstatic.com',
     ];
     foreach ($hints as $i => $hint) {
         $url = is_string($hint) ? $hint : ($hint['href'] ?? '');
         foreach ($remove as $r) {
-            if (str_starts_with($url, $r)) {
+            if (strpos($url, $r) !== false) {
                 unset($hints[$i]);
                 break;
             }
