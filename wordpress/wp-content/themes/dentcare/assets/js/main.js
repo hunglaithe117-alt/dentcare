@@ -278,6 +278,22 @@
       });
     });
 
+    // Ensure active tab and panel are in perfect sync on load
+    const activeTab = tabs.find((t) => t.classList.contains("is-active")) || tabs[0];
+    if (activeTab) {
+      const activeKey = activeTab.dataset.productTab;
+      tabs.forEach((item) => {
+        const isActive = item === activeTab;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.productPanel === activeKey;
+        panel.classList.toggle("is-active", isActive);
+        panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+    }
+
     const modalImageCount = $("[data-modal-image-count]", modal);
 
     const setImage = (src, alt, activeButton) => {
